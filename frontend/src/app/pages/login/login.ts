@@ -15,6 +15,15 @@ export class Login {
 
   email = '';
   senha = '';
+  botaoDesabilitado:boolean = true;
+
+  validarFormulario() {
+    if(this.email.trim() !== '' && this.senha.trim() != ''){
+      this.botaoDesabilitado = false;
+     } else {
+      this.botaoDesabilitado = true;
+     }
+    }
 
   alternarSenha() {
     this.mostrarSenha.update((valor) => !valor);

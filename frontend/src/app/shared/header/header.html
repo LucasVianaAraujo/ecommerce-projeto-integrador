@@ -1,27 +1,20 @@
-<div class="FundoPreto">
-    <header>
-        <div id="LogoDoSite">
-            <h1>LogoDoSite</h1>
-        </div>
-        <div id="BarradePesquisa">
-            <input type="search" placeholder="Filtrar por marca, nome ou preço...">
-        </div>
-        <div id="Interativos">
-            <a>Home</a>
-            <a>Produtos</a>
-            <a>Marcas</a>
-            <a>Contato</a>
-            <div id="IconesInterativos">
-                <svg lucideHeart></svg>
-                <svg lucideShoppingCart></svg>
-                <svg lucideUser></svg>
-            </div>
-        </div>
-    </header>
-</div>
-
-<div class="CentralizadorDoBreadCrump">
-    <div class="BreadCrump">
-        <h4>Home ></h4>
+<header>
+    <div id="LogoDoSite">
+        <h1>LogoDoSite</h1>
     </div>
-</div>
+    <div id="BarradePesquisa">
+        <input type="search" placeholder="Filtrar por marca, nome ou preço...">
+    </div>
+    <div id="Interativos">
+        <ul class="navbar-list">
+        @for(item of itensMenu; track item){
+          <li><a [href]="item.link">{{item.label}}</a></li>
+        }
+      </ul>
+        <div id="IconesInterativos">
+            <svg lucideHeart></svg>
+            <svg lucideShoppingCart></svg>
+            <a href="login"><svg lucideUser></svg></a>
+        </div>
+    </div>
+</header>

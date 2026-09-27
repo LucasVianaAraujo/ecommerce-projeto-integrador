@@ -8,4 +8,12 @@ import { LucideHouse, LucideHeart, LucideShoppingCart, LucideUser } from '@lucid
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
-export class Header { }
+export class Header {
+  itensMenu = [
+    {label: 'Home', link: ''},
+    {label: "Produtos", link: 'produtos'},
+    {label: "Marcas", link: 'Marcas'},
+    {label: "Contato", link: 'Contato'},
+    {label: "Carrinho", link: 'carrinho'},
+  ]
+ }
