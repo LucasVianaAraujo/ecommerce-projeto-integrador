@@ -1,17 +1,20 @@
-header {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.FundoPreto {
     background-color: black;
-    width: 100%;
+}
+
+header {
+    display: flex;
+    background-color: black;
+    width: 76vw;
+    justify-self: center;
     height: 10vh;
 }
 
 #LogoDoSite {
     display: flex;
-    width: 100%;
+    width: 40%;
     height: 100%;
     align-items: center;
-    justify-content: center;
     color: white;
 }
 
@@ -27,7 +30,7 @@ header {
 }
 
 #BarradePesquisa input {
-    height: 30%;
+    height: 35%;
     border: none;
     width: 90%;
     outline: none;
@@ -37,6 +40,7 @@ header {
 
 #Interativos {
     display: flex;
+    justify-content: end;
     width: 100%;
     height: 100%;
     align-items: center;
@@ -45,7 +49,8 @@ header {
 
 #IconesInterativos {
     display: flex;
-    width: 100%;
+    width: 20%;
+    justify-content: flex-end;
     height: 100%;
     align-items: center;
     gap: 2vh;
@@ -64,4 +69,17 @@ a:hover {
 svg {
     color: white;
     cursor: pointer;
+}
+
+.CentralizadorDoBreadCrump {
+    background-color: gray;
+    .BreadCrump {
+        display: flex;
+        width: 76vw;
+        height: 2vh;
+        justify-self: center;
+        align-items: center;
+        color: white;
+        font-size: 1.5vh;
+    }
 }
