@@ -11,9 +11,9 @@
 .CarrosselFundo {
     display: flex;
     width: 76%;
-    background-color: red;
     justify-self: center;
     height: 50vh;
+    padding-bottom: 5vh;
 }
 
 .ElementosDoCarrossel {
@@ -21,7 +21,6 @@
     width: 60%;
     align-self: center;
     height: 50vh;
-    background-color: blue;
 }
 
 .Botões {
@@ -30,17 +29,70 @@
     height: 50vh;
     gap: 2vh;
     align-items: flex-end;
-    background-color: red;
 }
 
 .Botões button {
     display: flex;
-    height: 3vh;
-    width: 15vh;
+    transition: all 0.5s;
+    height: 5vh;
+    width: 50%;
+    box-shadow: 0 1vw 20vh rgba(0, 0, 0, 0.699);
     justify-content: center;
     align-items: center;
     border-radius: 0.5vh;
+    color: white;
     cursor: pointer;
+    font-size: 2vh;
     border: none;
     outline: none;
+    background-color: #787878;
+}
+
+.Botões button:hover {
+    transform: translateY(-0.5vh);
+}
+
+.NossosServiços {
+    display: flex;
+    margin-top: 5vh;
+    justify-self: center;
+    width: 76vw;
+    height: 15vh;
+}
+
+.Serviços {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2vh;
+}
+
+.BlocoServiço {
+    box-shadow: 0 1vw 20vh rgba(0, 0, 0, 0.699);
+    display: flex;
+    width: 15vw;
+    height: 100%;
+    background-color: #787878;
+}
+
+.ProdutosEmAlta {
+    display: flex;
+    width: 76vw;
+    min-height: 15vh;
+    margin-top: 4vh;
+    justify-self: center;
+}
+
+.Produtos {
+    display: flex;
+}
+
+.ServiçosDoSite {
+    display: flex;
+    width: 76vw;
+    min-height: 15vh;
+    margin-top: 4vh;
+    justify-self: center;
 }
