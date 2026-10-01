@@ -1,0 +1,312 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+/* Estrutura do Footer */
+.footer {
+  width: 100%;
+  color: #ffffff;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+/* Secção Superior (Cinzento Claro / Médio) */
+.footer-top {
+  background-color: #8f8f8f;
+  padding: 44px 24px 38px;
+}
+
+.footer-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+/* Coluna 1: Logo e Redes */
+.logo-col {
+  max-width: 270px;
+}
+
+.logo {
+  font-size: 42px;
+  font-weight: 900;
+  color: #000000;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.tagline {
+  font-size: 14px;
+  line-height: 1.35;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+/* Ícones de Redes Sociais */
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.social-icon {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.social-icon:hover {
+  transform: translateY(-3px) scale(1.05);
+  filter: brightness(1.08);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Instagram com degradê autêntico e formato squircle */
+.social-icon.instagram {
+  border-radius: 12px;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+/* Facebook botão circular azul */
+.social-icon.facebook {
+  border-radius: 50%;
+  background-color: #1877f2;
+}
+
+/* WhatsApp botão circular verde */
+.social-icon.whatsapp {
+  border-radius: 50%;
+  background-color: #25d366;
+}
+
+/* Divisórias Verticais (Entre Serviços/Ajudas e Ajudas/Atendimento) */
+.vertical-divider {
+  border-left: 1px solid rgba(255, 255, 255, 0.45);
+  padding-left: 30px;
+}
+
+/* Colunas de Links */
+.footer-col h3 {
+  font-size: 19px;
+  color: #000000;
+  font-weight: 800;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  transition: opacity 0.15s ease;
+  opacity: 0.95;
+  display: inline-block;
+}
+
+.footer-col ul li a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Coluna de Atendimento */
+.contact-info li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+}
+
+/* Avatar circular roxo de atendimento */
+.user-badge {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #b5a4ec;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Secção Inferior (Cinzento Escuro) */
+.footer-bottom {
+  background-color: #505050;
+  padding: 22px 24px;
+  border-top: 1px solid #666666;
+}
+
+.bottom-container {
+  align-items: center;
+}
+
+/* Frete Grátis */
+.shipping-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 15px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.truck-icon {
+  flex-shrink: 0;
+}
+
+/* Formas de Pagamento */
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.payment-title {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: lowercase;
+  letter-spacing: 0.2px;
+}
+
+.payment-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.payment-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  cursor: default;
+}
+
+.payment-badge:hover {
+  transform: scale(1.08);
+}
+
+/* PIX */
+.pix-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: default;
+  transition: transform 0.2s ease;
+}
+
+.pix-badge:hover {
+  transform: scale(1.05);
+}
+
+.pix-icon {
+  flex-shrink: 0;
+}
+
+.pix-text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  line-height: 1;
+}
+
+.pix-brand-name {
+  font-weight: 800;
+  font-size: 20px;
+  color: #8c8c8c;
+  line-height: 0.95;
+  letter-spacing: -0.5px;
+}
+
+.pix-sub {
+  font-size: 6.5px;
+  color: #7b7b7b;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-top: 2px;
+}
+
+/* Endereço */
+.address-info {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.45;
+  text-align: right;
+  color: #dedede;
+  white-space: nowrap;
+}
+
+/* Responsividade (Tablets e Telas Pequenas) */
+@media (max-width: 860px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .vertical-divider {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .logo-col {
+    max-width: 100%;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .contact-info li {
+    justify-content: center;
+  }
+
+  .bottom-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .address-info {
+    text-align: center;
+    white-space: normal;
+  }
+}
+}
