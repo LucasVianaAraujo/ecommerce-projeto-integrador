@@ -7,6 +7,10 @@
     padding-left: 5vh;
     border: black 0.2vh solid;
     border-radius: 0.5vh;
+    margin-top: 4vh;
+
+    /* NOVO: a bola vermelha */
+    background: radial-gradient(circle 19vw at 85% 61%, #E00000 99.5%, transparent 100%);
 }
 
 .ElementosDoCarrossel {
@@ -137,4 +141,142 @@
     outline: none;
     border-radius: 0.5vh;
     padding: 1%;
+}
+
+/* ===== Adicione ao final do seu CSS ===== */
+
+/* Texto do carrossel (acima dos botões) */
+.ElementosDoCarrossel {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.TextoCarrossel {
+    padding-top: 6vh;
+    max-width: 90%;
+}
+
+.TextoCarrossel h1 {
+    font-size: 5vh;
+    margin: 0 0 1.5vh;
+}
+
+.TextoCarrossel p {
+    font-size: 2.2vh;
+    margin: 0;
+}
+
+.Botões {
+    height: auto;
+    margin-bottom: 2vh;
+}
+
+/* Blocos de categoria */
+.BlocoProduto {
+    align-items: flex-end;
+    border-radius: 0.5vh;
+}
+
+.BlocoProduto h3 {
+    margin: 0;
+    padding: 1.5vh;
+    color: white;
+    font-size: 2.4vh;
+}
+
+/* Seções com título + conteúdo */
+.ProdutosEmAlta > div,
+.ServiçosDoSite > div,
+.AvaliaçõesRecentes > div {
+    width: 100%;
+}
+
+.Produtos,
+.Serviços,
+.Avaliações {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vh;
+}
+
+/* Cards de produto */
+.CardProduto {
+    display: flex;
+    flex-direction: column;
+    width: 17vw;
+    padding: 1.5vh;
+    border: #D9D9D9 0.2vh solid;
+    border-radius: 0.5vh;
+}
+
+.ImagemProduto {
+    height: 20vh;
+    margin-bottom: 1.5vh;
+    border-radius: 0.5vh;
+    background-color: #787878;
+}
+
+.CardProduto h3 {
+    margin: 0 0 0.5vh;
+    font-size: 2.2vh;
+}
+
+.Descricao {
+    margin: 0 0 1vh;
+    color: #787878;
+    font-size: 1.8vh;
+}
+
+.Preco {
+    margin: 0 0 1.5vh;
+    font-size: 2.4vh;
+    font-weight: bold;
+}
+
+.CardProduto button {
+    height: 5vh;
+    border: none;
+    border-radius: 0.5vh;
+    background-color: #787878;
+    color: white;
+    font-size: 1.8vh;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.CardProduto button:hover {
+    transform: translateY(-0.5vh);
+}
+
+/* Cards de serviço e avaliação */
+.CardServico,
+.CardAvaliacao {
+    width: 17vw;
+    padding: 2vh;
+    border-radius: 0.5vh;
+    background-color: #D9D9D9;
+}
+
+.CardAvaliacao {
+    width: 24vw;
+}
+
+.CardServico h3 {
+    margin: 0 0 1vh;
+    font-size: 2.2vh;
+}
+
+.CardServico p,
+.CardAvaliacao p {
+    margin: 0 0 1vh;
+    font-size: 1.8vh;
+}
+
+.Nota {
+    color: #E00000;
+    font-size: 2.2vh;
+}
+
+.Autor {
+    color: #787878;
 }
