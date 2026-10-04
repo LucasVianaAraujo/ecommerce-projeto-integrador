@@ -11,9 +11,9 @@
             <button type="button" class="botao-olho" (click)="alternarSenha()"
                 [attr.aria-label]="mostrarSenha() ? 'Ocultar senha' : 'Mostrar senha'">
                 @if (mostrarSenha()) {
-                <svg lucideEyeOff></svg>
+                <mat-icon>visibility_off</mat-icon>
                 } @else {
-                <svg lucideEye></svg>
+                <mat-icon>visibility</mat-icon>
                 }
             </button>
         </div>
