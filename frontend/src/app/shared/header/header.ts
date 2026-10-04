@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { LucideHouse, LucideHeart, LucideShoppingCart, LucideUser } from '@lucide/angular';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [LucideHouse, LucideHeart, LucideShoppingCart, LucideUser],
+  imports: [MatIconModule],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })

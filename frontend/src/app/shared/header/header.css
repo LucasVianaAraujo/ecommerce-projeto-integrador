@@ -79,7 +79,7 @@ a:hover {
     transition: color 0.3s ease;
 }
 
-svg {
+mat-icon {
     color: white;
     width: 22px;
     height: 22px;
