@@ -1,11 +1,11 @@
 import { Component, signal, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LucideEye, LucideEyeOff } from '@lucide/angular';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, LucideEye, LucideEyeOff],
+  imports: [FormsModule, MatIconModule],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -15,9 +15,9 @@ export class Login {
 
   email = '';
   senha = '';
-  botaoDesabilitado:boolean = true;
+  botaoDesabilitado = true;
 
-  validarFormulario() {
+ validarFormulario() {
     if(this.email.trim() !== '' && this.senha.trim() != ''){
       this.botaoDesabilitado = false;
      } else {

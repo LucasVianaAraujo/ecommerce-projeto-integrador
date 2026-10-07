@@ -73,9 +73,10 @@ label {
     color: #000000;
 }
 
-.botao-olho svg {
+.botao-olho mat-icon {
     width: 20px;
     height: 20px;
+    font-size: 20px;
 }
 
 .input-submeter {
