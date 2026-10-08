@@ -63,3 +63,10 @@ textarea.input-simples {
 .input-submeter:hover {
     background-color: #b30000;
 }
+
+.link-voltar {
+    margin-top: 16px;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+}

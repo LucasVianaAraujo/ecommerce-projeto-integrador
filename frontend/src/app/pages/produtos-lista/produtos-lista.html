@@ -1,0 +1,46 @@
+<div class="content-container">
+    <h1>Produtos</h1>
+
+    <div class="acoes">
+        <a class="botao-vermelho" routerLink="/admin/produtos/novo">Novo produto</a>
+        <a class="link-voltar" routerLink="/admin">Voltar ao painel</a>
+    </div>
+
+    <input class="busca" type="search" placeholder="Consultar por modelo ou marca" [(ngModel)]="filtro" />
+
+    @if (produtos.length === 0) {
+    <p class="vazio">Nenhum tênis cadastrado ainda.</p>
+    } @else if (produtosFiltrados().length === 0) {
+    <p class="vazio">Nenhum tênis encontrado.</p>
+    } @else {
+    <table>
+        <thead>
+            <tr>
+                <th>Modelo</th>
+                <th>Marca</th>
+                <th>Preço</th>
+                <th>Descrição</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (produto of produtosFiltrados(); track produto.id) {
+            <tr>
+                <td>{{ produto.modelo }}</td>
+                <td>{{ produto.marca }}</td>
+                <td>{{ produto.precoFormatado() }}</td>
+                <td>{{ produto.descricao }}</td>
+                <td class="acoes-linha">
+                    <a [routerLink]="['/admin/produtos', produto.id, 'editar']" aria-label="Editar">
+                        <mat-icon>edit</mat-icon>
+                    </a>
+                    <button type="button" (click)="excluir(produto)" aria-label="Excluir">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    }
+</div>

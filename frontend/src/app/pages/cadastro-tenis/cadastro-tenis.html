@@ -1,5 +1,5 @@
 <div class="content-container">
-    <h1>Cadastro de Tênis</h1>
+    <h1>{{ editando ? 'Editar Tênis' : 'Cadastro de Tênis' }}</h1>
     <form>
         <label for="modelo">Modelo</label>
         <input class="input-simples" id="modelo" name="modelo" type="text" placeholder="Digite o modelo"
@@ -18,7 +18,8 @@
             [(ngModel)]="descricao"></textarea>
 
         <button class="input-submeter" type="button" (click)="cadastrar()">
-            Cadastro
+            {{ editando ? 'Salvar' : 'Cadastro' }}
         </button>
+        <a class="link-voltar" routerLink="/admin/produtos">Voltar para produtos</a>
     </form>
 </div>
