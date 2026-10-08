@@ -3,90 +3,125 @@
 }
 
 header {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    background-color: black;
     width: 100%;
-    height: 10vh;
-    padding: 0 2vw;
+    background-color: white;
+}
+
+#HeaderPrincipal {
+    width: 100%;
+    height: 13vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    box-sizing: border-box;
 }
 
 #LogoDoSite {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 20vw;
     height: 100%;
-    color: white;
-}
-
-#LogoDoSite h1 {
-    font-size: 1.5rem;
     cursor: pointer;
 }
 
 #BarradePesquisa {
+    width: 45%;
+    height: 5vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    border: 1px solid #d5d5d5;
+    border-radius: 0.5vh;
+    overflow: hidden;
+}
+
+#BarradePesquisa select {
+    width: 25%;
     height: 100%;
-    width: 100%;
+    border: none;
+    background-color: white;
+    padding: 0 2%;
+    outline: none;
 }
 
 #BarradePesquisa input {
-    height: 36px;
     width: 90%;
-    max-width: 400px;
-    border: none;
-    outline: none;
-    border-radius: 0.5vh;
-    padding: 0 12px;
-    font-size: 14px;
-}
-
-#Interativos {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
     height: 100%;
-    gap: 2vw;
+    border: none;
+    padding: 0 2%;
+    outline: none;
 }
 
-.navbar-list {
+#BarradePesquisa button {
+    width: 10%;
+    height: 100%;
+    border: none;
+    background-color: #f2a900;
     display: flex;
     align-items: center;
-    list-style: none;
-    gap: 1.5vw;
-    margin: 0;
-    padding: 0;
-    white-space: nowrap;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#BarradePesquisa mat-icon {
+    color: white;
 }
 
 #IconesInterativos {
     display: flex;
+    width: 25vw;
+    justify-content: space-around;
     align-items: center;
-    gap: 1.2vw;
 }
 
-a {
+#IconesInterativos div {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    padding: 1vh 1vw;
+    cursor: pointer;
+}
+
+#IconesInterativos div:hover {
+    background-color: #d3d3d3;
+    transition: 0.3s;
+}
+
+#IconesInterativos mat-icon {
+    color: #222;
+}
+
+#IconesInterativos span {
+    font-size: 0.8vw;
+}
+
+#Menu {
+    width: 100%;
+    height: 6vh;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    box-sizing: border-box;
+    gap: 2.5vw;
+}
+
+#Menu a {
     color: white;
     text-decoration: none;
+    font-size: 0.9vw;
+    font-weight: bold;
     cursor: pointer;
 }
 
-a:hover {
-    color: rgba(255, 255, 255, 0.87);
-    transition: color 0.3s ease;
+#Menu a:hover {
+    color: #f2a900;
+    transition: 0.3s;
 }
 
-mat-icon {
-    color: white;
-    width: 22px;
-    height: 22px;
-    cursor: pointer;
-    transition: color 0.3s ease;
+#MenuDireita {
+    margin-left: auto;
 }
 
-svg:hover {
-    color: rgba(255, 255, 255, 0.7);
+#MenuDireita a {
+    color: #f2a900;
 }

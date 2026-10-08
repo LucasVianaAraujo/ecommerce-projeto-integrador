@@ -1,20 +1,51 @@
 <header>
-    <div id="LogoDoSite">
-        <h1>LogoDoSite</h1>
-    </div>
-    <div id="BarradePesquisa">
-        <input type="search" placeholder="Filtrar por marca, nome ou preço...">
-    </div>
-    <div id="Interativos">
-        <ul class="navbar-list">
-        @for(item of itensMenu; track item){
-          <li><a [href]="item.link">{{item.label}}</a></li>
-        }
-      </ul>
-        <div id="IconesInterativos">
-            <svg lucideHeart></svg>
-            <svg lucideShoppingCart></svg>
-            <svg lucideUser></svg>
+    <div id="HeaderPrincipal">
+
+        <div id="LogoDoSite" routerLink="/home">
+            <img src="/images/logo.png" alt="">
         </div>
+
+        <div id="BarradePesquisa">
+            <input type="search" placeholder="Filtrar por marca, nome ou preço...">
+
+            <button>
+                <mat-icon>search</mat-icon>
+            </button>
+        </div>
+
+        <div id="IconesInterativos">
+
+            <div>
+                <mat-icon>favorite</mat-icon>
+                <span>Favoritos</span>
+            </div>
+
+            <div routerLink="/carrinho">
+                <mat-icon>shopping_cart</mat-icon>
+                <span>Carrinho</span>
+            </div>
+
+            <div>
+                <mat-icon>person</mat-icon>
+                <span>Minha conta</span>
+            </div>
+
+        </div>
+
     </div>
+
+    <nav id="Menu">
+        <a routerLink="/home">Home</a>
+        <a routerLink="/produtos">Produtos</a>
+        <a>Marcas</a>
+        <a>Ofertas</a>
+        <a>Novidades</a>
+        <a>Contato</a>
+
+        <div id="MenuDireita">
+            <a>Ofertas especiais</a>
+        </div>
+
+    </nav>
+
 </header>
