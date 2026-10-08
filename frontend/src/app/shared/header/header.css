@@ -2,6 +2,15 @@
     box-sizing: border-box;
 }
 
+/* Remove o "X" nativo do navegador em inputs do tipo search */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
 header {
     width: 100%;
     background-color: white;
@@ -24,48 +33,63 @@ header {
     cursor: pointer;
 }
 
+/* --- BARRA DE PESQUISA RECOLHÍVEL QUE SAI DA LUPA --- */
 #BarradePesquisa {
-    width: 45%;
-    height: 5vh;
+    position: relative;
     display: flex;
     align-items: center;
-    border: 1px solid #d5d5d5;
-    border-radius: 0.5vh;
-    overflow: hidden;
-}
-
-#BarradePesquisa select {
-    width: 25%;
-    height: 100%;
-    border: none;
-    background-color: white;
-    padding: 0 2%;
-    outline: none;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 25px;
+    height: 42px;
 }
 
 #BarradePesquisa input {
-    width: 90%;
-    height: 100%;
-    border: none;
-    padding: 0 2%;
+    width: 42px;
+    height: 42px;
+    opacity: 0;
+    border: 1px solid #d5d5d5;
+    border-radius: 25px;
+    padding: 0 48px 0 16px; /* Ajustado para dar espaço apenas à lupa amarela */
     outline: none;
+    background-color: white;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
 }
 
-#BarradePesquisa button {
-    width: 10%;
-    height: 100%;
+/* Expande ao passar o mouse ou clicar */
+#BarradePesquisa:hover input,
+#BarradePesquisa input:focus {
+    width: 280px;
+    opacity: 1;
+    pointer-events: auto;
+    border-color: #f2a900;
+}
+
+/* Botão principal da Lupa */
+#BarradePesquisa .search-btn {
+    position: absolute;
+    right: 0;
+    width: 42px;
+    height: 42px;
     border: none;
     background-color: #f2a900;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    z-index: 2;
 }
 
-#BarradePesquisa mat-icon {
+#BarradePesquisa .search-btn mat-icon {
     color: white;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
 }
 
+/* --- ÍCONES INTERATIVOS COM HOVER CINZA ARREDONDADO --- */
 #IconesInterativos {
     display: flex;
     width: 25vw;
@@ -73,17 +97,18 @@ header {
     align-items: center;
 }
 
-#IconesInterativos div {
+#IconesInterativos .icon-item {
     display: flex;
     align-items: center;
     gap: 0.5vw;
-    padding: 1vh 1vw;
+    padding: 8px 14px;
+    border-radius: 20px;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
-#IconesInterativos div:hover {
-    background-color: #d3d3d3;
-    transition: 0.3s;
+#IconesInterativos .icon-item:hover {
+    background-color: #f0f0f0;
 }
 
 #IconesInterativos mat-icon {
@@ -94,6 +119,7 @@ header {
     font-size: 0.8vw;
 }
 
+/* --- MENU NAVEGAÇÃO E ESTADO ATIVO --- */
 #Menu {
     width: 100%;
     height: 6vh;
@@ -111,17 +137,18 @@ header {
     font-size: 0.9vw;
     font-weight: bold;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 #Menu a:hover {
     color: #f2a900;
-    transition: 0.3s;
+}
+
+#Menu a.active,
+#MenuDireita a.active {
+    color: #f2a900;
 }
 
 #MenuDireita {
     margin-left: auto;
-}
-
-#MenuDireita a {
-    color: #f2a900;
 }

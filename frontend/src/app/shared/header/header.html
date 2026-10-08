@@ -2,30 +2,30 @@
     <div id="HeaderPrincipal">
 
         <div id="LogoDoSite" routerLink="/home">
-            <img src="/images/logo.png" alt="">
+            <img src="/images/logo.png" alt="Logo">
         </div>
 
         <div id="BarradePesquisa">
-            <input type="search" placeholder="Filtrar por marca, nome ou preço...">
+            <input type="search" placeholder="Pesquise aqui!">
 
-            <button>
+            <button class="search-btn" type="button">
                 <mat-icon>search</mat-icon>
             </button>
         </div>
 
         <div id="IconesInterativos">
 
-            <div>
+            <div class="icon-item">
                 <mat-icon>favorite</mat-icon>
                 <span>Favoritos</span>
             </div>
 
-            <div routerLink="/carrinho">
+            <div class="icon-item" routerLink="/carrinho">
                 <mat-icon>shopping_cart</mat-icon>
                 <span>Carrinho</span>
             </div>
 
-            <div>
+            <div class="icon-item">
                 <mat-icon>person</mat-icon>
                 <span>Minha conta</span>
             </div>
@@ -35,17 +35,15 @@
     </div>
 
     <nav id="Menu">
-        <a routerLink="/home">Home</a>
-        <a routerLink="/produtos">Produtos</a>
-        <a>Marcas</a>
-        <a>Ofertas</a>
+        <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a routerLink="/produtos" routerLinkActive="active">Produtos</a>
+        <a routerLink="/marcas" routerLinkActive="active">Marcas</a>
+        <a routerLink="/ofertas" routerLinkActive="active">Ofertas</a>
         <a>Novidades</a>
         <a>Contato</a>
 
         <div id="MenuDireita">
-            <a>Ofertas especiais</a>
+            <a routerLink="/ofertas-especiais" routerLinkActive="active">Ofertas especiais</a>
         </div>
-
     </nav>
-
 </header>
