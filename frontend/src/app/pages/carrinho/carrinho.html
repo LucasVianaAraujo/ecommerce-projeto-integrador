@@ -1,130 +1,126 @@
-<div class="Carrinho">
-    <div class="TituloCarrinho">
-        <h2>Meu Carrinho</h2>
-        <button class="Filtrar">Filtrar por ☰</button>
-    </div>
+<main class="cart">
+  <header class="cart__header">
+    <h1>Seu carrinho</h1>
+    @if (totalItens() > 0) {
+      <p>{{ totalItens() }} {{ totalItens() === 1 ? 'item' : 'itens' }}</p>
+    }
+  </header>
 
-    <div class="ConteudoCarrinho">
-        <div class="ListaProdutos">
-            <div class="Produto">
-                <div class="ImagemProduto"></div>
-
-                <div class="Informacoes">
-                    <h3>Tenis preto</h3>
-                    <span>Tamanho: 42</span>
-                    <span>Categoria: Esportes</span>
-                    <strong>R$ 500,25</strong>
-                </div>
-
-                <div class="Selecionar">
-                    <label>
-                        Selecionar
-                        <input type="checkbox">
-                    </label>
-
-                    <div class="Acoes">
-                        <span>🗑</span>
-                        <span>-</span>
-                        <span>54</span>
-                        <span>+</span>
-                    </div>
-                </div>
+  @if (itens().length === 0) {
+    <section class="empty">
+      <h2>Seu carrinho está vazio</h2>
+      <p>Adicione produtos para ver o resumo do pedido aqui.</p>
+      <a class="btn btn--primary" href="/">Continuar comprando</a>
+    </section>
+  } @else {
+    <div class="cart__layout">
+      <section class="items" aria-label="Itens do carrinho">
+        @for (item of itens(); track item.id) {
+          <article class="item">
+            <div class="item__thumb" [style.background]="item.cor" aria-hidden="true">
+              {{ item.nome.charAt(0) }}
             </div>
 
-            <div class="Produto">
-                <div class="ImagemProduto"></div>
-
-                <div class="Informacoes">
-                    <h3>Tenis preto</h3>
-                    <span>Tamanho: 42</span>
-                    <span>Categoria: Esportes</span>
-                    <strong>R$ 500,25</strong>
-                </div>
-
-                <div class="Selecionar">
-                    <label>
-                        Selecionar
-                        <input type="checkbox">
-                    </label>
-
-                    <div class="Acoes">
-                        <span>🗑</span>
-                        <span>-</span>
-                        <span>54</span>
-                        <span>+</span>
-                    </div>
-                </div>
+            <div class="item__info">
+              <h2>{{ item.nome }}</h2>
+              @if (item.variacao) {
+                <p class="item__variant">{{ item.variacao }}</p>
+              }
+              <button type="button" class="link" (click)="removerItem(item.id)">Remover</button>
             </div>
 
-            <div class="Produto">
-                <div class="ImagemProduto"></div>
-
-                <div class="Informacoes">
-                    <h3>Tenis preto</h3>
-                    <span>Tamanho: 42</span>
-                    <span>Categoria: Esportes</span>
-                    <strong>R$ 500,25</strong>
-                </div>
-
-                <div class="Selecionar">
-                    <label>
-                        Selecionar
-                        <input type="checkbox">
-                    </label>
-
-                    <div class="Acoes">
-                        <span>🗑</span>
-                        <span>-</span>
-                        <span>54</span>
-                        <span>+</span>
-                    </div>
-                </div>
+            <div class="qty" role="group" [attr.aria-label]="'Quantidade de ' + item.nome">
+              <button
+                type="button"
+                (click)="alterarQuantidade(item.id, -1)"
+                [disabled]="item.quantidade <= 1"
+                aria-label="Diminuir quantidade"
+              >−</button>
+              <span aria-live="polite">{{ item.quantidade }}</span>
+              <button
+                type="button"
+                (click)="alterarQuantidade(item.id, 1)"
+                aria-label="Aumentar quantidade"
+              >+</button>
             </div>
 
-            <div class="Produto">
-                <div class="ImagemProduto"></div>
-
-                <div class="Informacoes">
-                    <h3>Tenis preto</h3>
-                    <span>Tamanho: 42</span>
-                    <span>Categoria: Esportes</span>
-                    <strong>R$ 500,25</strong>
-                </div>
-
-                <div class="Selecionar">
-                    <label>
-                        Selecionar
-                        <input type="checkbox">
-                    </label>
-
-                    <div class="Acoes">
-                        <span>🗑</span>
-                        <span>-</span>
-                        <span>54</span>
-                        <span>+</span>
-                    </div>
-                </div>
+            <div class="item__price">
+              <strong>{{ item.preco * item.quantidade | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR' }}</strong>
+              @if (item.quantidade > 1) {
+                <small>{{ item.preco | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR' }} cada</small>
+              }
             </div>
+          </article>
+        }
+
+        <button type="button" class="link link--muted" (click)="limpar()">Esvaziar carrinho</button>
+      </section>
+
+      <aside class="summary" aria-label="Resumo do pedido">
+        <h2>Resumo do pedido</h2>
+
+        <div class="shipping">
+          @if (faltaParaFreteGratis() > 0) {
+            <p>
+              Faltam
+              <strong>{{ faltaParaFreteGratis() | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR' }}</strong>
+              para o frete grátis.
+            </p>
+          } @else {
+            <p><strong>Você ganhou frete grátis.</strong></p>
+          }
+          <div class="progress" role="progressbar" [attr.aria-valuenow]="progressoFrete()" aria-valuemin="0" aria-valuemax="100">
+            <span [style.width.%]="progressoFrete()"></span>
+          </div>
         </div>
 
-        <div class="LateralCarrinho">
-            <div class="Subtotal">
-                <span>Subtotal (1 produto)</span>
-                <strong>R$500,25</strong>
-                <button>Concluir Compra</button>
+        <div class="coupon">
+          <label for="cupom">Cupom de desconto</label>
+          @if (cupomAplicado(); as cupom) {
+            <div class="coupon__applied">
+              <span>{{ cupom }} aplicado</span>
+              <button type="button" class="link" (click)="removerCupom()">Remover</button>
             </div>
-
-            <div class="Filtros">
-                <h3>Filtros</h3>
-
-                <label><input type="checkbox"> Logus</label>
-                <label><input type="checkbox"> Logus</label>
-                <label><input type="checkbox"> Logus</label>
-                <label><input type="checkbox"> Logus</label>
-
-                <button class="Cancelar">Cancelar</button>
-                <button class="Aplicar">Aplicar Seleção</button>
+          } @else {
+            <div class="coupon__row">
+              <input #cupomInput id="cupom" type="text" placeholder="Ex.: BEMVINDO10"
+                     (keydown.enter)="aplicarCupom(cupomInput.value, cupomInput)" />
+              <button type="button" class="btn" (click)="aplicarCupom(cupomInput.value, cupomInput)">
+                Aplicar
+              </button>
             </div>
+            @if (erroCupom()) {
+              <p class="coupon__error" role="alert">{{ erroCupom() }}</p>
+            }
+          }
         </div>
+
+        <dl class="totals">
+          <div>
+            <dt>Subtotal</dt>
+            <dd>{{ subtotal() | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR' }}</dd>
+          </div>
+          @if (desconto() > 0) {
+            <div class="totals__discount">
+              <dt>Desconto</dt>
+              <dd>− {{ desconto() | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR' }}</dd>
+            </div>
+          }
+          <div>
+            <dt>Frete</dt>
+            <dd>{{ frete() === 0 ? 'Grátis' : (frete() | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR') }}</dd>
+          </div>
+          <div class="totals__total">
+            <dt>Total</dt>
+            <dd>{{ total() | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR' }}</dd>
+          </div>
+        </dl>
+
+        <button type="button" class="btn btn--primary btn--block" (click)="finalizarCompra()">
+          Finalizar compra
+        </button>
+        <a class="summary__back" href="/">Continuar comprando</a>
+      </aside>
     </div>
-</div>
+  }
+</main>
