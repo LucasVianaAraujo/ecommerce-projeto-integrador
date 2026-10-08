@@ -6,10 +6,12 @@ import { ProdutosLista } from './pages/produtos-lista/produtos-lista';
 import { CadastroTenis } from './pages/cadastro-tenis/cadastro-tenis';
 import { Produtos } from './pages/produtos/produtos';
 import { Carrinho } from './pages/carrinho/carrinho';
+import { CadastroComponent } from './pages/cadastro-user/cadastro.component';
 
 export const routes: Routes = [
   { path: 'home', component: Home },
   { path: 'login', component: Login },
+  { path: 'cadastro', component: CadastroComponent },
   { path: 'admin', component: Admin },
   { path: 'admin/produtos', component: ProdutosLista },
   { path: 'admin/produtos/novo', component: CadastroTenis },

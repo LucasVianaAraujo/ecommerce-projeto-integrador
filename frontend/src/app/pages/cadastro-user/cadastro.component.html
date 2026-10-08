@@ -1,0 +1,92 @@
+<div class="content-container">
+    <form (ngSubmit)="cadastrar()">
+        <label for="nome">Nome Completo</label>
+        <input
+            class="input-simples"
+            id="nome"
+            name="nome"
+            type="text"
+            placeholder="Digite seu nome completo"
+            (keyup)="validarFormulario()"
+            [(ngModel)]="nome"
+        />
+
+        <label for="email">E-mail</label>
+        <input
+            class="input-simples"
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Digite seu e-mail"
+            (keyup)="validarFormulario()"
+            [(ngModel)]="email"
+        />
+
+        <label for="senha">Senha</label>
+        <div class="senha-wrapper">
+            <input
+                class="input-simples"
+                id="senha"
+                name="senha"
+                [type]="mostrarSenha() ? 'text' : 'password'"
+                placeholder="Crie sua senha"
+                (keyup)="validarFormulario()"
+                [(ngModel)]="senha"
+            />
+            <button
+                type="button"
+                class="botao-olho"
+                (click)="alternarSenha()"
+                [attr.aria-label]="mostrarSenha() ? 'Ocultar senha' : 'Mostrar senha'"
+            >
+                @if (mostrarSenha()) {
+                    <mat-icon>visibility_off</mat-icon>
+                } @else {
+                    <mat-icon>visibility</mat-icon>
+                }
+            </button>
+        </div>
+
+        <label for="confirmar-senha">Confirmar Senha</label>
+        <div class="senha-wrapper">
+            <input
+                class="input-simples"
+                id="confirmar-senha"
+                name="confirmar-senha"
+                [type]="mostrarConfirmarSenha() ? 'text' : 'password'"
+                placeholder="Repita sua senha"
+                (keyup)="validarFormulario()"
+                [(ngModel)]="confirmarSenha"
+            />
+            <button
+                type="button"
+                class="botao-olho"
+                (click)="alternarConfirmarSenha()"
+                [attr.aria-label]="mostrarConfirmarSenha() ? 'Ocultar senha' : 'Mostrar senha'"
+            >
+                @if (mostrarConfirmarSenha()) {
+                    <mat-icon>visibility_off</mat-icon>
+                } @else {
+                    <mat-icon>visibility</mat-icon>
+                }
+            </button>
+        </div>
+
+        @if (mensagemErro) {
+            <p class="mensagem-erro">{{ mensagemErro }}</p>
+        }
+
+        <button
+            class="input-submeter"
+            type="submit"
+            [disabled]="botaoDesabilitado"
+        >
+            Confirmar
+        </button>
+
+        <div class="cadastrar-link">
+            <span>Já possui uma conta? </span>
+            <a routerLink="/login">Entrar</a>
+        </div>
+    </form>
+</div>
