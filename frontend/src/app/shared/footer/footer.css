@@ -1,0 +1,131 @@
+footer {
+    width: 100%;
+    background-color: #a6a6a6;
+    color: white;
+}
+
+#FooterPrincipal {
+    width: 100%;
+    display: flex;
+    padding: 5vh 5%;
+    box-sizing: border-box;
+    gap: 5%;
+}
+
+#Logo {
+    width: 30%;
+}
+
+#Logo h1 {
+    color: black;
+    font-size: 4vw;
+    margin: 0 0 2vh;
+}
+
+#Logo p {
+    font-size: 1.2vw;
+    font-weight: bold;
+}
+
+#RedesSociais {
+    display: flex;
+    gap: 2vw;
+    margin-top: 3vh;
+}
+
+#RedesSociais img {
+    width: 3vw;
+    height: 3vw;
+}
+
+#Servicos,
+#Ajudas,
+#Atendimento {
+    padding: 0 3%;
+}
+
+#Servicos,
+#Ajudas {
+    border-right: 1px solid white;
+}
+
+#Servicos h2,
+#Ajudas h2,
+#Atendimento h2 {
+    color: black;
+    font-size: 1.5vw;
+    margin-top: 0;
+    margin-bottom: 2vh;
+}
+
+#Servicos a,
+#Ajudas a {
+    display: block;
+    margin-bottom: 2vh;
+    font-size: 1.1vw;
+    font-weight: bold;
+}
+
+#Atendimento div {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    margin-bottom: 2vh;
+    font-size: 1.1vw;
+    font-weight: bold;
+}
+
+#Atendimento img {
+    width: 1.8vw;
+    height: 1.8vw;
+}
+
+#FooterInferior {
+    width: 100%;
+    background-color: #555555;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3vh 5%;
+    box-sizing: border-box;
+}
+
+#Frete {
+    display: flex;
+    align-items: center;
+    gap: 1.5vw;
+    font-size: 1.2vw;
+}
+
+#Frete img {
+    width: 4vw;
+    height: 4vw;
+}
+
+#Pagamentos {
+    text-align: center;
+}
+
+#Pagamentos strong {
+    display: block;
+    margin-bottom: 1.5vh;
+    font-size: 1.1vw;
+}
+
+#Pagamentos div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5vw;
+}
+
+#Pagamentos img {
+    width: 4vw;
+    height: 3vw;
+    object-fit: contain;
+}
+
+#Endereco {
+    text-align: center;
+    font-size: 1.1vw;
+}
