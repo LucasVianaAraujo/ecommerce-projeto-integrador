@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
-import { LucideHouse, LucideHeart, LucideShoppingCart, LucideUser } from '@lucide/angular';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [LucideHouse, LucideHeart, LucideShoppingCart, LucideUser],
+  imports: [MatIconModule],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
-export class Header { }
+export class Header {
+  itensMenu = [
+    {label: 'Home', link: ''},
+    {label: "Produtos", link: 'produtos'},
+    {label: "Marcas", link: 'Marcas'},
+    {label: "Contato", link: 'Contato'},
+    {label: "Carrinho", link: 'carrinho'},
+  ]
+ }

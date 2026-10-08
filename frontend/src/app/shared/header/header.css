@@ -1,85 +1,92 @@
-.FundoPreto {
-    background-color: black;
+* {
+    box-sizing: border-box;
 }
 
 header {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
     background-color: black;
-    width: 76vw;
-    justify-self: center;
+    width: 100%;
     height: 10vh;
+    padding: 0 2vw;
 }
 
 #LogoDoSite {
     display: flex;
-    width: 40%;
-    height: 100%;
     align-items: center;
+    justify-content: center;
+    height: 100%;
     color: white;
 }
 
 #LogoDoSite h1 {
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
 #BarradePesquisa {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 100%;
     width: 100%;
 }
 
 #BarradePesquisa input {
-    height: 35%;
-    border: none;
+    height: 36px;
     width: 90%;
+    max-width: 400px;
+    border: none;
     outline: none;
     border-radius: 0.5vh;
-    padding: 1%;
+    padding: 0 12px;
+    font-size: 14px;
 }
 
 #Interativos {
     display: flex;
-    justify-content: end;
-    width: 100%;
-    height: 100%;
     align-items: center;
-    gap: 2vh;
+    justify-content: flex-end;
+    height: 100%;
+    gap: 2vw;
+}
+
+.navbar-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.5vw;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
 }
 
 #IconesInterativos {
     display: flex;
-    width: 20%;
-    justify-content: flex-end;
-    height: 100%;
     align-items: center;
-    gap: 2vh;
+    gap: 1.2vw;
 }
 
 a {
     color: white;
+    text-decoration: none;
     cursor: pointer;
 }
 
 a:hover {
     color: rgba(255, 255, 255, 0.87);
-    transition: all 0.5s;
+    transition: color 0.3s ease;
 }
 
 svg {
     color: white;
+    width: 22px;
+    height: 22px;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.CentralizadorDoBreadCrump {
-    background-color: gray;
-    .BreadCrump {
-        display: flex;
-        width: 76vw;
-        height: 2vh;
-        justify-self: center;
-        align-items: center;
-        color: white;
-        font-size: 1.5vh;
-    }
+svg:hover {
+    color: rgba(255, 255, 255, 0.7);
 }

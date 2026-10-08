@@ -73,9 +73,10 @@ label {
     color: #000000;
 }
 
-.botao-olho svg {
+.botao-olho mat-icon {
     width: 20px;
     height: 20px;
+    font-size: 20px;
 }
 
 .input-submeter {
@@ -92,4 +93,10 @@ label {
 
 .input-submeter:hover {
     background-color: #b30000;
+}
+.input-submeter:disabled {
+  background-color: #94a3b8;
+  color: #e2e8f0;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
