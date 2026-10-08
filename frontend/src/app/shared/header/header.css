@@ -43,6 +43,14 @@ header {
     gap: 2vh;
 }
 
+#Interativos a {
+    text-decoration: none;
+}
+
+#Interativos a:hover {
+    color: red;
+}
+
 #IconesInterativos {
     display: flex;
     width: 100%;
