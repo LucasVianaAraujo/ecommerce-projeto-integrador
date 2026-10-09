@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { adminLogado } from '../../shared/auth/auth';
 import { buscarProduto, cadastrarProduto, editarProduto } from '../../shared/produto/produto';
 
 @Component({
@@ -21,6 +22,11 @@ export class CadastroTenis {
   constructor(private roteador: Router, private rota: ActivatedRoute) {}
 
   ngOnInit() {
+    if (!adminLogado()) {
+      this.roteador.navigate(['/admin']);
+      return;
+    }
+
     const idDaRota = this.rota.snapshot.paramMap.get('id');
     if (!idDaRota) {
       return;

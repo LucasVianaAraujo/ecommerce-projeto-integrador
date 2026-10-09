@@ -1,16 +1,27 @@
-<div class="container">
-    <h1>Painel do Administrador</h1>
+<div class="content-container">
+    <h1>Área do Administrador</h1>
+    <form (ngSubmit)="enviar()">
+        <label for="email">Login</label>
+        <input class="input-simples" id="email" name="email" type="email" placeholder="Digite seu email"
+            [(ngModel)]="email" />
 
-    <div class="cartoes">
-        <a class="cartao" routerLink="/admin/produtos">
-            <mat-icon>inventory_2</mat-icon>
-            <h2>Produtos</h2>
-            <p>Listar, editar e excluir tênis cadastrados</p>
-        </a>
-        <a class="cartao" routerLink="/admin/produtos/novo">
-            <mat-icon>add_circle</mat-icon>
-            <h2>Novo produto</h2>
-            <p>Cadastrar um novo tênis</p>
-        </a>
-    </div>
+        <label for="input-senha">Senha</label>
+        <div class="senha-wrapper">
+            <input class="input-simples" id="input-senha" name="input-senha"
+                [type]="mostrarSenha() ? 'text' : 'password'" placeholder="Digite sua senha" [(ngModel)]="senha" />
+
+            <button type="button" class="botao-olho" (click)="alternarSenha()"
+                [attr.aria-label]="mostrarSenha() ? 'Ocultar senha' : 'Mostrar senha'">
+                @if (mostrarSenha()) {
+                <mat-icon>visibility_off</mat-icon>
+                } @else {
+                <mat-icon>visibility</mat-icon>
+                }
+            </button>
+        </div>
+
+        <button class="input-submeter" type="submit" [disabled]="botaoDesabilitado()">
+            Entrar
+        </button>
+    </form>
 </div>

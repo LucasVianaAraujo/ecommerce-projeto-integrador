@@ -3,7 +3,7 @@
 
     <div class="acoes">
         <a class="botao-vermelho" routerLink="/admin/produtos/novo">Novo produto</a>
-        <a class="link-voltar" routerLink="/admin">Voltar ao painel</a>
+        <a class="link-voltar" (click)="sair()">Sair</a>
     </div>
 
     <input class="busca" type="search" placeholder="Consultar por modelo ou marca" [(ngModel)]="filtro" />
