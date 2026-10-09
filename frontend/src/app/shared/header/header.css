@@ -21,6 +21,9 @@ header {
     display: flex;
     width: 20vw;
     height: 100%;
+}
+
+#LogoDoSite img {
     cursor: pointer;
 }
 

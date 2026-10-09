@@ -1,0 +1,86 @@
+
+main {
+    width: 92%;
+    margin: 3vh auto;
+}
+
+#CabecalhoProdutos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+}
+
+#CabecalhoProdutos h1 {
+    font-size: 1.8vw;
+    margin: 0;
+}
+
+#Filtrar {
+    display: flex;
+    align-items: center;
+    gap: 0.8vw;
+    padding: 0.8vh 1.2vw;
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 0.4vh;
+    box-shadow: 0 0.2vh 0.3vh #00000025;
+    font-size: 1vw;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#Filtrar mat-icon {
+    color: #777;
+}
+
+#Filtrar:hover {
+    background-color: #c5c5c5;
+}
+
+#FiltroAtivo {
+    margin-bottom: 2.5vh;
+}
+
+#FiltroAtivo button {
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 0.4vh;
+    padding: 0.4vh 0.6vw;
+    font-size: 0.8vw;
+    box-shadow: 0 0.2vh 0.3vh #00000025;
+    cursor: pointer;
+}
+
+#Produtos {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5%;
+    margin-bottom: 6vh;
+}
+
+.Produto {
+    background-color: #f2a900;
+    padding-bottom: 2vh;
+    cursor: pointer;
+}
+
+.ProdutoImagem {
+    height: 20vh;
+    background-color: white;
+    margin: 5%;
+}
+
+.Produto p {
+    color: white;
+    margin: 2vh 5% 1vh;
+}
+
+.Produto strong {
+    color: white;
+    margin-left: 5%;
+}
+.Produto:hover {
+    background-color: #dd9b01;
+    transition: 0.2s;
+}
