@@ -16,5 +16,6 @@ export class Header {
     {label: "Marcas", link: 'Marcas'},
     {label: "Contato", link: 'Contato'},
     {label: "Carrinho", link: 'carrinho'},
+    
   ]
  }
