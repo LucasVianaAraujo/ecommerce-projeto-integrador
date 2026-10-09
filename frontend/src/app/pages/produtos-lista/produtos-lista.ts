@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { adminLogado, logoutAdmin } from '../../shared/auth/auth';
 import { excluirProduto, listaProdutos, Produto } from '../../shared/produto/produto';
 
 @Component({
@@ -13,6 +14,14 @@ import { excluirProduto, listaProdutos, Produto } from '../../shared/produto/pro
 export class ProdutosLista {
   produtos = listaProdutos;
   filtro = '';
+
+  constructor(private roteador: Router) {}
+
+  ngOnInit() {
+    if (!adminLogado()) {
+      this.roteador.navigate(['/admin']);
+    }
+  }
 
   produtosFiltrados() {
     const busca = this.filtro.trim().toLowerCase();
@@ -27,5 +36,10 @@ export class ProdutosLista {
     if (confirm(`Deseja excluir o tênis "${produto.modelo}"?`)) {
       excluirProduto(produto.id);
     }
+  }
+
+  sair() {
+    logoutAdmin();
+    this.roteador.navigate(['/admin']);
   }
 }
