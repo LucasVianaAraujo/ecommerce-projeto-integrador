@@ -106,14 +106,14 @@ main {
 }
 
 #Banner {
+    display: flex;
     width: 100%;
     height: 40vh;
-    background-color: #777;
+    background-color: #f2a900;
     margin-bottom: 3vh;
-    display: flex;
     align-items: center;
     padding: 5%;
-    box-sizing: border-box;
+    background-image: url('/images/wallpaper.png');
 }
 
 #BannerTexto {
@@ -133,9 +133,10 @@ main {
 #BannerTexto button {
     padding: 1.5vh 2vw;
     border: none;
-    background-color: white;
+    background-color: #f2a900;
     color: black;
     font-weight: bold;
+    cursor: pointer;
 }
 
 #Categorias {
@@ -168,12 +169,23 @@ h2 {
 }
 
 .Produto {
-    background-color: #8f8f8f;
+    background-color: #f2a900;
     padding-bottom: 2vh;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 .ProdutoImagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 20vh;
+    background-color: white;
+    margin: 5%;
+}
+
+.ProdutoImagem img {
+    height: 18vh;
     background-color: white;
     margin: 5%;
 }
@@ -187,6 +199,11 @@ h2 {
     color: white;
     margin-left: 5%;
 }
+
+.Produto:hover {
+    background-color: #dd9b01;
+}
+
 
 #Servicos {
     display: flex;
