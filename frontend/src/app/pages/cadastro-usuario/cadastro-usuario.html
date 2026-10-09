@@ -1,0 +1,53 @@
+<div class="login-page">
+    <div class="login-card">
+        
+        <!-- Banner Esquerdo -->
+        <div class="login-banner">
+            <div class="banner-placeholder">
+                <h2>OLDSHOES</h2>
+                <p>Crie a sua conta e aproveite as nossas ofertas!</p>
+            </div>
+        </div>
+
+        <!-- Formulário de Cadastro -->
+        <div class="login-form-container">
+            <h1>Crie a sua conta</h1>
+
+            <form (ngSubmit)="cadastrar()">
+                <div class="field-group">
+                    <label for="nome">Nome Completo</label>
+                    <input class="input-simples" id="nome" name="nome" type="text" placeholder="Digite o seu nome completo" (input)="validarFormulario()" [(ngModel)]="nome" />
+                </div>
+
+                <div class="field-group">
+                    <label for="emailOuCpf">E-mail ou CPF</label>
+                    <input class="input-simples" id="emailOuCpf" name="emailOuCpf" type="text" placeholder="Digite o seu e-mail ou CPF" (input)="validarFormulario()" [(ngModel)]="emailOuCpf" />
+                </div>
+
+                <div class="field-group">
+                    <label for="senha">Senha</label>
+                    <div class="senha-wrapper">
+                        <input class="input-simples" id="senha" name="senha" [type]="mostrarSenha() ? 'text' : 'password'" placeholder="Digite a sua senha" (input)="validarFormulario()" [(ngModel)]="senha" />
+                        <button type="button" class="botao-olho" (click)="alternarSenha()">
+                            <mat-icon>{{ mostrarSenha() ? 'visibility_off' : 'visibility' }}</mat-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label for="confirmarSenha">Confirmar Senha</label>
+                    <input class="input-simples" id="confirmarSenha" name="confirmarSenha" type="password" placeholder="Confirme a sua senha" (input)="validarFormulario()" [(ngModel)]="confirmarSenha" />
+                </div>
+
+                <button class="btn-entrar" type="submit" [disabled]="botaoDesabilitado">
+                    Cadastrar &rarr;
+                </button>
+
+                <p class="signup-text">
+                    Já tem uma conta? <a routerLink="/login">Fazer login</a>
+                </p>
+            </form>
+        </div>
+
+    </div>
+</div>
