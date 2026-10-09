@@ -6,7 +6,7 @@ import { ProdutosLista } from './pages/produtos-lista/produtos-lista';
 import { CadastroTenis } from './pages/cadastro-tenis/cadastro-tenis';
 import { Produtos } from './pages/produtos/produtos';
 import { Carrinho } from './pages/carrinho/carrinho';
-import { ExibirProduto } from './pages/exibir-produto/exibir-produto';
+import { Categorias } from './pages/categorias/categorias';
 
 export const routes: Routes = [
   { path: 'home', component: Home },
@@ -17,6 +17,6 @@ export const routes: Routes = [
   { path: 'admin/produtos/:id/editar', component: CadastroTenis },
   { path: 'carrinho', component: Carrinho },
   { path: 'produtos', component: Produtos },
-  {path: 'exibir/produto', component: ExibirProduto},
+  {path: 'categorias', component: Categorias},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
