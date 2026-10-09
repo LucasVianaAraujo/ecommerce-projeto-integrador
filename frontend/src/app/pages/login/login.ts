@@ -1,11 +1,12 @@
 import { Component, signal, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, MatIconModule],
+  standalone: true,
+  imports: [FormsModule, MatIconModule, RouterLink],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -15,23 +16,25 @@ export class Login {
 
   email = '';
   senha = '';
-  botaoDesabilitado:boolean = true;
+  lembrarDeMim = false;
+  botaoDesabilitado = true;
 
   validarFormulario() {
-    if(this.email.trim() !== '' && this.senha.trim() != ''){
+    if (this.email.trim() !== '' && this.senha.trim() !== '') {
       this.botaoDesabilitado = false;
-     } else {
+    } else {
       this.botaoDesabilitado = true;
-     }
     }
+  }
 
   alternarSenha() {
     this.mostrarSenha.update((valor) => !valor);
   }
 
   enviar() {
-    if (this.email == 'admin@gmail.com' && this.senha == '1234') {
-      alert('Credenciais Corretas!')
+    if (this.email === 'admin@gmail.com' && this.senha === '1234') {
+      alert('Credenciais Corretas!');
+      this.router.navigate(['/home']);
     } else {
       alert('Credenciais inválidas!');
     }
