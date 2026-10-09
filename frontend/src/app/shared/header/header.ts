@@ -1,21 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatIconModule, RouterLink, RouterLinkActive],
+  imports: [CommonModule, RouterModule, MatIconModule],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
 export class Header {
-  itensMenu = [
-    {label: 'Home', link: ''},
-    {label: "Produtos", link: 'produtos'},
-    {label: "Marcas", link: 'Marcas'},
-    {label: "Contato", link: 'Contato'},
-    {label: "Carrinho", link: 'carrinho'},
-    
-  ]
- }
+  isSearchOpen = false;
+  @ViewChild('searchInput') searchInput!: ElementRef<HTMLInputElement>;
+
+  openSearch(): void {
+    this.isSearchOpen = true;
+  }
+
+  closeSearch(): void {
+    const input = this.searchInput?.nativeElement;
+    if (document.activeElement === input || input?.value.trim() !== '') {
+      return;
+    }
+    this.isSearchOpen = false;
+  }
+}

@@ -1,47 +1,69 @@
-<header>
-    <div id="HeaderPrincipal">
-
-        <div id="LogoDoSite" routerLink="/home">
-            <img src="/images/logo.png" alt="Logo">
-        </div>
-
-        <div id="BarradePesquisa">
-            <input type="search" placeholder="Pesquise aqui!">
-
-            <button class="search-btn" type="button">
-                <mat-icon>search</mat-icon>
-            </button>
-        </div>
-
-        <div id="IconesInterativos">
-
-            <div class="icon-item">
-                <mat-icon>favorite</mat-icon>
-                <span>Favoritos</span>
-            </div>
-
-            <div class="icon-item" routerLink="/carrinho">
-                <mat-icon>shopping_cart</mat-icon>
-                <span>Carrinho</span>
-            </div>
-
-            <div class="icon-item" routerLink="/login">
-                <mat-icon>person</mat-icon>
-                <span>Minha conta</span>
-            </div>
-
-        </div>
-
+<header class="site-header">
+  <div class="header-container" [class.search-active]="isSearchOpen">
+    
+    <!-- Logo (Desliza suavemente para a esquerda) -->
+    <div id="LogoDoSite" routerLink="/home" class="logo-box">
+      <img src="/images/logo.png" alt="Old Shoes" />
     </div>
 
-    <nav id="Menu">
-        <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-        <a routerLink="/produtos" routerLinkActive="active">Produtos</a>
-        <a routerLink="/categorias" routerLinkActive="active">Categorias</a>
-        <a>Contato</a>
-
-        <div id="MenuDireita">
-            <a routerLink="/ofertas-especiais" routerLinkActive="active">Ofertas especiais</a>
-        </div>
+    <!-- Links de Navegação (Compactam texto, mantém ícones) -->
+    <nav class="nav-menu">
+      <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" title="Home">
+        <mat-icon>home</mat-icon>
+        <span class="nav-text">Home</span>
+      </a>
+      <a routerLink="/produtos" routerLinkActive="active" title="Produtos">
+        <mat-icon>inventory_2</mat-icon>
+        <span class="nav-text">Produtos</span>
+      </a>
+      <a routerLink="/categorias" routerLinkActive="active" title="Categorias">
+        <mat-icon>category</mat-icon>
+        <span class="nav-text">Categorias</span>
+      </a>
+      <a routerLink="/contato" routerLinkActive="active" title="Contato">
+        <mat-icon>mail</mat-icon>
+        <span class="nav-text">Contato</span>
+      </a>
     </nav>
+
+    <!-- Barra de Pesquisa Central Expansível (Passar o Mouse) -->
+    <div 
+      class="search-container" 
+      [class.open]="isSearchOpen"
+      (mouseenter)="openSearch()"
+      (mouseleave)="closeSearch()"
+    >
+      <div class="search-circle">
+        <mat-icon class="search-icon">search</mat-icon>
+      </div>
+
+      <div class="search-input-wrapper">
+        <input 
+          type="search" 
+          placeholder="O que você está procurando?" 
+          #searchInput
+        />
+        <button type="button" class="submit-search-btn">
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <!-- Ações da Direita (Compactam texto, mantém ícones) -->
+    <div class="header-actions">
+      <a routerLink="/favoritos" class="action-item" title="Favoritos">
+        <mat-icon>favorite_border</mat-icon>
+        <span class="nav-text">Favoritos</span>
+      </a>
+      <a routerLink="/carrinho" class="action-item" title="Carrinho">
+        <mat-icon>shopping_cart</mat-icon>
+        <span class="nav-text">Carrinho</span>
+      </a>
+      <a routerLink="/login" class="action-item" title="Minha conta">
+        <mat-icon>person_outline</mat-icon>
+        <span class="nav-text">Minha conta</span>
+      </a>
+    </div>
+
+  </div>
 </header>
