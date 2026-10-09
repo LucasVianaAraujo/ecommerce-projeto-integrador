@@ -1,52 +1,103 @@
-.container {
+.content-container {
     display: flex;
     flex-direction: column;
     width: 80%;
-    margin: 50px auto;
+    margin: 50px auto 0;
+    text-align: left;
 }
 
-.container h1 {
+.content-container h1 {
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     color: #000000;
     text-align: center;
 }
 
-.cartoes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
+.content-container p {
+    font-size: 1.2rem;
+    color: #ffffff;
 }
 
-.cartao {
+form {
+    width: calc(100% - 32px);
+    max-width: 400px;
+    padding: 10px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 280px;
-    padding: 24px;
-    text-align: center;
-    text-decoration: none;
     border-radius: 8px;
-    color: #ffffff;
-    background-color: #787878;
-    cursor: pointer;
-    transition: all 0.5s;
-}
-
-.cartao:hover {
-    transform: translateY(-0.5vh);
     background-color: #000000;
 }
 
-.cartao mat-icon {
-    width: 48px;
-    height: 48px;
-    font-size: 48px;
-    margin-bottom: 12px;
-    color: #e60000;
+label {
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 4px;
 }
 
-.cartao h2 {
-    margin-bottom: 8px;
+.input-simples {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    color: #000000;
+    background-color: #ffffff;
+    outline: none;
+    border: none;
+}
+
+.senha-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.senha-wrapper .input-simples {
+    padding-right: 40px;
+}
+
+.botao-olho {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #000000;
+}
+
+.botao-olho mat-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+}
+
+.input-submeter {
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #e60000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.input-submeter:hover {
+    background-color: #b30000;
+}
+.input-submeter:disabled {
+  background-color: #94a3b8;
+  color: #e2e8f0;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
