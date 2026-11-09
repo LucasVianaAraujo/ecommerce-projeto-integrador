@@ -9,6 +9,8 @@ import { Produtos } from './pages/produtos/produtos';
 import { Carrinho } from './pages/carrinho/carrinho';
 import { Categorias } from './pages/categorias/categorias';
 import { ExibirProduto } from './pages/exibir-produto/exibir-produto';
+import { PefilUser } from './pages/pefil-user/pefil-user';
+import { RecuperarSenha } from './pages/recuperar-senha/recuperar-senha';
 
 export const routes: Routes = [
   { path: 'home', component: Home },
@@ -20,7 +22,9 @@ export const routes: Routes = [
   { path: 'admin/produtos/:id/editar', component: CadastroTenis },
   { path: 'carrinho', component: Carrinho },
   { path: 'produtos', component: Produtos },
-  {path: 'categorias', component: Categorias},
-  {path: 'exibir/produto', component: ExibirProduto},
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'categorias', component: Categorias },
+  { path: 'exibir/produto', component: ExibirProduto },
+  { path: 'perfil', component: PefilUser },
+  { path: 'recuperar-senha', component: RecuperarSenha },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];

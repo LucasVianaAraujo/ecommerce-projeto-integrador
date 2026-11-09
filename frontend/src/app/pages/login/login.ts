@@ -1,42 +1,14 @@
-import { Component, signal, inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, MatIconModule, RouterLink],
+  imports: [RouterLink, MatIconModule],
   templateUrl: './login.html',
-  styleUrl: './login.css',
+  styleUrl: './login.css'
 })
 export class Login {
-  private readonly router = inject(Router);
-  protected readonly mostrarSenha = signal(false);
-
-  email = '';
-  senha = '';
-  lembrarDeMim = false;
-  botaoDesabilitado = true;
-
-  validarFormulario() {
-    if (this.email.trim() !== '' && this.senha.trim() !== '') {
-      this.botaoDesabilitado = false;
-    } else {
-      this.botaoDesabilitado = true;
-    }
-  }
-
-  alternarSenha() {
-    this.mostrarSenha.update((valor) => !valor);
-  }
-
-  enviar() {
-    if (this.email === 'admin@gmail.com' && this.senha === '1234') {
-      alert('Credenciais Corretas!');
-      this.router.navigate(['/home']);
-    } else {
-      alert('Credenciais inválidas!');
-    }
-  }
+  ocultarSenha = true; // Declarando a váriavel usada no html pra fazer o olho da senha abrir e fechar 
 }

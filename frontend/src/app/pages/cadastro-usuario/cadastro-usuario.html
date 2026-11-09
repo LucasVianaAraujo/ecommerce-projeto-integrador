@@ -1,53 +1,48 @@
-<div class="login-page">
-    <div class="login-card">
-        
-        <!-- Banner Esquerdo -->
-        <div class="login-banner">
-            <div class="banner-placeholder">
-                <h2>OLDSHOES</h2>
-                <p>Crie a sua conta e aproveite as nossas ofertas!</p>
-            </div>
+<div class="background-login">             <!--caixa para fazer o fundo-->
+    <div class="conteiner-cadastro">       <!-- div para fazer a caixa branca onde será colocado o login-->
+        <div class="conteiner-a-esquerda"> <!--Faz a caixa cinza dentro da caixa branca-->
+            <h2>OLDSHOES</h2>
+            <p>BOAS VINDAS</p>
         </div>
 
-        <!-- Formulário de Cadastro -->
-        <div class="login-form-container">
-            <h1>Crie a sua conta</h1>
+        <div class="conteiner-a-direita">  <!--Caixa branca dentro da branca-->
+            <h2>Criar Conta</h2>
 
-            <form (ngSubmit)="cadastrar()">
-                <div class="field-group">
-                    <label for="nome">Nome Completo</label>
-                    <input class="input-simples" id="nome" name="nome" type="text" placeholder="Digite o seu nome completo" (input)="validarFormulario()" [(ngModel)]="nome" />
+            <form class="formulario-cadastro">
+                <div class="campo">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Escreva seu nome">
                 </div>
 
-                <div class="field-group">
-                    <label for="emailOuCpf">E-mail ou CPF</label>
-                    <input class="input-simples" id="emailOuCpf" name="emailOuCpf" type="text" placeholder="Digite o seu e-mail ou CPF" (input)="validarFormulario()" [(ngModel)]="emailOuCpf" />
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="confirma-senha" placeholder="Use seu melhor E-mail">
                 </div>
 
-                <div class="field-group">
+                <div class="campo">
                     <label for="senha">Senha</label>
-                    <div class="senha-wrapper">
-                        <input class="input-simples" id="senha" name="senha" [type]="mostrarSenha() ? 'text' : 'password'" placeholder="Digite a sua senha" (input)="validarFormulario()" [(ngModel)]="senha" />
-                        <button type="button" class="botao-olho" (click)="alternarSenha()">
-                            <mat-icon>{{ mostrarSenha() ? 'visibility_off' : 'visibility' }}</mat-icon>
+                    <div class="campo-senha">
+                        <input [type]="ocultarSenha ? 'password' : 'text'" id="senha" name="senha" placeholder="Escolha uma senha forte">
+                        <button class="btn-olho" type="button" (click)="ocultarSenha = !ocultarSenha">
+                            <mat-icon>{{ ocultarSenha ? 'visibility' : 'visibility_off' }}</mat-icon>
                         </button>
                     </div>
                 </div>
 
-                <div class="field-group">
-                    <label for="confirmarSenha">Confirmar Senha</label>
-                    <input class="input-simples" id="confirmarSenha" name="confirmarSenha" type="password" placeholder="Confirme a sua senha" (input)="validarFormulario()" [(ngModel)]="confirmarSenha" />
+                <div class="campo">
+                    <label for="confirma-senha">Confirmar senha</label>
+                    <div class="campo-senha">
+                        <input [type]="ocultarConfirmaSenha ? 'password' : 'text'" id="confirma-senha" name="confirma-senha" placeholder="Repita a senha">
+                        <button class="btn-olho" type="button" (click)="ocultarConfirmaSenha = !ocultarConfirmaSenha">
+                            <mat-icon>{{ ocultarConfirmaSenha ? 'visibility' : 'visibility_off' }}</mat-icon>
+                        </button>
+                    </div>
                 </div>
+                <hr>
+                <button type="submit" class="btn-cadastrar">Cadastrar</button>
 
-                <button class="btn-entrar" type="submit" [disabled]="botaoDesabilitado">
-                    Cadastrar &rarr;
-                </button>
-
-                <p class="signup-text">
-                    Já tem uma conta? <a routerLink="/login">Fazer login</a>
-                </p>
+                <p class="link-login">Já tem conta? <a routerLink="/login">Entrar</a></p>
             </form>
         </div>
-
     </div>
 </div>
