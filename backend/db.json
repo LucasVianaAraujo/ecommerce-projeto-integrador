@@ -1,0 +1,19 @@
+{
+  "produtos": [
+    {
+      "nome": "Tenis",
+      "marca": "Logus",
+      "preco": 230,
+      "descricao": "Tenis preto",
+      "id": "zXfcfWtxn9o"
+    },
+    {
+      "nome": "Tenis",
+      "marca": "Adidas",
+      "preco": 250,
+      "descricao": "Tenis Adidas",
+      "id": "5jVjYyg6di4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

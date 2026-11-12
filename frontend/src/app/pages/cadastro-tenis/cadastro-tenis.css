@@ -1,72 +1,74 @@
-.content-container {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: 50px auto;
-    text-align: left;
-}
 
-.content-container h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #000000;
-    text-align: center;
+.content-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 50px auto 0;
+  text-align: left;
 }
 
 form {
-    width: calc(100% - 32px);
-    max-width: 400px;
-    padding: 20px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    background-color: #9f9c9c;
+  width: calc(100% - 32px);
+  max-width: 500px;
+  padding: 25px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-label {
-    color: #ffffff;
-    font-weight: bold;
-    margin-bottom: 4px;
+form h1 {
+  margin: 0 0 8px;
+  color: #172033;
+  font-size: 28px;
+  text-align: center;
+}
+
+.descricao {
+  margin: 0 0 25px;
+  color: #475569;
+  font-size: 15px;
+  text-align: center;
+}
+
+form label {
+  margin-bottom: 6px;
+  color: #172033;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .input-simples {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 8px 12px;
-    font-size: 16px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    color: #000000;
-    background-color: #ffffff;
-    outline: none;
-    border: none;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-textarea.input-simples {
-    resize: vertical;
-    min-height: 100px;
+.input-simples:focus {
+  outline: none;
+  border-color: #0055b8;
+  box-shadow: 0 0 0 2px rgba(0, 85, 184, 0.1);
 }
 
 .input-submeter {
-    padding: 10px;
-    font-size: 16px;
-    color: #ffffff;
-    background-color: #e60000;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 0 auto;
-    width: 100%;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  color: #ffffff;
+  background-color: #0055b8;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .input-submeter:hover {
-    background-color: #b30000;
-}
-
-.link-voltar {
-    margin-top: 16px;
-    color: #ffffff;
-    text-align: center;
-    cursor: pointer;
+  background-color: #003b7a;
 }

@@ -1,64 +1,81 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { adminLogado } from '../../shared/auth/auth';
-import { buscarProduto, cadastrarProduto, editarProduto } from '../../shared/produto/produto';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { ProdutoService } from '../../services/produto.service';
+import { Produto } from '../../model/produto';
 
 @Component({
-  selector: 'app-cadastro-tenis',
-  imports: [FormsModule, RouterLink],
+  selector: 'app-admin-cadastro-tenis',
+  standalone: true,
+  imports: [FormsModule],
   templateUrl: './cadastro-tenis.html',
-  styleUrl: './cadastro-tenis.css',
+  styleUrl: './cadastro-tenis.css'
 })
-export class CadastroTenis {
-  id = 0;
-  editando = false;
+export class AdminCadastroTenis implements OnInit {
 
-  modelo = '';
-  marca = '';
-  preco: number | null = null;
-  descricao = '';
+  produto: Produto = {} as Produto;
 
-  constructor(private roteador: Router, private rota: ActivatedRoute) {}
+  private service = inject(ProdutoService);
+
+  private router = inject(Router);
+
+  private route = inject(ActivatedRoute);
+
+  produtoId: string | null = this.route.snapshot.paramMap.get('id');
 
   ngOnInit() {
-    if (!adminLogado()) {
-      this.roteador.navigate(['/admin']);
-      return;
+
+    if (this.produtoId) {
+
+      this.service.buscarPorId(this.produtoId).subscribe({
+
+        next: (produto) => this.produto = produto,
+
+        error: () => alert('Produto não encontrado.')
+
+      });
+
     }
 
-    const idDaRota = this.rota.snapshot.paramMap.get('id');
-    if (!idDaRota) {
-      return;
-    }
-
-    const produto = buscarProduto(Number(idDaRota));
-    if (!produto) {
-      this.roteador.navigate(['/admin/produtos']);
-      return;
-    }
-
-    this.id = produto.id;
-    this.editando = true;
-    this.modelo = produto.modelo;
-    this.marca = produto.marca;
-    this.preco = produto.preco;
-    this.descricao = produto.descricao;
   }
 
-  cadastrar() {
-    if (!this.modelo.trim() || !this.marca.trim() || !this.descricao.trim() || !this.preco || this.preco <= 0) {
-      alert('Preencha todos os campos corretamente!');
-      return;
-    }
+  salvar() {
+    if (this.produtoId) {
 
-    if (this.editando) {
-      editarProduto(this.id, this.modelo.trim(), this.marca.trim(), this.preco, this.descricao.trim());
-      alert('Tênis atualizado com sucesso!');
+      this.service.editar(this.produto).subscribe({
+
+        next: (produto) => {
+
+          this.produto = produto;
+
+          this.router.navigate(['/admin/produtos']);
+
+        },
+
+        error: () => alert('Erro ao alterar o produto.')
+
+      });
+
     } else {
-      cadastrarProduto(this.modelo.trim(), this.marca.trim(), this.preco, this.descricao.trim());
-      alert('Tênis cadastrado com sucesso!');
+      this.service.incluir(this.produto).subscribe({
+
+        next: (produto) => {
+
+          this.produto = produto;
+
+          alert(`Produto ${this.produto.nome} cadastrado com sucesso!`);
+
+          this.router.navigate(['/admin/produtos']);
+
+        },
+
+        error: () => alert('Erro ao cadastrar o produto.')
+
+      });
+
     }
-    this.roteador.navigate(['/admin/produtos']);
+
   }
+
 }

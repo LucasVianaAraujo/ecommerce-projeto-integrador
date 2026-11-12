@@ -1,0 +1,83 @@
+<div class="content-container">
+
+  <div class="cabecalho">
+
+    <div>
+      <span class="subtitulo">
+        ÁREA ADMINISTRATIVA
+      </span>
+
+      <h1>Produtos</h1>
+
+      <p>
+        Gerencie os produtos cadastrados na plataforma.
+      </p>
+    </div>
+
+    <button
+      class="botao-novo"
+      routerLink="/admin/produtos/novo"
+      type="button">
+
+      + Novo produto
+
+    </button>
+
+  </div>
+
+  <div class="tabela-container">
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Marca</th>
+          <th>Preço</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        @for (produto of listaProdutos; track produto.id) {
+
+          <tr>
+            <td>{{ produto.id }}</td>
+            <td>{{ produto.nome }}</td>
+            <td>{{ produto.marca }}</td>
+            <td>{{ produto.preco }}</td>
+
+            <td class="acoes">
+
+              <button
+                class="botao-editar"
+                type="button"
+                [routerLink]="['/admin/produtos', produto.id, 'editar']">
+
+                Editar
+
+              </button>
+
+              <button
+                class="botao-excluir"
+                type="button"
+                (click)="excluir(produto.id!)">
+
+                Excluir
+
+              </button>
+
+            </td>
+          </tr>
+
+        }
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

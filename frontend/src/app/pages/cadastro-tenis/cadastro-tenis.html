@@ -1,25 +1,50 @@
 <div class="content-container">
-    <h1>{{ editando ? 'Editar Tênis' : 'Cadastro de Tênis' }}</h1>
-    <form>
-        <label for="modelo">Modelo</label>
-        <input class="input-simples" id="modelo" name="modelo" type="text" placeholder="Digite o modelo"
-            [(ngModel)]="modelo" />
+  <form>
 
-        <label for="marca">Marca</label>
-        <input class="input-simples" id="marca" name="marca" type="text" placeholder="Digite a marca"
-            [(ngModel)]="marca" />
+    <h1>Cadastro de Produto</h1>
 
-        <label for="preco">Preço</label>
-        <input class="input-simples" id="preco" name="preco" type="number" min="0" step="0.01"
-            placeholder="Digite o preço" [(ngModel)]="preco" />
+    <label for="nome">Nome do produto</label>
+    <input
+      class="input-simples"
+      id="nome"
+      name="nome"
+      type="text"
+      [(ngModel)]="produto.nome"
+    />
 
-        <label for="descricao">Descrição</label>
-        <textarea class="input-simples" id="descricao" name="descricao" placeholder="Digite a descrição"
-            [(ngModel)]="descricao"></textarea>
+    <label for="marca">Marca</label>
+    <input
+      class="input-simples"
+      id="marca"
+      name="marca"
+      type="text"
+      [(ngModel)]="produto.marca"
+    />
 
-        <button class="input-submeter" type="button" (click)="cadastrar()">
-            {{ editando ? 'Salvar' : 'Cadastro' }}
-        </button>
-        <a class="link-voltar" routerLink="/admin/produtos">Voltar para produtos</a>
-    </form>
+    <label for="preco">Preço</label>
+    <input
+      class="input-simples"
+      id="preco"
+      name="preco"
+      type="number"
+      [(ngModel)]="produto.preco"
+    />
+
+    <label for="descricao">Descrição</label>
+    <input
+      class="input-simples"
+      id="descricao"
+      name="descricao"
+      type="text"
+      [(ngModel)]="produto.descricao"
+    />
+
+    <button
+      type="button"
+      class="input-submeter"
+      (click)="salvar()">
+      Confirmar
+    </button>
+
+  </form>
 </div>
