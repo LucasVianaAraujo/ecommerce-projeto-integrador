@@ -11,4 +11,5 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class Login {
   ocultarSenha = true; // Declarando a váriavel usada no html pra fazer o olho da senha abrir e fechar 
+    
 }

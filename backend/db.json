@@ -1,0 +1,23 @@
+{
+  "usuarios": [
+    {
+      "nome": "Guilherme Grangeiro",
+      "senha": "123456",
+      "email": "gui.simiao2007@gmail.com",
+      "id": "S1c9Ehe1PKw"
+    },
+    {
+      "nome": "eduardo",
+      "senha": "123",
+      "email": "eduardo@email.com",
+      "id": "btj-nT9CYEk"
+    },
+    {
+      "nome": "lucas",
+      "senha": "321",
+      "email": "lucas@email.com",
+      "id": "4rGPYIvNCBU"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
