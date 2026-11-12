@@ -1,7 +1,9 @@
 footer {
     width: 100%;
-    background-color: #a6a6a6;
-    color: white;
+    background-color: #fffefe;
+    color: rgb(0, 0, 0);
+    border: solid black 0,1px;
+    box-shadow: 8px 10px 8px 10px black;
 }
 
 #FooterPrincipal {
@@ -12,12 +14,12 @@ footer {
     gap: 5%;
 }
 
-#Logo {
-    width: 30%;
+#frasefooter{
+   font-family: Arial, Helvetica, sans-serif;
+   font-style: bold;
 }
 
-#Logo h1 {
-    color: black;
+.Logo h1 {
     font-size: 4vw;
     margin: 0 0 2vh;
 }
@@ -41,7 +43,9 @@ footer {
 #Servicos,
 #Ajudas,
 #Atendimento {
-    padding: 0 3%;
+    padding: 30px 70px 70px 30px;
+   font-family: Arial, Helvetica, sans-serif;
+   font-style: italic;
 }
 
 #Servicos,
@@ -52,7 +56,7 @@ footer {
 #Servicos h2,
 #Ajudas h2,
 #Atendimento h2 {
-    color: black;
+    color: #F1AC06;
     font-size: 1.5vw;
     margin-top: 0;
     margin-bottom: 2vh;
@@ -82,12 +86,14 @@ footer {
 
 #FooterInferior {
     width: 100%;
-    background-color: #555555;
+    background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 3vh 5%;
     box-sizing: border-box;
+    color: black;
+  
 }
 
 #Frete {
