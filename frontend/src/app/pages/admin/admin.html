@@ -1,0 +1,27 @@
+<div class="content-container">
+    <h1>Área do Administrador</h1>
+    <form (ngSubmit)="enviar()">
+        <label for="email">Login</label>
+        <input class="input-simples" id="email" name="email" type="email" placeholder="Digite seu email"
+            [(ngModel)]="email" />
+
+        <label for="input-senha">Senha</label>
+        <div class="senha-wrapper">
+            <input class="input-simples" id="input-senha" name="input-senha"
+                [type]="mostrarSenha() ? 'text' : 'password'" placeholder="Digite sua senha" [(ngModel)]="senha" />
+
+            <button type="button" class="botao-olho" (click)="alternarSenha()"
+                [attr.aria-label]="mostrarSenha() ? 'Ocultar senha' : 'Mostrar senha'">
+                @if (mostrarSenha()) {
+                <mat-icon>visibility_off</mat-icon>
+                } @else {
+                <mat-icon>visibility</mat-icon>
+                }
+            </button>
+        </div>
+
+        <button class="input-submeter" type="submit" [disabled]="botaoDesabilitado()">
+            Entrar
+        </button>
+    </form>
+</div>

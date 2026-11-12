@@ -1,0 +1,59 @@
+<div class="background-login">
+  <div class="conteiner-recuperar">
+    
+    <!-- Lado Esquerdo Amarelo -->
+    <div class="conteiner-a-esquerda">
+      <h2>OLDSHOES</h2>
+      <p>RECUPERACAO</p>
+    </div>
+
+    <!-- Lado Direito: Formulário -->
+    <div class="conteiner-a-direita">
+      <h2>Recuperar Senha</h2>
+      <p class="descricao-recuperar">
+        Informe seu e-mail cadastrado para consultar a sua dica e redefinir o acesso.
+      </p>
+
+      <form class="formulario-recuperar">
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="Digite seu e-mail cadastrado">
+        </div>
+
+        <!-- Bloco que exibe a dica pré-definida no cadastro -->
+        <div class="box-dica">
+          <div class="dica-cabecalho">
+            <mat-icon>lightbulb</mat-icon>
+            <span>Dica cadastrada:</span>
+          </div>
+          <p class="dica-conteudo">Nome do primeiro bicho de estimação</p>
+        </div>
+
+        <div class="campo">
+          <label for="nova-senha">Nova Senha</label>
+          <div class="campo-senha">
+            <input type="password" id="nova-senha" name="nova-senha" placeholder="Digite a nova senha">
+            <button class="btn-olho" type="button">
+              <mat-icon>visibility</mat-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="confirma-nova-senha">Confirmar Nova Senha</label>
+          <div class="campo-senha">
+            <input type="password" id="confirma-nova-senha" name="confirma-nova-senha" placeholder="Repita a nova senha">
+            <button class="btn-olho" type="button">
+              <mat-icon>visibility</mat-icon>
+            </button>
+          </div>
+        </div>
+
+        <button type="button" class="btn-redefinir">Redefinir Senha</button>
+
+        <p class="link-voltar">Lembrou a senha? <a routerLink="/login">Voltar ao login</a></p>
+      </form>
+    </div>
+
+  </div>
+</div>

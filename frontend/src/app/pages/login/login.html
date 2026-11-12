@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="content-container">
     <form>
         <label for="email">Login</label>
@@ -17,10 +18,41 @@
                 <mat-icon>visibility</mat-icon>
                 }
             </button>
+=======
+<div class="background-login"> <!--Fundo-->
+    <div class="conteiner-login"> <!--Caixa central-->
+        <div class="conteiner-a-esquerda"> <!--Esquerda ca caixa-->
+            <h2>OLDSHOES</h2>
+            <p>Estilo e conforto para os seus pes</p>
+>>>>>>> feature/cadastro-usuario
         </div>
 
-        <button class="input-submeter" type="button" [disabled]="botaoDesabilitado" (click)="enviar()">
-            Confirmar
-        </button>
-    </form>
+        <div class="conteiner-a-direita"> <!--Direita da caixa-->
+            <h2>Faça Seu Login</h2>
+
+            <form class="formulario-login"> <!--Fomulário-->
+                <div class="campo"><!--Caixa para por o e-mail-->
+                    <label for="email">E-mail</label>
+                    <input id="email" name="email" type="email" placeholder="Digite seu e-mail">
+                </div>
+
+                <div class="campo"><!--Caixa para por a senha-->
+                    <label for="input-senha">Senha</label>
+                    <div class="campo-senha">
+                        <input id="input-senha" name="input-senha" [type]="ocultarSenha ? 'password' : 'text'" placeholder="Digite sua senha">
+                        <button class="btn-olho" type="button" (click)="ocultarSenha = !ocultarSenha">
+                            <mat-icon>{{ocultarSenha ? 'visibility' : 'visibility_off'}}</mat-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <a href="recuperar-senha" class="esqueci-senha">Esqueceu sua senha?</a>
+                <hr>
+
+                <button class="btn-entrar" type="submit">Entrar &rarr; </button>
+
+                <p class="link-cadastro">Ainda nao tem cadastro? <a routerLink="/cadastro">Cadastre-se aqui!</a></p>
+            </form>
+        </div>
+    </div>
 </div>

@@ -1,0 +1,48 @@
+<div class="background-login">             <!--caixa para fazer o fundo-->
+    <div class="conteiner-cadastro">       <!-- div para fazer a caixa branca onde será colocado o login-->
+        <div class="conteiner-a-esquerda"> <!--Faz a caixa cinza dentro da caixa branca-->
+            <h2>OLDSHOES</h2>
+            <p>BOAS VINDAS</p>
+        </div>
+
+        <div class="conteiner-a-direita">  <!--Caixa branca dentro da branca-->
+            <h2>Criar Conta</h2>
+
+            <form class="formulario-cadastro" [formGroup]="cadastroForm" (ngSubmit)="fazerCadastro()">
+                <div class="campo">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" formControlName="nome" placeholder="Escreva seu nome">
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" formControlName="email" placeholder="Use seu melhor E-mail">
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <div class="campo-senha">
+                        <input [type]="ocultarSenha ? 'password' : 'text'" id="senha" formControlName="senha" placeholder="Escolha uma senha forte">
+                        <button class="btn-olho" type="button" (click)="toggleSenha()">
+                            <mat-icon>{{ ocultarSenha ? 'visibility' : 'visibility_off' }}</mat-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="confirma-senha">Confirmar senha</label>
+                    <div class="campo-senha">
+                        <input [type]="ocultarConfirmaSenha ? 'password' : 'text'" id="confirma-senha" formControlName="confirmeSenha" placeholder="Repita a senha">
+                        <button class="btn-olho" type="button" (click)="toggleConfirmarSenha()">
+                            <mat-icon>{{ ocultarConfirmaSenha ? 'visibility' : 'visibility_off' }}</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <hr>
+                <button type="submit" class="btn-cadastrar">Cadastrar</button>
+
+                <p class="link-login">Já tem conta? <a routerLink="/login">Entrar</a></p>
+            </form>
+        </div>
+    </div>
+</div>

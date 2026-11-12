@@ -1,0 +1,103 @@
+.content-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.content-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000000;
+    text-align: center;
+}
+
+.acoes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.botao-vermelho {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #e60000;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.botao-vermelho:hover {
+    background-color: #b30000;
+}
+
+.link-voltar {
+    color: #000000;
+    cursor: pointer;
+}
+
+.vazio {
+    text-align: center;
+    color: #787878;
+    font-size: 1.2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    padding: 12px;
+    text-align: left;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+td {
+    padding: 12px;
+    color: #000000;
+    background-color: #9f9c9c;
+    border-bottom: 1px solid #787878;
+}
+
+.acoes-linha {
+    display: flex;
+    gap: 8px;
+}
+
+.acoes-linha a,
+.acoes-linha button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.acoes-linha mat-icon {
+    color: #000000;
+}
+
+.acoes-linha a:hover mat-icon,
+.acoes-linha button:hover mat-icon {
+    color: #e60000;
+}
+
+.busca {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #787878;
+    border-radius: 4px;
+    outline: none;
+}
