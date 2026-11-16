@@ -1,0 +1,144 @@
+.area-admin {
+  width: 80%;
+  min-height: 75vh;
+  margin: 50px auto 7vh;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.subtitulo {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--amarelo-claro);
+}
+
+.cabecalho h1 {
+  margin: 8px 0;
+  font-size: 32px;
+  color: #172033;
+}
+
+.cabecalho p {
+  font-size: 16px;
+  color: #475569;
+}
+
+.cabecalho-botoes {
+  display: flex;
+  gap: 10px;
+}
+
+.botao-novo {
+  padding: 11px 20px;
+  background-color: var(--amarelo-claro);
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: black;
+}
+
+.botao-novo:hover {
+  background-color: #d3ac53;
+}
+
+.botao-sair {
+  padding: 11px 20px;
+  background-color: #e2e8f0;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #172033;
+}
+
+.botao-sair:hover {
+  background-color: #cbd5e1;
+}
+
+.tabela-container {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.tabela-container table {
+  width: 100%;
+}
+
+.tabela-container th {
+  padding: 16px;
+  background-color: #f8fafc;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  color: #172033;
+}
+
+.tabela-container td {
+  padding: 16px;
+  font-size: 15px;
+  color: #475569;
+}
+
+.tabela-container tr:hover td {
+  background-color: #f8fafc;
+}
+
+.botao-editar,
+.botao-excluir {
+  padding: 8px 14px;
+  border: none;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.botao-editar {
+  margin-right: 8px;
+  background-color: #94a3b8;
+}
+
+.botao-editar:hover {
+  background-color: #727d8d;
+}
+
+.botao-excluir {
+  background-color: #dc2626;
+}
+
+.botao-excluir:hover {
+  background-color: #b91c1c;
+}
+
+@media (max-width: 700px) {
+.area-admin {
+      width: 90%;
+    }
+  
+  .cabecalho {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+}
+
+.area-admin {
+  animation: aparecer 0.5s;
+}
+
+.botao-novo,
+.botao-sair,
+.botao-editar,
+.botao-excluir,
+.tabela-container td {
+  transition: all 0.2s;
+}
+
+.botao-novo:hover,
+.botao-sair:hover,
+.botao-editar:hover,
+.botao-excluir:hover {
+  transform: translateY(-2px);
+}

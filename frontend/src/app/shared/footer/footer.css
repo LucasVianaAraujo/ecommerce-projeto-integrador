@@ -1,0 +1,187 @@
+footer {
+  width: 100%;
+  background-color: #a6a6a6;
+  color: white;
+}
+
+.rodape-principal {
+  display: flex;
+  width: 100%;
+  padding: 5vh 5%;
+  gap: 5%;
+}
+
+.rodape-logo {
+  width: 30%;
+}
+
+.rodape-logo h1 {
+  color: black;
+  font-size: 4vw;
+  margin-bottom: 2vh;
+}
+
+.rodape-logo p {
+  font-size: 1.2vw;
+  font-weight: bold;
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 2vw;
+  margin-top: 3vh;
+}
+
+.redes-sociais img {
+  width: 3vw;
+  height: 3vw;
+}
+
+.rodape-servicos,
+.rodape-ajudas,
+.rodape-atendimento {
+  padding: 0 3%;
+}
+
+.rodape-servicos,
+.rodape-ajudas {
+  border-right: 1px solid white;
+}
+
+.rodape-servicos h2,
+.rodape-ajudas h2,
+.rodape-atendimento h2 {
+  color: black;
+  font-size: 1.5vw;
+  margin-bottom: 2vh;
+}
+
+.rodape-servicos a,
+.rodape-ajudas a {
+  display: block;
+  margin-bottom: 2vh;
+  font-size: 1.1vw;
+  font-weight: bold;
+}
+
+.rodape-servicos a:hover,
+.rodape-ajudas a:hover {
+  color: black;
+}
+
+.rodape-atendimento div {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  margin-bottom: 2vh;
+  font-size: 1.1vw;
+  font-weight: bold;
+}
+
+.rodape-inferior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #555555;
+  padding: 3vh 5%;
+}
+
+.rodape-frete {
+  display: flex;
+  align-items: center;
+  gap: 1.5vw;
+  font-size: 1.2vw;
+}
+
+.rodape-frete img {
+  width: 4vw;
+  height: 4vw;
+}
+
+.rodape-pagamentos {
+  text-align: center;
+}
+
+.rodape-pagamentos strong {
+  display: block;
+  margin-bottom: 1.5vh;
+  font-size: 1.1vw;
+}
+
+.rodape-pagamentos div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5vw;
+}
+
+.rodape-pagamentos img {
+  width: 4vw;
+  height: 3vw;
+}
+
+.rodape-endereco {
+  text-align: center;
+  font-size: 1.1vw;
+}
+
+@media (max-width: 900px) {
+.rodape-principal {
+      flex-direction: column;
+      gap: 3vh;
+    }
+  
+  .rodape-logo,
+  .rodape-servicos,
+  .rodape-ajudas,
+  .rodape-atendimento {
+      width: 100%;
+      border-right: none;
+      padding: 0;
+    }
+  
+  .rodape-logo h1 {
+      font-size: 8vw;
+    }
+  
+  .rodape-logo p,
+  .rodape-servicos a,
+  .rodape-ajudas a,
+  .rodape-atendimento div,
+  .rodape-endereco,
+  .rodape-pagamentos strong,
+  .rodape-frete {
+      font-size: 3.5vw;
+    }
+  
+  .rodape-servicos h2,
+  .rodape-ajudas h2,
+  .rodape-atendimento h2 {
+      font-size: 5vw;
+    }
+  
+  .redes-sociais img {
+      width: 8vw;
+      height: 8vw;
+    }
+  
+  .rodape-inferior {
+      flex-direction: column;
+      gap: 2vh;
+    }
+  
+  .rodape-frete img,
+  .rodape-pagamentos img {
+      width: 10vw;
+      height: 8vw;
+    }
+}
+
+.redes-sociais img {
+  transition: transform 0.2s;
+}
+
+.redes-sociais img:hover {
+  transform: scale(1.2);
+}

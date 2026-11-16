@@ -3,21 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OldShoes - Criar conta</title>
-  <link rel="icon" href="images/logo.png">
+  <title>OldShoes - Recuperar senha</title>
+  <link rel="icon" href="../../../../public/images/logo.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/conta.css">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../shared/header/header.css">
+  <link rel="stylesheet" href="../../shared/footer/footer.css">
+  <link rel="stylesheet" href="recuperar-senha.css">
 </head>
 <body>
 <header class="site-header">
   <div class="header-container" id="header-container">
-    <a href="index.html" class="logo-box"><img src="images/logo.png" alt="Old Shoes" height="45"></a>
+    <a href="../home/home.html" class="logo-box"><img src="../../../../public/images/logo.png" alt="Old Shoes" height="45"></a>
 
     <nav class="nav-menu">
-      <a href="index.html">🏠 <span class="nav-text">Home</span></a>
-      <a href="produtos.html">📦 <span class="nav-text">Produtos</span></a>
-      <a href="categorias.html">🏷️ <span class="nav-text">Categorias</span></a>
+      <a href="../home/home.html">🏠 <span class="nav-text">Home</span></a>
+      <a href="../produtos/produtos.html">📦 <span class="nav-text">Produtos</span></a>
+      <a href="../categorias/categorias.html">🏷️ <span class="nav-text">Categorias</span></a>
       <a href="#">🔖 <span class="nav-text">Ofertas</span></a>
       <a href="#">✉️ <span class="nav-text">Contato</span></a>
     </nav>
@@ -32,48 +34,51 @@
 
     <div class="header-actions">
       <a href="#">🤍 <span class="nav-text">Favoritos</span></a>
-      <a href="carrinho.html">🛒 <span class="nav-text">Carrinho</span> <span id="contador-carrinho"></span></a>
-      <a href="login.html" id="link-conta">👤 <span class="nav-text">Minha conta</span></a>
+      <a href="../carrinho/carrinho.html">🛒 <span class="nav-text">Carrinho</span> <span id="contador-carrinho"></span></a>
+      <a href="../login/login.html" id="link-conta">👤 <span class="nav-text">Minha conta</span></a>
     </div>
   </div>
 </header>
 
 
 <div class="fundo-conta">
-  <div class="caixa-conta">
+  <div class="caixa-conta estreita">
     <div class="lado-esquerdo">
       <h2>OLDSHOES</h2>
-      <p>Boas vindas</p>
+      <p>Recuperação</p>
     </div>
 
     <div class="lado-direito">
-      <h2>Criar Conta</h2>
+      <h2>Recuperar Senha</h2>
+      <p class="descricao-conta">Informe seu e-mail cadastrado para consultar a sua dica e redefinir o acesso.</p>
       <form class="formulario-conta">
         <div class="campo">
-          <label for="nome">Nome completo</label>
-          <input type="text" id="nome" placeholder="Escreva seu nome">
-        </div>
-        <div class="campo">
           <label for="email">E-mail</label>
-          <input type="text" id="email" placeholder="Use seu melhor e-mail">
+          <input type="text" id="email" placeholder="Digite seu e-mail cadastrado">
         </div>
+
+        <div class="caixa-dica">
+          <span>💡 Dica cadastrada:</span>
+          <p id="dica-conteudo">Nome do primeiro bicho de estimação</p>
+        </div>
+
         <div class="campo">
-          <label for="senha">Senha</label>
+          <label for="nova-senha">Nova Senha</label>
           <div class="campo-senha">
-            <input type="password" id="senha" placeholder="Escolha uma senha forte">
+            <input type="password" id="nova-senha" placeholder="Digite a nova senha">
             <button type="button" class="btn-olho">Mostrar</button>
           </div>
         </div>
         <div class="campo">
-          <label for="confirma-senha">Confirmar senha</label>
+          <label for="confirma-nova-senha">Confirmar Nova Senha</label>
           <div class="campo-senha">
-            <input type="password" id="confirma-senha" placeholder="Repita a senha">
+            <input type="password" id="confirma-nova-senha" placeholder="Repita a nova senha">
             <button type="button" class="btn-olho">Mostrar</button>
           </div>
         </div>
         <p class="mensagem" id="mensagem"></p>
-        <button type="submit" class="botao-conta">Cadastrar</button>
-        <p class="link-troca">Já tem conta? <a href="login.html">Entrar</a></p>
+        <button type="submit" class="botao-conta">Redefinir Senha</button>
+        <p class="link-troca">Lembrou a senha? <a href="../login/login.html">Voltar ao login</a></p>
       </form>
     </div>
   </div>
@@ -85,17 +90,17 @@
       <h1>LOGO</h1>
       <p>mais do que calçados oferecemos<br>conforto que é justo</p>
       <div class="redes-sociais">
-        <img src="images/instagram.png" alt="Instagram" width="30" height="30">
-        <img src="images/facebook.png" alt="Facebook" width="30" height="30">
-        <img src="images/whatsapp.png" alt="WhatsApp" width="30" height="30">
+        <img src="../../../../public/images/instagram.png" alt="Instagram" width="30" height="30">
+        <img src="../../../../public/images/facebook.png" alt="Facebook" width="30" height="30">
+        <img src="../../../../public/images/whatsapp.png" alt="WhatsApp" width="30" height="30">
       </div>
     </div>
 
     <div class="rodape-servicos">
       <h2>Serviços</h2>
-      <a href="index.html">Início</a>
-      <a href="produtos.html">Produtos</a>
-      <a href="categorias.html">Categorias</a>
+      <a href="../home/home.html">Início</a>
+      <a href="../produtos/produtos.html">Produtos</a>
+      <a href="../categorias/categorias.html">Categorias</a>
       <a href="#">Sobre nós</a>
     </div>
 
@@ -117,16 +122,16 @@
 
   <div class="rodape-inferior">
     <div class="rodape-frete">
-      <img src="images/caminhao.png" alt="Frete" width="40" height="40">
+      <img src="../../../../public/images/caminhao.png" alt="Frete" width="40" height="40">
       <strong>frete grátis</strong>
     </div>
 
     <div class="rodape-pagamentos">
       <strong>formas de pagamento</strong>
       <div>
-        <img src="images/visa.png" alt="Visa" width="40" height="30">
-        <img src="images/mastercard.png" alt="Mastercard" width="40" height="30">
-        <img src="images/pix.png" alt="Pix" width="40" height="30">
+        <img src="../../../../public/images/visa.png" alt="Visa" width="40" height="30">
+        <img src="../../../../public/images/mastercard.png" alt="Mastercard" width="40" height="30">
+        <img src="../../../../public/images/pix.png" alt="Pix" width="40" height="30">
       </div>
     </div>
 
