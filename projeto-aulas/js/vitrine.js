@@ -1,13 +1,5 @@
-// =====================================================
-// vitrine.js - Home, Produtos, Categorias e Detalhe do produto
-// Conteúdo das aulas: DOM (getElementById, innerHTML, style),
-// template literals, for, sort/filter/find com arrow function,
-// localStorage, fetch + then/catch (ViaCEP), try/catch/throw.
-// =====================================================
-
 var produtoAtual = null;
 
-// ---------- cartões de produto ----------
 function criarCartaoProduto(produto) {
   return `<a href="exibir-produto.html" class="Produto" onclick="selecionarProduto(${produto.id})">
     <div class="ProdutoImagem"><img src="images/all-star.jpg" alt="${produto.nome}" height="100"></div>
@@ -16,12 +8,10 @@ function criarCartaoProduto(produto) {
   </a>`;
 }
 
-// Guarda qual produto foi clicado (a página de detalhe lê esse valor)
 function selecionarProduto(id) {
   localStorage.setItem("produtoSelecionado", id);
 }
 
-// ---------- HOME ----------
 function mostrarProdutosEmAlta() {
   var container = document.getElementById("lista-produtos");
   var produtos = lerLista("produtos");
@@ -36,7 +26,6 @@ function mostrarProdutosEmAlta() {
   container.innerHTML = html;
 }
 
-// Newsletter: valida o e-mail e guarda na lista "newsletter"
 function assinarNewsletter() {
   var campo = document.getElementById("email-newsletter");
   try {
@@ -55,19 +44,16 @@ function assinarNewsletter() {
   }
 }
 
-// ---------- PRODUTOS ----------
 var termoBusca = "";
 
 function aplicarFiltros() {
   var container = document.getElementById("lista-produtos");
   var ordem = document.getElementById("ordenacao").value;
 
-  // filtra pelo termo (nome, marca ou descrição)
   var lista = lerLista("produtos").filter(p =>
     semAcento(p.nome + " " + p.marca + " " + p.descricao).indexOf(semAcento(termoBusca)) >= 0
   );
 
-  // ordena
   var textoOrdem = "";
   if (ordem == "barato") {
     lista.sort((a, b) => a.preco - b.preco);
@@ -80,7 +66,6 @@ function aplicarFiltros() {
     textoOrdem = "Nome (A-Z)";
   }
 
-  // título da página
   var titulo = document.getElementById("titulo-produtos");
   if (termoBusca != "") {
     titulo.innerHTML = `Resultados para "${termoBusca}" (${lista.length})`;
@@ -88,7 +73,6 @@ function aplicarFiltros() {
     titulo.innerHTML = `Todos os produtos (${lista.length})`;
   }
 
-  // etiqueta do filtro ativo
   var filtroAtivo = document.getElementById("filtro-ativo");
   if (textoOrdem != "") {
     filtroAtivo.innerHTML = `<button type="button" onclick="limparOrdenacao()">× ${textoOrdem}</button>`;
@@ -96,7 +80,6 @@ function aplicarFiltros() {
     filtroAtivo.innerHTML = "";
   }
 
-  // lista
   if (lista.length == 0) {
     container.innerHTML = "<p>Nenhum produto encontrado.</p>";
     return;
@@ -113,12 +96,10 @@ function limparOrdenacao() {
   aplicarFiltros();
 }
 
-// ---------- CATEGORIAS ----------
 function abrirCategoria() {
   localStorage.setItem("busca", "");
 }
 
-// ---------- DETALHE DO PRODUTO ----------
 function carregarProduto() {
   var id = Number(localStorage.getItem("produtoSelecionado"));
   produtoAtual = lerLista("produtos").find(p => p.id === id);
@@ -136,7 +117,6 @@ function carregarProduto() {
     produtoAtual.marca + " - " + produtoAtual.descricao;
 }
 
-// Marca uma opção (cor ou tamanho) e desmarca as outras do mesmo grupo
 function escolherOpcao(elemento, classeGrupo) {
   var opcoes = document.getElementsByClassName(classeGrupo);
   for (var i = 0; i < opcoes.length; i++) {
@@ -189,13 +169,11 @@ function comprarAgora() {
   }
 }
 
-// Checkbox "Calcular frete" mostra/esconde o campo de CEP
 function alternarFrete() {
   var marcado = document.getElementById("marcar-frete").checked;
   document.getElementById("AreaFrete").style.display = marcado ? "block" : "none";
 }
 
-// Consulta o CEP na API ViaCEP (fetch + promises, como na aula)
 function consultarCep() {
   var cep = document.getElementById("campo-cep").value.trim().replace("-", "");
   if (cep.length != 8 || isNaN(cep)) {
@@ -221,12 +199,10 @@ function consultarCep() {
     });
 }
 
-// ---------- inicialização (só roda o que existir na página) ----------
 function iniciarVitrine() {
   var temLista = document.getElementById("lista-produtos") != null;
 
   if (temLista && document.getElementById("ordenacao") != null) {
-    // página Produtos: lê a busca feita no cabeçalho uma única vez
     var buscaSalva = localStorage.getItem("busca");
     if (buscaSalva != null) {
       termoBusca = buscaSalva;

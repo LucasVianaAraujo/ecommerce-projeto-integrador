@@ -1,11 +1,3 @@
-// =====================================================
-// conta.js - Login, Cadastro, Recuperar senha e Perfil do cliente
-// Conteúdo das aulas: validação de formulário com try/catch/throw,
-// onsubmit="return ...", localStorage + JSON, find/filter/map,
-// eventos (oninput), window.location.href.
-// =====================================================
-
-// ---------- LOGIN ----------
 function entrar() {
   try {
     var email = document.getElementById("email").value.trim().toLowerCase();
@@ -22,10 +14,9 @@ function entrar() {
   } catch (erro) {
     mostrarMensagem("mensagem", erro, "red");
   }
-  return false; // impede o envio do formulário
+  return false;
 }
 
-// ---------- CADASTRO ----------
 function cadastrar() {
   try {
     var nome = document.getElementById("nome").value.trim();
@@ -59,8 +50,6 @@ function cadastrar() {
   return false;
 }
 
-// ---------- RECUPERAR SENHA ----------
-// Mostra a dica cadastrada assim que o e-mail é digitado
 function mostrarDica() {
   var email = document.getElementById("email").value.trim().toLowerCase();
   var usuario = lerLista("usuarios").find(u => u.email === email);
@@ -105,7 +94,6 @@ function redefinirSenha() {
   return false;
 }
 
-// ---------- PERFIL ----------
 function sair() {
   localStorage.removeItem("usuarioLogado");
   window.location.href = "login.html";
@@ -180,7 +168,6 @@ function iniciarPerfil() {
   mostrarPedidos();
 }
 
-// ---------- inicialização ----------
 if (document.getElementById("perfil-email") != null) {
   iniciarPerfil();
 }

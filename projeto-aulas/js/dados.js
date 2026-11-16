@@ -1,10 +1,3 @@
-// =====================================================
-// dados.js - funções de apoio usadas em todas as páginas
-// Conteúdo das aulas usado aqui: localStorage, JSON.stringify,
-// JSON.parse, arrays (find, filter, reduce), try/catch e throw.
-// =====================================================
-
-// Lê uma lista salva no localStorage (volta [] se ainda não existir)
 function lerLista(chave) {
   var texto = localStorage.getItem(chave);
   if (texto == null) {
@@ -13,17 +6,14 @@ function lerLista(chave) {
   return JSON.parse(texto);
 }
 
-// Salva uma lista no localStorage como texto (JSON)
 function salvarLista(chave, lista) {
   localStorage.setItem(chave, JSON.stringify(lista));
 }
 
-// Transforma 230 em "R$ 230,00"
 function formatarPreco(valor) {
   return "R$ " + valor.toFixed(2).replace(".", ",");
 }
 
-// Cria alguns produtos na primeira visita ao site
 function criarProdutosIniciais() {
   if (localStorage.getItem("produtos") == null) {
     var iniciais = [
@@ -40,7 +30,6 @@ function criarProdutosIniciais() {
 
 criarProdutosIniciais();
 
-// Valida e-mail com a regra mostrada na aula (@ e ponto) - lança erro se inválido
 function validarEmail(email) {
   var atpos = email.indexOf("@");
   var dotpos = email.lastIndexOf(".");
@@ -49,7 +38,6 @@ function validarEmail(email) {
   }
 }
 
-// Tira os acentos e deixa em minúsculas (para a busca achar "tenis" em "Tênis")
 function semAcento(texto) {
   var comAcento = "áàâãäéèêëíìîïóòôõöúùûüç";
   var semAcentos = "aaaaaeeeeiiiiooooouuuuc";
@@ -62,7 +50,6 @@ function semAcento(texto) {
   return resultado;
 }
 
-// Devolve o usuário logado (objeto) ou null
 function buscarUsuarioLogado() {
   var email = localStorage.getItem("usuarioLogado");
   if (email == null) {
@@ -79,7 +66,6 @@ function adminLogado() {
   return localStorage.getItem("adminLogado") === "true";
 }
 
-// Escreve uma mensagem (erro ou sucesso) em um elemento da página
 function mostrarMensagem(id, texto, cor) {
   var elemento = document.getElementById(id);
   if (elemento != null) {
@@ -88,7 +74,6 @@ function mostrarMensagem(id, texto, cor) {
   }
 }
 
-// Mostra/oculta a senha de um campo (botão do "olho")
 function alternarSenha(idCampo, botao) {
   var campo = document.getElementById(idCampo);
   if (campo.type == "password") {

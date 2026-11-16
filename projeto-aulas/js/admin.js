@@ -1,13 +1,3 @@
-// =====================================================
-// admin.js - área administrativa: login e CRUD de produtos
-// CRUD = Create (cadastrar), Read (listar), Update (editar), Delete (excluir)
-// Tudo salvo no localStorage com JSON.stringify / JSON.parse.
-// Conteúdo das aulas: DOM, eventos, arrays (find, filter, map, reduce,
-// splice), try/catch/throw, confirm/alert, window.location.href.
-// =====================================================
-
-// ---------- LOGIN DO ADMIN ----------
-// Como no projeto original: qualquer e-mail e senha preenchidos são aceitos
 function entrarAdmin() {
   try {
     var email = document.getElementById("email").value.trim();
@@ -23,7 +13,6 @@ function entrarAdmin() {
   return false;
 }
 
-// Botão "Entrar" só habilitado com os dois campos preenchidos
 function verificarCamposAdmin() {
   var email = document.getElementById("email").value.trim();
   var senha = document.getElementById("senha").value.trim();
@@ -35,7 +24,6 @@ function sairAdmin() {
   window.location.href = "admin.html";
 }
 
-// Páginas internas só abrem para o admin logado
 function protegerAdmin() {
   if (!adminLogado()) {
     window.location.href = "admin.html";
@@ -44,7 +32,6 @@ function protegerAdmin() {
   return true;
 }
 
-// ---------- READ: listar ----------
 function listarProdutosAdmin() {
   var corpo = document.getElementById("corpo-tabela");
   var produtos = lerLista("produtos");
@@ -68,7 +55,6 @@ function listarProdutosAdmin() {
   corpo.innerHTML = html;
 }
 
-// ---------- DELETE: excluir ----------
 function excluirProduto(id) {
   if (confirm("Deseja realmente excluir o produto?")) {
     var restantes = lerLista("produtos").filter(p => p.id !== id);
@@ -77,7 +63,6 @@ function excluirProduto(id) {
   }
 }
 
-// ---------- abrir o formulário ----------
 function novoProduto() {
   localStorage.removeItem("produtoEditando");
   window.location.href = "admin-produto-form.html";
@@ -88,11 +73,10 @@ function editarProduto(id) {
   window.location.href = "admin-produto-form.html";
 }
 
-// ---------- formulário (CREATE / UPDATE) ----------
 function carregarFormulario() {
   var id = localStorage.getItem("produtoEditando");
   if (id == null) {
-    return; // cadastro novo
+    return;
   }
   var produto = lerLista("produtos").find(p => p.id === Number(id));
   if (produto == undefined) {
@@ -128,7 +112,6 @@ function salvarProduto() {
     var idEditando = localStorage.getItem("produtoEditando");
 
     if (idEditando != null) {
-      // UPDATE
       var produto = produtos.find(p => p.id === Number(idEditando));
       produto.nome = nome;
       produto.marca = marca;
@@ -137,7 +120,6 @@ function salvarProduto() {
       salvarLista("produtos", produtos);
       localStorage.removeItem("produtoEditando");
     } else {
-      // CREATE (novo id = maior id + 1)
       var novoId = produtos.reduce((maior, p) => (p.id > maior ? p.id : maior), 0) + 1;
       produtos.push({ id: novoId, nome: nome, marca: marca, preco: preco, descricao: descricao });
       salvarLista("produtos", produtos);
@@ -154,7 +136,6 @@ function cancelarFormulario() {
   window.location.href = "admin-produtos.html";
 }
 
-// ---------- inicialização ----------
 if (document.getElementById("corpo-tabela") != null) {
   if (protegerAdmin()) {
     listarProdutosAdmin();

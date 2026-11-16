@@ -1,9 +1,3 @@
-// =====================================================
-// carrinho.js - página do carrinho
-// Conteúdo das aulas: localStorage + JSON, reduce/map/filter/forEach,
-// template literals, innerHTML, splice, confirm/alert, objetos.
-// =====================================================
-
 var FRETE_GRATIS_A_PARTIR_DE = 200;
 var VALOR_FRETE = 19.9;
 var CUPONS = { BEMVINDO10: 0.1, PROMO20: 0.2 };
@@ -19,7 +13,6 @@ function lerCupom() {
   return localStorage.getItem("cupom");
 }
 
-// ---------- cálculos ----------
 function calcularSubtotal(itens) {
   return itens.reduce((soma, item) => soma + item.preco * item.quantidade, 0);
 }
@@ -39,7 +32,6 @@ function calcularFrete(itens, subtotal, desconto) {
   return subtotal - desconto >= FRETE_GRATIS_A_PARTIR_DE ? 0 : VALOR_FRETE;
 }
 
-// ---------- ações ----------
 function alterarQuantidade(indice, delta) {
   var itens = lerCarrinho();
   var novaQuantidade = itens[indice].quantidade + delta;
@@ -88,7 +80,6 @@ function removerCupom() {
   mostrarCarrinho();
 }
 
-// Finaliza: gera um pedido, guarda no localStorage e esvazia o carrinho
 function finalizarCompra() {
   var usuario = buscarUsuarioLogado();
   if (usuario == null) {
@@ -118,7 +109,6 @@ function finalizarCompra() {
   window.location.href = "perfil.html";
 }
 
-// ---------- desenho da página ----------
 function criarLinhaItem(item, indice) {
   var cor = CORES_MINIATURA[indice % CORES_MINIATURA.length];
   var precoCada = "";
