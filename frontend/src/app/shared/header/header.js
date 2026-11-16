@@ -5,14 +5,15 @@ function atualizarContadorCarrinho() {
   if (span == null) {
     return;
   }
-  var total = lerLista("carrinho").reduce((soma, item) => soma + item.quantidade, 0);
+  var carrinho = JSON.parse(localStorage.getItem("carrinho") || "[]");
+  var total = carrinho.reduce((soma, item) => soma + item.quantidade, 0);
   span.innerHTML = total > 0 ? "(" + total + ")" : "";
 }
 
 function ajustarLinkConta() {
   var link = document.getElementById("link-conta");
   if (link != null && buscarUsuarioLogado() != null) {
-    link.href = "perfil.html";
+    link.href = "../pefil-user/pefil-user.html";
   }
 }
 
@@ -33,15 +34,12 @@ function fecharBusca() {
 function buscarProdutos() {
   var termo = document.getElementById("campo-busca").value.trim();
   localStorage.setItem("busca", termo);
-  window.location.href = "produtos.html";
+  window.location.href = "../produtos/produtos.html";
 }
 
 function iniciarCabecalho() {
   var container = document.getElementById("busca-container");
   var campo = document.getElementById("campo-busca");
-  if (container == null || campo == null) {
-    return;
-  }
   container.addEventListener("mouseover", abrirBusca);
   container.addEventListener("mouseout", fecharBusca);
   campo.addEventListener("focus", function () {

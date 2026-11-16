@@ -6,7 +6,11 @@ var CORES_MINIATURA = ["#2f3e46", "#c9b79c", "#52796f", "#8d5a44", "#4a5d7a"];
 var erroCupom = "";
 
 function lerCarrinho() {
-  return lerLista("carrinho");
+  return JSON.parse(localStorage.getItem("carrinho") || "[]");
+}
+
+function salvarCarrinho(itens) {
+  localStorage.setItem("carrinho", JSON.stringify(itens));
 }
 
 function lerCupom() {
@@ -42,14 +46,14 @@ function alterarQuantidade(indice, delta) {
     novaQuantidade = 99;
   }
   itens[indice].quantidade = novaQuantidade;
-  salvarLista("carrinho", itens);
+  salvarCarrinho(itens);
   mostrarCarrinho();
 }
 
 function removerItem(indice) {
   var itens = lerCarrinho();
   itens.splice(indice, 1);
-  salvarLista("carrinho", itens);
+  salvarCarrinho(itens);
   mostrarCarrinho();
 }
 
@@ -84,7 +88,7 @@ function finalizarCompra() {
   var usuario = buscarUsuarioLogado();
   if (usuario == null) {
     alert("Faça login para finalizar a compra.");
-    window.location.href = "login.html";
+    window.location.href = "../login/login.html";
     return;
   }
   var itens = lerCarrinho();
@@ -92,7 +96,7 @@ function finalizarCompra() {
   var desconto = calcularDesconto(subtotal);
   var total = subtotal - desconto + calcularFrete(itens, subtotal, desconto);
 
-  var pedidos = lerLista("pedidos");
+  var pedidos = JSON.parse(localStorage.getItem("pedidos") || "[]");
   var novoId = pedidos.reduce((maior, p) => (p.id > maior ? p.id : maior), 0) + 1;
   pedidos.push({
     id: novoId,
@@ -101,12 +105,12 @@ function finalizarCompra() {
     total: total,
     status: "Em andamento"
   });
-  salvarLista("pedidos", pedidos);
+  localStorage.setItem("pedidos", JSON.stringify(pedidos));
 
   localStorage.removeItem("carrinho");
   localStorage.removeItem("cupom");
   alert("Compra finalizada! Pedido #" + novoId + " criado.");
-  window.location.href = "perfil.html";
+  window.location.href = "../pefil-user/pefil-user.html";
 }
 
 function criarLinhaItem(item, indice) {
@@ -143,7 +147,7 @@ function mostrarCarrinho() {
     conteudo.innerHTML = `<div class="vazio">
       <h2>Seu carrinho está vazio</h2>
       <p>Adicione produtos para ver o resumo do pedido aqui.</p>
-      <a class="botao botao-principal" href="produtos.html">Continuar comprando</a>
+      <a class="botao botao-principal" href="../produtos/produtos.html">Continuar comprando</a>
     </div>`;
     return;
   }
@@ -217,11 +221,9 @@ function mostrarCarrinho() {
           <div class="totais-total"><dt>Total</dt><dd>${formatarPreco(total)}</dd></div>
         </dl>
         <button type="button" class="botao botao-principal botao-bloco" onclick="finalizarCompra()">Finalizar compra</button>
-        <a class="resumo-voltar" href="produtos.html">Continuar comprando</a>
+        <a class="resumo-voltar" href="../produtos/produtos.html">Continuar comprando</a>
       </div>
     </div>`;
 }
 
-if (document.getElementById("carrinho-conteudo") != null) {
-  mostrarCarrinho();
-}
+mostrarCarrinho();

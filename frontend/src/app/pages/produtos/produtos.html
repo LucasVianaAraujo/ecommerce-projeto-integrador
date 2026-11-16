@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OldShoes - Produtos</title>
+  <link rel="icon" href="../../../../public/images/logo.png">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-container" id="header-container">
+    <a href="../home/home.html" class="logo-box"><img src="../../../../public/images/logo.png" alt="Old Shoes" height="45"></a>
+
+    <nav class="nav-menu">
+      <a href="../home/home.html">🏠 <span class="nav-text">Home</span></a>
+      <a href="../produtos/produtos.html" class="ativo">📦 <span class="nav-text">Produtos</span></a>
+      <a href="../categorias/categorias.html">🏷️ <span class="nav-text">Categorias</span></a>
+      <a href="#">🔖 <span class="nav-text">Ofertas</span></a>
+      <a href="#">✉️ <span class="nav-text">Contato</span></a>
+    </nav>
+
+    <div class="search-container" id="busca-container">
+      <span class="search-circle">🔍</span>
+      <div class="search-input-wrapper">
+        <input type="text" id="campo-busca" placeholder="O que você está procurando?">
+        <button type="button" onclick="buscarProdutos()">🔍</button>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <a href="#">🤍 <span class="nav-text">Favoritos</span></a>
+      <a href="../carrinho/carrinho.html">🛒 <span class="nav-text">Carrinho</span> <span id="contador-carrinho"></span></a>
+      <a href="../login/login.html" id="link-conta">👤 <span class="nav-text">Minha conta</span></a>
+    </div>
+  </div>
+</header>
+
+
+<div class="conteudo">
+  <div id="CabecalhoProdutos">
+    <h1 id="titulo-produtos">Todos os produtos</h1>
+    <select id="ordenacao" onchange="aplicarFiltros()">
+      <option value="">Filtrar por</option>
+      <option value="barato">Mais barato</option>
+      <option value="caro">Mais caro</option>
+      <option value="nome">Nome (A-Z)</option>
+    </select>
+  </div>
+
+  <div id="FiltroAtivo"><span id="filtro-ativo"><button type="button">× Mais Barato</button></span></div>
+
+  <div class="lista-produtos" id="lista-produtos">
+      <a href="../exibir-produto/exibir-produto.html" class="Produto">
+        <div class="ProdutoImagem"><img src="../../../../public/images/all-star.jpg" alt="Produto 07" height="100"></div>
+        <p>Produto 07</p>
+        <strong>R$ 189,90</strong>
+      </a>
+      <a href="../exibir-produto/exibir-produto.html" class="Produto">
+        <div class="ProdutoImagem"><img src="../../../../public/images/all-star.jpg" alt="Produto 07" height="100"></div>
+        <p>Produto 07</p>
+        <strong>R$ 189,90</strong>
+      </a>
+      <a href="../exibir-produto/exibir-produto.html" class="Produto">
+        <div class="ProdutoImagem"><img src="../../../../public/images/all-star.jpg" alt="Produto 07" height="100"></div>
+        <p>Produto 07</p>
+        <strong>R$ 189,90</strong>
+      </a>
+      <a href="../exibir-produto/exibir-produto.html" class="Produto">
+        <div class="ProdutoImagem"><img src="../../../../public/images/all-star.jpg" alt="Produto 07" height="100"></div>
+        <p>Produto 07</p>
+        <strong>R$ 189,90</strong>
+      </a>
+      <a href="../exibir-produto/exibir-produto.html" class="Produto">
+        <div class="ProdutoImagem"><img src="../../../../public/images/all-star.jpg" alt="Produto 07" height="100"></div>
+        <p>Produto 07</p>
+        <strong>R$ 189,90</strong>
+      </a>
+      <a href="../exibir-produto/exibir-produto.html" class="Produto">
+        <div class="ProdutoImagem"><img src="../../../../public/images/all-star.jpg" alt="Produto 07" height="100"></div>
+        <p>Produto 07</p>
+        <strong>R$ 189,90</strong>
+      </a>
+      <a href="../exibir-produto/exibir-produto.html" class="Produto">
+        <div class="ProdutoImagem"><img src="../../../../public/images/all-star.jpg" alt="Produto 07" height="100"></div>
+        <p>Produto 07</p>
+        <strong>R$ 189,90</strong>
+      </a>
+      <a href="../exibir-produto/exibir-produto.html" class="Produto">
+        <div class="ProdutoImagem"><img src="../../../../public/images/all-star.jpg" alt="Produto 07" height="100"></div>
+        <p>Produto 07</p>
+        <strong>R$ 189,90</strong>
+      </a>
+  </div>
+</div>
+
+<footer>
+  <div class="rodape-principal">
+    <div class="rodape-logo">
+      <h1>LOGO</h1>
+      <p>mais do que calçados oferecemos<br>conforto que é justo</p>
+      <div class="redes-sociais">
+        <img src="../../../../public/images/instagram.png" alt="Instagram" width="30" height="30">
+        <img src="../../../../public/images/facebook.png" alt="Facebook" width="30" height="30">
+        <img src="../../../../public/images/whatsapp.png" alt="WhatsApp" width="30" height="30">
+      </div>
+    </div>
+
+    <div class="rodape-servicos">
+      <h2>Serviços</h2>
+      <a href="../home/home.html">Início</a>
+      <a href="../produtos/produtos.html">Produtos</a>
+      <a href="../categorias/categorias.html">Categorias</a>
+      <a href="#">Sobre nós</a>
+    </div>
+
+    <div class="rodape-ajudas">
+      <h2>Ajudas</h2>
+      <a href="#">Como comprar</a>
+      <a href="#">Reembolso</a>
+      <a href="#">Troca e devoluções</a>
+      <a href="#">Sobre nós</a>
+    </div>
+
+    <div class="rodape-atendimento">
+      <h2>Atendimento</h2>
+      <div><span>📞</span><span>11 9999-9999</span></div>
+      <div><span>✉️</span><span>minhaLoja@gmail.com</span></div>
+      <div><span>🏢</span><span>seg a sex - 8h às 17h</span></div>
+    </div>
+  </div>
+
+  <div class="rodape-inferior">
+    <div class="rodape-frete">
+      <img src="../../../../public/images/caminhao.png" alt="Frete" width="40" height="40">
+      <strong>frete grátis</strong>
+    </div>
+
+    <div class="rodape-pagamentos">
+      <strong>formas de pagamento</strong>
+      <div>
+        <img src="../../../../public/images/visa.png" alt="Visa" width="40" height="30">
+        <img src="../../../../public/images/mastercard.png" alt="Mastercard" width="40" height="30">
+        <img src="../../../../public/images/pix.png" alt="Pix" width="40" height="30">
+      </div>
+    </div>
+
+    <div class="rodape-endereco">
+      <p>Praça do Sol, 6584, Casa 115 -<br>Liberdade, Rio Verde - GO, CEP<br>76113-744</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="../../shared/auth/auth.js"></script>
+  <script src="../../services/produto.service.js"></script>
+  <script src="../../shared/header/header.js"></script>
+  <script src="produtos.js"></script>
+</body>
+</html>

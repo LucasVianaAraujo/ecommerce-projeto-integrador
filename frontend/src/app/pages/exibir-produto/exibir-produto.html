@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OldShoes - Produto</title>
-  <link rel="icon" href="images/logo.png">
+  <link rel="icon" href="../../../../public/images/logo.png">
 </head>
 <body>
 <header class="site-header">
   <div class="header-container" id="header-container">
-    <a href="index.html" class="logo-box"><img src="images/logo.png" alt="Old Shoes" height="45"></a>
+    <a href="../home/home.html" class="logo-box"><img src="../../../../public/images/logo.png" alt="Old Shoes" height="45"></a>
 
     <nav class="nav-menu">
-      <a href="index.html">🏠 <span class="nav-text">Home</span></a>
-      <a href="produtos.html" class="ativo">📦 <span class="nav-text">Produtos</span></a>
-      <a href="categorias.html">🏷️ <span class="nav-text">Categorias</span></a>
+      <a href="../home/home.html">🏠 <span class="nav-text">Home</span></a>
+      <a href="../produtos/produtos.html" class="ativo">📦 <span class="nav-text">Produtos</span></a>
+      <a href="../categorias/categorias.html">🏷️ <span class="nav-text">Categorias</span></a>
       <a href="#">🔖 <span class="nav-text">Ofertas</span></a>
       <a href="#">✉️ <span class="nav-text">Contato</span></a>
     </nav>
@@ -29,8 +29,8 @@
 
     <div class="header-actions">
       <a href="#">🤍 <span class="nav-text">Favoritos</span></a>
-      <a href="carrinho.html">🛒 <span class="nav-text">Carrinho</span> <span id="contador-carrinho"></span></a>
-      <a href="login.html" id="link-conta">👤 <span class="nav-text">Minha conta</span></a>
+      <a href="../carrinho/carrinho.html">🛒 <span class="nav-text">Carrinho</span> <span id="contador-carrinho"></span></a>
+      <a href="../login/login.html" id="link-conta">👤 <span class="nav-text">Minha conta</span></a>
     </div>
   </div>
 </header>
@@ -38,7 +38,7 @@
 
 <div id="Produto">
   <section id="Galeria">
-    <div id="ImagemPrincipal"><img src="images/all-star.jpg" alt="Foto do produto" height="250"></div>
+    <div id="ImagemPrincipal"><img src="../../../../public/images/all-star.jpg" alt="Foto do produto" height="250"></div>
     <div id="Miniaturas">
       <div class="Miniatura"></div>
       <div class="Miniatura"></div>
@@ -94,17 +94,17 @@
       <h1>LOGO</h1>
       <p>mais do que calçados oferecemos<br>conforto que é justo</p>
       <div class="redes-sociais">
-        <img src="images/instagram.png" alt="Instagram" width="30" height="30">
-        <img src="images/facebook.png" alt="Facebook" width="30" height="30">
-        <img src="images/whatsapp.png" alt="WhatsApp" width="30" height="30">
+        <img src="../../../../public/images/instagram.png" alt="Instagram" width="30" height="30">
+        <img src="../../../../public/images/facebook.png" alt="Facebook" width="30" height="30">
+        <img src="../../../../public/images/whatsapp.png" alt="WhatsApp" width="30" height="30">
       </div>
     </div>
 
     <div class="rodape-servicos">
       <h2>Serviços</h2>
-      <a href="index.html">Início</a>
-      <a href="produtos.html">Produtos</a>
-      <a href="categorias.html">Categorias</a>
+      <a href="../home/home.html">Início</a>
+      <a href="../produtos/produtos.html">Produtos</a>
+      <a href="../categorias/categorias.html">Categorias</a>
       <a href="#">Sobre nós</a>
     </div>
 
@@ -126,16 +126,16 @@
 
   <div class="rodape-inferior">
     <div class="rodape-frete">
-      <img src="images/caminhao.png" alt="Frete" width="40" height="40">
+      <img src="../../../../public/images/caminhao.png" alt="Frete" width="40" height="40">
       <strong>frete grátis</strong>
     </div>
 
     <div class="rodape-pagamentos">
       <strong>formas de pagamento</strong>
       <div>
-        <img src="images/visa.png" alt="Visa" width="40" height="30">
-        <img src="images/mastercard.png" alt="Mastercard" width="40" height="30">
-        <img src="images/pix.png" alt="Pix" width="40" height="30">
+        <img src="../../../../public/images/visa.png" alt="Visa" width="40" height="30">
+        <img src="../../../../public/images/mastercard.png" alt="Mastercard" width="40" height="30">
+        <img src="../../../../public/images/pix.png" alt="Pix" width="40" height="30">
       </div>
     </div>
 
@@ -145,8 +145,9 @@
   </div>
 </footer>
 
-  <script src="js/dados.js"></script>
-  <script src="js/geral.js"></script>
-  <script src="js/vitrine.js"></script>
+  <script src="../../shared/auth/auth.js"></script>
+  <script src="../../services/produto.service.js"></script>
+  <script src="../../shared/header/header.js"></script>
+  <script src="exibir-produto.js"></script>
 </body>
 </html>
