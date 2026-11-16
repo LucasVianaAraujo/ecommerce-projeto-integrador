@@ -1,0 +1,116 @@
+.mensagem {
+  min-height: 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.mensagem {
+  animation: aparecer 0.3s;
+}
+
+.area-admin {
+  width: 80%;
+  min-height: 75vh;
+  margin: 50px auto 7vh;
+}
+
+.area-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-claro {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+}
+
+.form-claro h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  text-align: center;
+  color: #172033;
+}
+
+.form-claro label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #172033;
+}
+
+.input-simples {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  font-size: 16px;
+  color: #000000;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+
+.input-simples:focus {
+  border-color: #94a3b8;
+}
+
+.input-submeter {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 16px;
+  color: black;
+  background-color: #94a3b8;
+  border: none;
+}
+
+.input-submeter:hover {
+  background-color: #727d8d;
+}
+
+.input-cancelar {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  font-size: 16px;
+  color: #172033;
+  background-color: #e2e8f0;
+  border: none;
+}
+
+.input-cancelar:hover {
+  background-color: #cbd5e1;
+}
+
+.mensagem-admin {
+  min-height: 1.2rem;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+.area-admin {
+      width: 90%;
+    }
+}
+
+.area-admin {
+  animation: aparecer 0.5s;
+}
+
+.input-simples,
+.input-submeter,
+.input-cancelar {
+  transition: all 0.2s;
+}
+
+.input-submeter:hover {
+  transform: translateY(-2px);
+}

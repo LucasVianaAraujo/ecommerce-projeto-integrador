@@ -1,0 +1,268 @@
+.fundo-conta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 40px 20px;
+  background-color: var(--cinza-fundo);
+}
+
+.mensagem {
+  min-height: 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.conteiner-perfil {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  width: 100%;
+  max-width: 950px;
+  padding: 40px 50px;
+  border: 1px solid #e0e0e0;
+  background-color: #ffffff;
+}
+
+.perfil-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.usuario-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: var(--amarelo-claro);
+  font-size: 2.4rem;
+}
+
+.usuario-texto h1 {
+  margin-bottom: 6px;
+  font-size: 1.6rem;
+  color: #111111;
+}
+
+.usuario-email {
+  display: inline-block;
+  padding: 4px 10px;
+  background-color: #f0f0f0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #444444;
+}
+
+.perfil-botoes {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-perfil {
+  padding: 12px 24px;
+  background-color: var(--amarelo-claro);
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111111;
+}
+
+.btn-perfil:hover {
+  background-color: #e5b23b;
+}
+
+.btn-perfil.sair {
+  background-color: #dcdcdc;
+}
+
+.btn-perfil.sair:hover {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.perfil-secao h2 {
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111111;
+}
+
+.grid-atalhos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card-atalho {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 54px;
+  padding: 0 16px;
+  background-color: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #222222;
+}
+
+.card-atalho:hover {
+  background-color: #fff9e6;
+  border-color: var(--amarelo-claro);
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  background-color: var(--amarelo-claro);
+}
+
+.card-dica {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  padding: 24px;
+  background-color: #fafafa;
+  border: 1px solid #e8e8e8;
+}
+
+.campo-dica {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.campo-dica label {
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #222222;
+}
+
+.campo-dica input {
+  width: 100%;
+  height: 44px;
+  padding: 0 16px;
+  font-size: 14px;
+  background-color: #e8e8e8;
+  border: 1px solid #e8e8e8;
+}
+
+.campo-dica input:focus {
+  background-color: #ffffff;
+  border-color: var(--amarelo-claro);
+}
+
+.dica-aviso {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: #777777;
+}
+
+.btn-salvar-dica {
+  height: 44px;
+  padding: 0 24px;
+  background-color: var(--amarelo-claro);
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.btn-salvar-dica:hover {
+  background-color: #e5b23b;
+}
+
+.lista-pedidos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card-pedido {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 80px;
+  padding: 16px 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #e8e8e8;
+  font-size: 0.9rem;
+}
+
+.card-pedido:hover {
+  border-color: #dcdcdc;
+}
+
+.pedido-info {
+  flex: 1;
+}
+
+.btn-cancelar-pedido {
+  padding: 9px 18px;
+  background-color: #dcdcdc;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #222222;
+}
+
+.btn-cancelar-pedido:hover {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+@media (max-width: 800px) {
+.conteiner-perfil {
+      padding: 30px 20px;
+    }
+  
+  .perfil-cabecalho {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+  .grid-atalhos {
+      grid-template-columns: 1fr;
+    }
+  
+  .card-dica {
+      flex-direction: column;
+      align-items: stretch;
+    }
+}
+
+.conteiner-perfil {
+  animation: aparecer 0.5s;
+}
+
+.campo-dica input,
+.btn-perfil,
+.btn-salvar-dica,
+.btn-cancelar-pedido,
+.card-atalho,
+.card-pedido {
+  transition: all 0.2s;
+}
+
+.btn-perfil:hover,
+.btn-salvar-dica:hover,
+.card-atalho:hover {
+  transform: translateY(-2px);
+}
+
+.mensagem {
+  animation: aparecer 0.3s;
+}

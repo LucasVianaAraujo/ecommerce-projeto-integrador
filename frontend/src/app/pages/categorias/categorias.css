@@ -1,0 +1,81 @@
+.conteudo {
+  width: 90%;
+  margin: 3vh auto;
+}
+
+#CategoriasPagina h2 {
+  font-size: 2vw;
+  margin-bottom: 2vh;
+}
+
+#Categorias {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2vh 1vw;
+  margin-bottom: 15vh;
+}
+
+.Categoria {
+  position: relative;
+  display: block;
+  height: 30vh;
+  border: 2px solid #02020220;
+}
+
+.Categoria img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.Categoria p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 1vh 0.5vw;
+  font-size: 1.5vw;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Categoria:hover {
+  border-color: var(--amarelo);
+}
+
+@media (max-width: 900px) {
+#CategoriasPagina h2 {
+      font-size: 5vw;
+    }
+  
+  #Categorias {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+  .Categoria p {
+      font-size: 4vw;
+    }
+}
+
+.conteudo {
+  animation: aparecer 0.5s;
+}
+
+.Categoria {
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.Categoria img {
+  transition: transform 0.4s;
+}
+
+.Categoria:hover {
+  transform: translateY(-4px);
+}
+
+.Categoria:hover img {
+  transform: scale(1.08);
+}

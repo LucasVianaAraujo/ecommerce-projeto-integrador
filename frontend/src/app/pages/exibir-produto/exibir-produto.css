@@ -1,0 +1,268 @@
+.Produto {
+  display: block;
+  background-color: var(--amarelo);
+  padding-bottom: 2vh;
+}
+
+.Produto:hover {
+  background-color: var(--amarelo-escuro);
+}
+
+.Produto p {
+  color: white;
+  margin: 2vh 5% 1vh;
+}
+
+.Produto strong {
+  color: white;
+  margin-left: 5%;
+}
+
+#Produto {
+  display: flex;
+  justify-content: space-between;
+  gap: 3vw;
+  min-height: 78vh;
+  margin: 3vh 5vw;
+}
+
+#Galeria {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 50%;
+}
+
+#ImagemPrincipal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 55vh;
+  background-color: var(--cinza);
+}
+
+#ImagemPrincipal img {
+  height: 50vh;
+}
+
+#Miniaturas {
+  display: flex;
+  gap: 2vh;
+  width: 80%;
+  margin-top: 2vh;
+}
+
+.Miniatura {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3vw;
+  height: 3vw;
+  background-color: var(--cinza);
+  font-size: 1.2vw;
+}
+
+.Miniatura:hover {
+  background-color: #777777;
+}
+
+#Informacoes {
+  width: 50%;
+}
+
+#Informacoes h1 {
+  font-size: 2vw;
+  line-height: 1.2;
+  margin-bottom: 1vh;
+}
+
+.etiqueta {
+  background-color: var(--cinza);
+  padding: 0.4vh 0.4vw;
+  font-size: 0.8vw;
+}
+
+#Informacoes h2 {
+  font-size: 1.5vw;
+  margin-top: 1vh;
+}
+
+#Informacoes p {
+  font-size: 1vw;
+  margin-top: 0.5vh;
+}
+
+.Opcoes {
+  display: flex;
+  gap: 0.6vw;
+  margin-bottom: 1vh;
+}
+
+.Opcao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.2vw;
+  height: 2.2vw;
+  border: 2px solid var(--cinza);
+  background-color: var(--cinza);
+  font-size: 0.9vw;
+  font-weight: bold;
+}
+
+.Opcao:hover {
+  border-color: #777777;
+}
+
+.Opcao.selecionada {
+  border: 2px solid black;
+}
+
+.cor-preto { background-color: #222222; }
+
+.cor-branco { background-color: #ffffff; }
+
+.cor-vermelho { background-color: #c0392b; }
+
+.link-medidas {
+  display: block;
+  font-size: 0.8vw;
+  margin: 0.7vh 0 1vh;
+  text-decoration: underline;
+}
+
+#Informacoes button.botao-produto {
+  display: block;
+  width: 70%;
+  height: 5vh;
+  margin-bottom: 1vh;
+  border: none;
+  background-color: var(--cinza);
+  font-size: 1.2vw;
+  font-weight: bold;
+}
+
+#Informacoes button.botao-produto:hover {
+  background-color: #777777;
+}
+
+#FreteProduto {
+  display: flex;
+  align-items: center;
+  gap: 0.6vw;
+  margin-top: 1vh;
+  font-size: 1vw;
+}
+
+#AreaFrete {
+  display: block;
+  width: 70%;
+  margin-top: 0.8vh;
+}
+
+#AreaFrete input {
+  width: 60%;
+  padding: 0.8vh 0.6vw;
+  border: none;
+  background-color: var(--cinza);
+  font-size: 1vw;
+}
+
+#AreaFrete button {
+  padding: 0.8vh 0.8vw;
+  border: none;
+  background-color: #777777;
+  color: white;
+  font-size: 1vw;
+}
+
+.mensagem-produto {
+  font-size: 1vw;
+  margin-top: 1vh;
+}
+
+@media (max-width: 900px) {
+#Produto {
+      flex-direction: column;
+    }
+  
+  #Galeria,
+  #Informacoes {
+      width: 100%;
+    }
+  
+  #ImagemPrincipal,
+  #Miniaturas {
+      width: 100%;
+    }
+  
+  .Miniatura {
+      width: 10vw;
+      height: 10vw;
+      font-size: 3.5vw;
+    }
+  
+  .Opcao {
+      width: 8vw;
+      height: 8vw;
+      font-size: 3.5vw;
+    }
+  
+  #Informacoes h1 {
+      font-size: 6vw;
+    }
+  
+  #Informacoes h2 {
+      font-size: 5vw;
+    }
+  
+  #Informacoes p,
+  .etiqueta,
+  .link-medidas,
+  #FreteProduto,
+  .mensagem-produto,
+  #AreaFrete input,
+  #AreaFrete button {
+      font-size: 3.5vw;
+    }
+  
+  #Informacoes button.botao-produto {
+      width: 100%;
+      font-size: 4vw;
+    }
+  
+  #AreaFrete {
+      width: 100%;
+    }
+}
+
+#Produto {
+  animation: aparecer 0.5s;
+}
+
+.Produto,
+.Miniatura,
+.Opcao,
+#Informacoes button.botao-produto {
+  transition: all 0.2s;
+}
+
+.Produto:hover {
+  transform: translateY(-6px);
+}
+
+.Opcao:hover,
+.Miniatura:hover {
+  transform: scale(1.1);
+}
+
+#Informacoes button.botao-produto:hover {
+  transform: translateY(-2px);
+}
+
+#AreaFrete {
+  animation: aparecer 0.4s;
+}

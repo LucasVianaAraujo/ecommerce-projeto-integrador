@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OldShoes - Login</title>
+  <link rel="icon" href="../../../../public/images/logo.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../shared/header/header.css">
+  <link rel="stylesheet" href="../../shared/footer/footer.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-container" id="header-container">
+    <a href="../home/home.html" class="logo-box"><img src="../../../../public/images/logo.png" alt="Old Shoes" height="45"></a>
+
+    <nav class="nav-menu">
+      <a href="../home/home.html">🏠 <span class="nav-text">Home</span></a>
+      <a href="../produtos/produtos.html">📦 <span class="nav-text">Produtos</span></a>
+      <a href="../categorias/categorias.html">🏷️ <span class="nav-text">Categorias</span></a>
+      <a href="#">🔖 <span class="nav-text">Ofertas</span></a>
+      <a href="#">✉️ <span class="nav-text">Contato</span></a>
+    </nav>
+
+    <div class="search-container" id="busca-container">
+      <span class="search-circle">🔍</span>
+      <div class="search-input-wrapper">
+        <input type="text" id="campo-busca" placeholder="O que você está procurando?">
+        <button type="button" onclick="buscarProdutos()">🔍</button>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <a href="#">🤍 <span class="nav-text">Favoritos</span></a>
+      <a href="../carrinho/carrinho.html">🛒 <span class="nav-text">Carrinho</span> <span id="contador-carrinho"></span></a>
+      <a href="../login/login.html" id="link-conta">👤 <span class="nav-text">Minha conta</span></a>
+    </div>
+  </div>
+</header>
+
+
+<div class="fundo-conta">
+  <div class="caixa-conta">
+    <div class="lado-esquerdo">
+      <h2>OLDSHOES</h2>
+      <p>Estilo e conforto para os seus pés</p>
+    </div>
+
+    <div class="lado-direito">
+      <h2>Faça Seu Login</h2>
+      <form class="formulario-conta" onsubmit="return entrar();">
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input type="text" id="email" placeholder="Digite seu e-mail">
+        </div>
+        <div class="campo">
+          <label for="senha">Senha</label>
+          <div class="campo-senha">
+            <input type="password" id="senha" placeholder="Digite sua senha">
+            <button type="button" class="btn-olho" onclick="alternarSenha('senha', this)">Mostrar</button>
+          </div>
+        </div>
+        <a href="../recuperar-senha/recuperar-senha.html" class="link-esqueci">Esqueceu sua senha?</a>
+        <p class="mensagem" id="mensagem"></p>
+        <button type="submit" class="botao-conta">Entrar →</button>
+        <p class="link-troca">Ainda não tem cadastro? <a href="../cadastro-usuario/cadastro-usuario.html">Cadastre-se aqui!</a></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="rodape-principal">
+    <div class="rodape-logo">
+      <h1>LOGO</h1>
+      <p>mais do que calçados oferecemos<br>conforto que é justo</p>
+      <div class="redes-sociais">
+        <img src="../../../../public/images/instagram.png" alt="Instagram" width="30" height="30">
+        <img src="../../../../public/images/facebook.png" alt="Facebook" width="30" height="30">
+        <img src="../../../../public/images/whatsapp.png" alt="WhatsApp" width="30" height="30">
+      </div>
+    </div>
+
+    <div class="rodape-servicos">
+      <h2>Serviços</h2>
+      <a href="../home/home.html">Início</a>
+      <a href="../produtos/produtos.html">Produtos</a>
+      <a href="../categorias/categorias.html">Categorias</a>
+      <a href="#">Sobre nós</a>
+    </div>
+
+    <div class="rodape-ajudas">
+      <h2>Ajudas</h2>
+      <a href="#">Como comprar</a>
+      <a href="#">Reembolso</a>
+      <a href="#">Troca e devoluções</a>
+      <a href="#">Sobre nós</a>
+    </div>
+
+    <div class="rodape-atendimento">
+      <h2>Atendimento</h2>
+      <div><span>📞</span><span>11 9999-9999</span></div>
+      <div><span>✉️</span><span>minhaLoja@gmail.com</span></div>
+      <div><span>🏢</span><span>seg a sex - 8h às 17h</span></div>
+    </div>
+  </div>
+
+  <div class="rodape-inferior">
+    <div class="rodape-frete">
+      <img src="../../../../public/images/caminhao.png" alt="Frete" width="40" height="40">
+      <strong>frete grátis</strong>
+    </div>
+
+    <div class="rodape-pagamentos">
+      <strong>formas de pagamento</strong>
+      <div>
+        <img src="../../../../public/images/visa.png" alt="Visa" width="40" height="30">
+        <img src="../../../../public/images/mastercard.png" alt="Mastercard" width="40" height="30">
+        <img src="../../../../public/images/pix.png" alt="Pix" width="40" height="30">
+      </div>
+    </div>
+
+    <div class="rodape-endereco">
+      <p>Praça do Sol, 6584, Casa 115 -<br>Liberdade, Rio Verde - GO, CEP<br>76113-744</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="../../shared/auth/auth.js"></script>
+  <script src="../../shared/header/header.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
