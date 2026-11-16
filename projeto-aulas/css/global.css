@@ -1,0 +1,341 @@
+/* =====================================================
+   global.css - variáveis, reset, cabeçalho e rodapé
+   Conteúdo das aulas: seletores, :root + var(), position,
+   flex, display, margin/padding/border, cores, fontes,
+   :hover, @media.
+   ===================================================== */
+
+:root {
+  --amarelo: #f2a900;
+  --amarelo-escuro: #dd9b01;
+  --amarelo-claro: #f7c44d;
+  --destaque: #e59c00;
+  --cinza: #d9d9d9;
+  --cinza-fundo: #f5f5f5;
+  --preto: #222222;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* o cabeçalho é fixo no topo, então o corpo ganha um espaço em cima */
+body {
+  padding-top: 71px;
+  background-color: #ffffff;
+  color: var(--preto);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------------- CABEÇALHO ---------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 12px 24px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+.logo-box {
+  flex-shrink: 0;
+}
+
+.logo-box img {
+  height: 45px;
+  display: block;
+}
+
+.nav-menu,
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.nav-menu a,
+.header-actions a {
+  color: #222222;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px;
+}
+
+.nav-menu a:hover,
+.nav-menu a.ativo,
+.header-actions a:hover {
+  color: var(--destaque);
+}
+
+/* barra de busca: um quadrado amarelo que se expande ao passar o mouse */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 40px;
+  width: 40px;
+  margin-left: auto;
+}
+
+.search-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--destaque);
+  color: #ffffff;
+}
+
+.search-input-wrapper {
+  display: none;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #f4f4f4;
+  border: 1px solid #cccccc;
+  padding: 4px 8px 4px 16px;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  border: none;
+  background-color: #f4f4f4;
+  font-size: 14px;
+  color: #333333;
+}
+
+.search-input-wrapper button {
+  background-color: #f4f4f4;
+  border: none;
+  color: var(--destaque);
+  font-size: 16px;
+  padding: 6px;
+}
+
+.search-container:hover,
+.search-container.open {
+  flex: 1;
+  width: 100%;
+  max-width: 800px;
+}
+
+.search-container:hover .search-circle,
+.search-container.open .search-circle {
+  display: none;
+}
+
+.search-container:hover .search-input-wrapper,
+.search-container.open .search-input-wrapper {
+  display: flex;
+}
+
+/* com a busca aberta, os textos do menu somem e ficam só os ícones */
+.header-container.search-active .nav-text {
+  display: none;
+}
+
+/* ---------------- RODAPÉ ---------------- */
+footer {
+  width: 100%;
+  background-color: #a6a6a6;
+  color: white;
+}
+
+.rodape-principal {
+  display: flex;
+  width: 100%;
+  padding: 5vh 5%;
+  gap: 5%;
+}
+
+.rodape-logo {
+  width: 30%;
+}
+
+.rodape-logo h1 {
+  color: black;
+  font-size: 4vw;
+  margin-bottom: 2vh;
+}
+
+.rodape-logo p {
+  font-size: 1.2vw;
+  font-weight: bold;
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 2vw;
+  margin-top: 3vh;
+}
+
+.redes-sociais img {
+  width: 3vw;
+  height: 3vw;
+}
+
+.rodape-servicos,
+.rodape-ajudas,
+.rodape-atendimento {
+  padding: 0 3%;
+}
+
+.rodape-servicos,
+.rodape-ajudas {
+  border-right: 1px solid white;
+}
+
+.rodape-servicos h2,
+.rodape-ajudas h2,
+.rodape-atendimento h2 {
+  color: black;
+  font-size: 1.5vw;
+  margin-bottom: 2vh;
+}
+
+.rodape-servicos a,
+.rodape-ajudas a {
+  display: block;
+  margin-bottom: 2vh;
+  font-size: 1.1vw;
+  font-weight: bold;
+}
+
+.rodape-servicos a:hover,
+.rodape-ajudas a:hover {
+  color: black;
+}
+
+.rodape-atendimento div {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  margin-bottom: 2vh;
+  font-size: 1.1vw;
+  font-weight: bold;
+}
+
+.rodape-inferior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #555555;
+  padding: 3vh 5%;
+}
+
+.rodape-frete {
+  display: flex;
+  align-items: center;
+  gap: 1.5vw;
+  font-size: 1.2vw;
+}
+
+.rodape-frete img {
+  width: 4vw;
+  height: 4vw;
+}
+
+.rodape-pagamentos {
+  text-align: center;
+}
+
+.rodape-pagamentos strong {
+  display: block;
+  margin-bottom: 1.5vh;
+  font-size: 1.1vw;
+}
+
+.rodape-pagamentos div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5vw;
+}
+
+.rodape-pagamentos img {
+  width: 4vw;
+  height: 3vw;
+}
+
+.rodape-endereco {
+  text-align: center;
+  font-size: 1.1vw;
+}
+
+/* ---------------- TELAS PEQUENAS ---------------- */
+@media (max-width: 900px) {
+  .nav-text {
+    display: none;
+  }
+
+  .rodape-principal {
+    flex-direction: column;
+    gap: 3vh;
+  }
+
+  .rodape-logo,
+  .rodape-servicos,
+  .rodape-ajudas,
+  .rodape-atendimento {
+    width: 100%;
+    border-right: none;
+    padding: 0;
+  }
+
+  .rodape-logo h1 {
+    font-size: 8vw;
+  }
+
+  .rodape-logo p,
+  .rodape-servicos a,
+  .rodape-ajudas a,
+  .rodape-atendimento div,
+  .rodape-endereco,
+  .rodape-pagamentos strong,
+  .rodape-frete {
+    font-size: 3.5vw;
+  }
+
+  .rodape-servicos h2,
+  .rodape-ajudas h2,
+  .rodape-atendimento h2 {
+    font-size: 5vw;
+  }
+
+  .redes-sociais img {
+    width: 8vw;
+    height: 8vw;
+  }
+
+  .rodape-inferior {
+    flex-direction: column;
+    gap: 2vh;
+  }
+
+  .rodape-frete img,
+  .rodape-pagamentos img {
+    width: 10vw;
+    height: 8vw;
+  }
+}

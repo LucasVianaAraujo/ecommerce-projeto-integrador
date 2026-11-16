@@ -1,0 +1,258 @@
+/* =====================================================
+   admin.css - login do admin, lista e formulário de produtos
+   ===================================================== */
+
+.area-admin {
+  width: 80%;
+  min-height: 75vh;
+  margin: 50px auto 7vh;
+}
+
+/* ---------------- LOGIN (caixa preta) ---------------- */
+.area-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-escuro {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #000000;
+}
+
+.form-escuro label {
+  margin-bottom: 4px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* ---------------- FORMULÁRIO DE PRODUTO (caixa branca) ---------------- */
+.form-claro {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+}
+
+.form-claro h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  text-align: center;
+  color: #172033;
+}
+
+.form-claro label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #172033;
+}
+
+.input-simples {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  font-size: 16px;
+  color: #000000;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+
+.form-escuro .input-simples {
+  border: none;
+  padding: 8px 12px;
+  margin-bottom: 20px;
+}
+
+.input-simples:focus {
+  border-color: #94a3b8;
+}
+
+.senha-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.senha-wrapper .input-simples {
+  padding-right: 80px;
+}
+
+.botao-olho {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  bottom: 20px;
+  background-color: #ffffff;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.input-submeter {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 16px;
+  color: black;
+  background-color: #94a3b8;
+  border: none;
+}
+
+.input-submeter:hover {
+  background-color: #727d8d;
+}
+
+.input-cancelar {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  font-size: 16px;
+  color: #172033;
+  background-color: #e2e8f0;
+  border: none;
+}
+
+.input-cancelar:hover {
+  background-color: #cbd5e1;
+}
+
+.mensagem-admin {
+  min-height: 1.2rem;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ---------------- LISTA DE PRODUTOS ---------------- */
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.subtitulo {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--amarelo-claro);
+}
+
+.cabecalho h1 {
+  margin: 8px 0;
+  font-size: 32px;
+  color: #172033;
+}
+
+.cabecalho p {
+  font-size: 16px;
+  color: #475569;
+}
+
+.cabecalho-botoes {
+  display: flex;
+  gap: 10px;
+}
+
+.botao-novo {
+  padding: 11px 20px;
+  background-color: var(--amarelo-claro);
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: black;
+}
+
+.botao-novo:hover {
+  background-color: #d3ac53;
+}
+
+.botao-sair {
+  padding: 11px 20px;
+  background-color: #e2e8f0;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #172033;
+}
+
+.botao-sair:hover {
+  background-color: #cbd5e1;
+}
+
+.tabela-container {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.tabela-container table {
+  width: 100%;
+}
+
+.tabela-container th {
+  padding: 16px;
+  background-color: #f8fafc;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  color: #172033;
+}
+
+.tabela-container td {
+  padding: 16px;
+  font-size: 15px;
+  color: #475569;
+}
+
+.tabela-container tr:hover td {
+  background-color: #f8fafc;
+}
+
+.botao-editar,
+.botao-excluir {
+  padding: 8px 14px;
+  border: none;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.botao-editar {
+  margin-right: 8px;
+  background-color: #94a3b8;
+}
+
+.botao-editar:hover {
+  background-color: #727d8d;
+}
+
+.botao-excluir {
+  background-color: #dc2626;
+}
+
+.botao-excluir:hover {
+  background-color: #b91c1c;
+}
+
+@media (max-width: 700px) {
+  .area-admin {
+    width: 90%;
+  }
+
+  .cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
