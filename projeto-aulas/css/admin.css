@@ -1,14 +1,9 @@
-/* =====================================================
-   admin.css - login do admin, lista e formulário de produtos
-   ===================================================== */
-
 .area-admin {
   width: 80%;
   min-height: 75vh;
   margin: 50px auto 7vh;
 }
 
-/* ---------------- LOGIN (caixa preta) ---------------- */
 .area-login {
   display: flex;
   flex-direction: column;
@@ -31,7 +26,6 @@
   color: #ffffff;
 }
 
-/* ---------------- FORMULÁRIO DE PRODUTO (caixa branca) ---------------- */
 .form-claro {
   display: flex;
   flex-direction: column;
@@ -136,7 +130,6 @@
   text-align: center;
 }
 
-/* ---------------- LISTA DE PRODUTOS ---------------- */
 .cabecalho {
   display: flex;
   align-items: center;
@@ -257,7 +250,6 @@
   }
 }
 
-/* ---------------- ANIMAÇÕES ---------------- */
 .area-admin {
   animation: aparecer 0.5s;
 }

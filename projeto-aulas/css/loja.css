@@ -1,13 +1,8 @@
-/* =====================================================
-   loja.css - Home, Produtos, Categorias e Detalhe do produto
-   ===================================================== */
-
 .conteudo {
   width: 90%;
   margin: 3vh auto;
 }
 
-/* ---------------- HOME ---------------- */
 #Banner {
   display: flex;
   align-items: center;
@@ -67,7 +62,6 @@
   margin-bottom: 2vh;
 }
 
-/* grade de produtos (Home e Produtos) */
 .lista-produtos {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -184,7 +178,6 @@
   margin-top: 1vh;
 }
 
-/* ---------------- PRODUTOS ---------------- */
 #CabecalhoProdutos {
   display: flex;
   align-items: center;
@@ -219,7 +212,6 @@
   font-size: 0.8vw;
 }
 
-/* ---------------- CATEGORIAS ---------------- */
 #CategoriasPagina h2 {
   font-size: 2vw;
   margin-bottom: 2vh;
@@ -262,7 +254,6 @@
   border-color: var(--amarelo);
 }
 
-/* ---------------- DETALHE DO PRODUTO ---------------- */
 #Produto {
   display: flex;
   justify-content: space-between;
@@ -427,7 +418,6 @@
   margin-top: 1vh;
 }
 
-/* ---------------- TELAS PEQUENAS ---------------- */
 @media (max-width: 900px) {
   .lista-produtos {
     grid-template-columns: repeat(2, 1fr);
@@ -527,7 +517,6 @@
   }
 }
 
-/* ---------------- ANIMAÇÕES ---------------- */
 .conteudo,
 #Produto,
 #Banner {
