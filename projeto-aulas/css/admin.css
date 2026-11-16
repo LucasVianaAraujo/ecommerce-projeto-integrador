@@ -256,3 +256,27 @@
     gap: 20px;
   }
 }
+
+/* ---------------- ANIMAÇÕES ---------------- */
+.area-admin {
+  animation: aparecer 0.5s;
+}
+
+.input-simples,
+.input-submeter,
+.input-cancelar,
+.botao-novo,
+.botao-sair,
+.botao-editar,
+.botao-excluir,
+.tabela-container td {
+  transition: all 0.2s;
+}
+
+.botao-novo:hover,
+.botao-sair:hover,
+.botao-editar:hover,
+.botao-excluir:hover,
+.input-submeter:hover {
+  transform: translateY(-2px);
+}

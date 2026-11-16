@@ -442,3 +442,32 @@
     align-items: stretch;
   }
 }
+
+/* ---------------- ANIMAÇÕES ---------------- */
+.caixa-conta,
+.conteiner-perfil {
+  animation: aparecer 0.5s;
+}
+
+.campo input,
+.campo-dica input,
+.botao-conta,
+.btn-perfil,
+.btn-salvar-dica,
+.btn-cancelar-pedido,
+.card-atalho,
+.card-pedido,
+.btn-olho {
+  transition: all 0.2s;
+}
+
+.botao-conta:hover,
+.btn-perfil:hover,
+.btn-salvar-dica:hover,
+.card-atalho:hover {
+  transform: translateY(-2px);
+}
+
+.mensagem {
+  animation: aparecer 0.3s;
+}
