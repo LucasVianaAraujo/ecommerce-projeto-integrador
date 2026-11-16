@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OldShoes - Admin: Cadastro de produto</title>
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-container" id="header-container">
+    <a href="index.html" class="logo-box"><img src="images/logo.png" alt="Old Shoes" height="45"></a>
+
+    <nav class="nav-menu">
+      <a href="index.html">🏠 <span class="nav-text">Home</span></a>
+      <a href="produtos.html">📦 <span class="nav-text">Produtos</span></a>
+      <a href="categorias.html">🏷️ <span class="nav-text">Categorias</span></a>
+      <a href="#">🔖 <span class="nav-text">Ofertas</span></a>
+      <a href="#">✉️ <span class="nav-text">Contato</span></a>
+    </nav>
+
+    <div class="search-container" id="busca-container">
+      <span class="search-circle">🔍</span>
+      <div class="search-input-wrapper">
+        <input type="text" id="campo-busca" placeholder="O que você está procurando?">
+        <button type="button">🔍</button>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <a href="#">🤍 <span class="nav-text">Favoritos</span></a>
+      <a href="carrinho.html">🛒 <span class="nav-text">Carrinho</span> <span id="contador-carrinho"></span></a>
+      <a href="login.html" id="link-conta">👤 <span class="nav-text">Minha conta</span></a>
+    </div>
+  </div>
+</header>
+
+
+<div class="area-admin area-login">
+  <form class="form-claro">
+    <h1 id="titulo-form">Cadastro de Produto</h1>
+
+    <label for="nome">Nome do produto</label>
+    <input type="text" class="input-simples" id="nome" placeholder="Nome do Produto...">
+
+    <label for="marca">Marca</label>
+    <input type="text" class="input-simples" id="marca" placeholder="Marca do Produto...">
+
+    <label for="preco">Preço</label>
+    <input type="text" class="input-simples" id="preco" placeholder="Preço do Produto...">
+
+    <label for="descricao">Descrição</label>
+    <input type="text" class="input-simples" id="descricao" placeholder="Descrição do Produto...">
+
+    <button type="button" class="input-submeter">Confirmar</button>
+    <button type="button" class="input-cancelar">Cancelar</button>
+    <p class="mensagem-admin" id="mensagem"></p>
+  </form>
+</div>
+
+<footer>
+  <div class="rodape-principal">
+    <div class="rodape-logo">
+      <h1>LOGO</h1>
+      <p>mais do que calçados oferecemos<br>conforto que é justo</p>
+      <div class="redes-sociais">
+        <img src="images/instagram.png" alt="Instagram" width="30" height="30">
+        <img src="images/facebook.png" alt="Facebook" width="30" height="30">
+        <img src="images/whatsapp.png" alt="WhatsApp" width="30" height="30">
+      </div>
+    </div>
+
+    <div class="rodape-servicos">
+      <h2>Serviços</h2>
+      <a href="index.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="categorias.html">Categorias</a>
+      <a href="#">Sobre nós</a>
+    </div>
+
+    <div class="rodape-ajudas">
+      <h2>Ajudas</h2>
+      <a href="#">Como comprar</a>
+      <a href="#">Reembolso</a>
+      <a href="#">Troca e devoluções</a>
+      <a href="#">Sobre nós</a>
+    </div>
+
+    <div class="rodape-atendimento">
+      <h2>Atendimento</h2>
+      <div><span>📞</span><span>11 9999-9999</span></div>
+      <div><span>✉️</span><span>minhaLoja@gmail.com</span></div>
+      <div><span>🏢</span><span>seg a sex - 8h às 17h</span></div>
+    </div>
+  </div>
+
+  <div class="rodape-inferior">
+    <div class="rodape-frete">
+      <img src="images/caminhao.png" alt="Frete" width="40" height="40">
+      <strong>frete grátis</strong>
+    </div>
+
+    <div class="rodape-pagamentos">
+      <strong>formas de pagamento</strong>
+      <div>
+        <img src="images/visa.png" alt="Visa" width="40" height="30">
+        <img src="images/mastercard.png" alt="Mastercard" width="40" height="30">
+        <img src="images/pix.png" alt="Pix" width="40" height="30">
+      </div>
+    </div>
+
+    <div class="rodape-endereco">
+      <p>Praça do Sol, 6584, Casa 115 -<br>Liberdade, Rio Verde - GO, CEP<br>76113-744</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
