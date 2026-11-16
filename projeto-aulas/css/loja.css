@@ -526,3 +526,66 @@
     width: 100%;
   }
 }
+
+/* ---------------- ANIMAÇÕES ---------------- */
+.conteudo,
+#Produto,
+#Banner {
+  animation: aparecer 0.5s;
+}
+
+.Produto,
+.CategoriaHome,
+.Miniatura,
+.Opcao,
+#Informacoes button.botao-produto,
+.botao-banner {
+  transition: all 0.2s;
+}
+
+.Produto:hover {
+  transform: translateY(-6px);
+}
+
+.ProdutoImagem img {
+  transition: transform 0.3s;
+}
+
+.Produto:hover .ProdutoImagem img {
+  transform: scale(1.08);
+}
+
+.CategoriaHome:hover,
+.botao-banner:hover {
+  transform: translateY(-3px);
+}
+
+.Categoria {
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.Categoria img {
+  transition: transform 0.4s;
+}
+
+.Categoria:hover {
+  transform: translateY(-4px);
+}
+
+.Categoria:hover img {
+  transform: scale(1.08);
+}
+
+.Opcao:hover,
+.Miniatura:hover {
+  transform: scale(1.1);
+}
+
+#Informacoes button.botao-produto:hover {
+  transform: translateY(-2px);
+}
+
+#AreaFrete {
+  animation: aparecer 0.4s;
+}

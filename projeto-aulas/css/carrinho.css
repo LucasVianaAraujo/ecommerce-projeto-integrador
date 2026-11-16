@@ -300,3 +300,31 @@
     height: 72px;
   }
 }
+
+/* ---------------- ANIMAÇÕES ---------------- */
+.carrinho {
+  animation: aparecer 0.5s;
+}
+
+.progresso span {
+  transition: width 0.5s;
+}
+
+.item {
+  animation: aparecer 0.4s;
+}
+
+.botao,
+.quantidade button,
+.link {
+  transition: all 0.2s;
+}
+
+.botao:hover {
+  transform: translateY(-2px);
+}
+
+.cupom-erro,
+.cupom-aplicado {
+  animation: aparecer 0.3s;
+}
