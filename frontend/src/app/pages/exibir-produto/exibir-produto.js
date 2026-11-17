@@ -1,8 +1,8 @@
-var idSelecionado = localStorage.getItem("produtoSelecionado");
-var produtos = JSON.parse(localStorage.getItem("produtos") || "[]");
-var produtoAtual = produtos[0];
+let idSelecionado = localStorage.getItem("produtoSelecionado");
+let produtos = JSON.parse(localStorage.getItem("produtos") || "[]");
+let produtoAtual = produtos[0];
 
-for (var i = 0; i < produtos.length; i++) {
+for (let i = 0; i < produtos.length; i++) {
   if (produtos[i].id == idSelecionado) {
     produtoAtual = produtos[i];
   }
@@ -14,18 +14,18 @@ document.getElementById("descricao-produto").innerHTML = produtoAtual.descricao;
 document.getElementById("ImagemPrincipal").innerHTML = `<img src="${produtoAtual.imagem}" alt="${produtoAtual.nome}" height="250">`;
 
 function escolherOpcao(elemento, classeGrupo) {
-  var opcoes = document.getElementsByClassName(classeGrupo);
-  for (var i = 0; i < opcoes.length; i++) {
+  let opcoes = document.getElementsByClassName(classeGrupo);
+  for (let i = 0; i < opcoes.length; i++) {
     opcoes[i].classList.remove("selecionada");
   }
   elemento.classList.add("selecionada");
 }
 
 function adicionarAoCarrinho(irParaCarrinho) {
-  var cor = document.querySelector(".OpcaoCor.selecionada").title;
-  var tamanho = document.querySelector(".OpcaoTamanho.selecionada").title;
+  let cor = document.querySelector(".OpcaoCor.selecionada").title;
+  let tamanho = document.querySelector(".OpcaoTamanho.selecionada").title;
 
-  var carrinho = JSON.parse(localStorage.getItem("carrinho") || "[]");
+  let carrinho = JSON.parse(localStorage.getItem("carrinho") || "[]");
 
   carrinho.push({
     nome: produtoAtual.nome,

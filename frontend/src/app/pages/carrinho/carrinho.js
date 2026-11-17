@@ -1,10 +1,10 @@
 function mostrarCarrinho() {
-  var itens = JSON.parse(localStorage.getItem("carrinho") || "[]");
-  var lista = document.getElementById("lista-itens");
-  var html = "";
-  var total = 0;
+  let itens = JSON.parse(localStorage.getItem("carrinho") || "[]");
+  let lista = document.getElementById("lista-itens");
+  let html = "";
+  let total = 0;
 
-  for (var i = 0; i < itens.length; i++) {
+  for (let i = 0; i < itens.length; i++) {
     total += itens[i].preco;
     html += `
       <div class="item">
@@ -30,7 +30,7 @@ function mostrarCarrinho() {
 }
 
 function removerItem(indice) {
-  var itens = JSON.parse(localStorage.getItem("carrinho") || "[]");
+  let itens = JSON.parse(localStorage.getItem("carrinho") || "[]");
   itens.splice(indice, 1);
   localStorage.setItem("carrinho", JSON.stringify(itens));
   mostrarCarrinho();

@@ -1,8 +1,8 @@
 function cadastrar() {
-  var nome = document.getElementById("nome").value;
-  var email = document.getElementById("email").value;
-  var senha = document.getElementById("senha").value;
-  var confirma = document.getElementById("confirma-senha").value;
+  let nome = document.getElementById("nome").value;
+  let email = document.getElementById("email").value;
+  let senha = document.getElementById("senha").value;
+  let confirma = document.getElementById("confirma-senha").value;
 
   if (nome == "" || email == "" || senha == "") {
     document.getElementById("mensagem").innerHTML = "Preencha todos os campos!";
@@ -14,7 +14,7 @@ function cadastrar() {
     return false;
   }
 
-  var usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
+  let usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
   usuarios.push({ nome: nome, email: email, senha: senha });
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
 

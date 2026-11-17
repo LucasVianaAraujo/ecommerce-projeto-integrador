@@ -1,8 +1,8 @@
-var produtos = JSON.parse(localStorage.getItem("produtos") || "[]");
-var container = document.getElementById("lista-produtos");
-var html = "";
+let produtos = JSON.parse(localStorage.getItem("produtos") || "[]");
+let container = document.getElementById("lista-produtos");
+let html = "";
 
-for (var i = 0; i < produtos.length; i++) {
+for (let i = 0; i < produtos.length; i++) {
   html += `
     <a href="../exibir-produto/exibir-produto.html" class="Produto" onclick="selecionarProduto(${produtos[i].id})">
       <div class="ProdutoImagem"><img src="${produtos[i].imagem}" alt="${produtos[i].nome}" height="100"></div>
