@@ -20,26 +20,15 @@
       <a href="../home/home.html">🏠 <span class="nav-text">Home</span></a>
       <a href="../produtos/produtos.html">📦 <span class="nav-text">Produtos</span></a>
       <a href="../categorias/categorias.html">🏷️ <span class="nav-text">Categorias</span></a>
-      <a href="#">🔖 <span class="nav-text">Ofertas</span></a>
-      <a href="#">✉️ <span class="nav-text">Contato</span></a>
+      <a href="../cadastro-usuario/cadastro-usuario.html">📝 <span class="nav-text">Cadastro</span></a>
     </nav>
 
-    <div class="search-container" id="busca-container">
-      <span class="search-circle">🔍</span>
-      <div class="search-input-wrapper">
-        <input type="text" id="campo-busca" placeholder="O que você está procurando?">
-        <button type="button" onclick="buscarProdutos()">🔍</button>
-      </div>
-    </div>
-
     <div class="header-actions">
-      <a href="#">🤍 <span class="nav-text">Favoritos</span></a>
-      <a href="../carrinho/carrinho.html">🛒 <span class="nav-text">Carrinho</span> <span id="contador-carrinho"></span></a>
-      <a href="../login/login.html" id="link-conta">👤 <span class="nav-text">Minha conta</span></a>
+      <a href="../carrinho/carrinho.html">🛒 <span class="nav-text">Carrinho</span></a>
+      <a href="../login/login.html" id="link-conta">👤 <span class="nav-text">Login</span></a>
     </div>
   </div>
 </header>
-
 
 <div class="area-admin area-login">
   <form class="form-claro" onsubmit="return false;">
@@ -48,18 +37,15 @@
     <label for="nome">Nome do produto</label>
     <input type="text" class="input-simples" id="nome" placeholder="Nome do Produto...">
 
-    <label for="marca">Marca</label>
-    <input type="text" class="input-simples" id="marca" placeholder="Marca do Produto...">
-
     <label for="preco">Preço</label>
-    <input type="text" class="input-simples" id="preco" placeholder="Preço do Produto...">
+    <input type="number" class="input-simples" id="preco" placeholder="Ex: 199.90">
 
     <label for="descricao">Descrição</label>
     <input type="text" class="input-simples" id="descricao" placeholder="Descrição do Produto...">
 
     <button type="button" class="input-submeter" onclick="salvarProduto()">Confirmar</button>
     <button type="button" class="input-cancelar" onclick="cancelarFormulario()">Cancelar</button>
-    <p class="mensagem-admin" id="mensagem"></p>
+    <p class="mensagem-admin" id="mensagem" style="color: red;"></p>
   </form>
 </div>
 
@@ -80,7 +66,7 @@
       <a href="../home/home.html">Início</a>
       <a href="../produtos/produtos.html">Produtos</a>
       <a href="../categorias/categorias.html">Categorias</a>
-      <a href="#">Sobre nós</a>
+      <a href="../admin/admin.html">Área Admin</a>
     </div>
 
     <div class="rodape-ajudas">
@@ -120,9 +106,6 @@
   </div>
 </footer>
 
-  <script src="../../shared/auth/auth.js"></script>
-  <script src="../../services/produto.service.js"></script>
-  <script src="../../shared/header/header.js"></script>
-  <script src="cadastro-tenis.js"></script>
+<script src="cadastro-tenis.js"></script>
 </body>
 </html>

@@ -1,50 +1,43 @@
 function listarProdutosAdmin() {
   var corpo = document.getElementById("corpo-tabela");
-  var produtos = produtoService.listar();
+  var produtos = JSON.parse(localStorage.getItem("produtos") || "[]");
+
   if (produtos.length == 0) {
     corpo.innerHTML = '<tr><td colspan="5">Nenhum produto cadastrado.</td></tr>';
     return;
   }
+
   var html = "";
-  produtos.forEach(produto => {
-    html += `<tr>
-      <td>${produto.id}</td>
-      <td>${produto.nome}</td>
-      <td>${produto.marca}</td>
-      <td>${formatarPreco(produto.preco)}</td>
-      <td class="acoes">
-        <button type="button" class="botao-editar" onclick="editarProduto(${produto.id})">Editar</button>
-        <button type="button" class="botao-excluir" onclick="excluirProduto(${produto.id})">Excluir</button>
-      </td>
-    </tr>`;
-  });
+  for (var i = 0; i < produtos.length; i++) {
+    html += `
+      <tr>
+        <td>${produtos[i].id}</td>
+        <td>${produtos[i].nome}</td>
+        <td>${produtos[i].descricao}</td>
+        <td>R$ ${produtos[i].preco.toFixed(2)}</td>
+        <td class="acoes">
+          <button type="button" class="botao-excluir" onclick="excluirProduto(${i})">Excluir</button>
+        </td>
+      </tr>
+    `;
+  }
+
   corpo.innerHTML = html;
 }
 
-function excluirProduto(id) {
-  if (confirm("Deseja realmente excluir o produto?")) {
-    produtoService.excluir(id);
-    listarProdutosAdmin();
-  }
-}
-
-function novoProduto() {
-  localStorage.removeItem("produtoEditando");
-  window.location.href = "../cadastro-tenis/cadastro-tenis.html";
-}
-
-function editarProduto(id) {
-  localStorage.setItem("produtoEditando", id);
-  window.location.href = "../cadastro-tenis/cadastro-tenis.html";
+function excluirProduto(indice) {
+  var produtos = JSON.parse(localStorage.getItem("produtos") || "[]");
+  produtos.splice(indice, 1);
+  localStorage.setItem("produtos", JSON.stringify(produtos));
+  listarProdutosAdmin();
 }
 
 function sairAdmin() {
-  logoutAdmin();
   window.location.href = "../admin/admin.html";
 }
 
-if (!adminLogado()) {
-  window.location.href = "../admin/admin.html";
-} else {
-  listarProdutosAdmin();
+listarProdutosAdmin();
+
+function novoProduto() {
+  window.location.href = "../cadastro-tenis/cadastro-tenis.html";
 }

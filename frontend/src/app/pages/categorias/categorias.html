@@ -19,23 +19,13 @@
     <nav class="nav-menu">
       <a href="../home/home.html">🏠 <span class="nav-text">Home</span></a>
       <a href="../produtos/produtos.html">📦 <span class="nav-text">Produtos</span></a>
-      <a href="../categorias/categorias.html" class="ativo">🏷️ <span class="nav-text">Categorias</span></a>
-      <a href="#">🔖 <span class="nav-text">Ofertas</span></a>
-      <a href="#">✉️ <span class="nav-text">Contato</span></a>
+      <a href="../categorias/categorias.html">🏷️ <span class="nav-text">Categorias</span></a>
+      <a href="../cadastro-usuario/cadastro-usuario.html">📝 <span class="nav-text">Cadastro</span></a>
     </nav>
 
-    <div class="search-container" id="busca-container">
-      <span class="search-circle">🔍</span>
-      <div class="search-input-wrapper">
-        <input type="text" id="campo-busca" placeholder="O que você está procurando?">
-        <button type="button" onclick="buscarProdutos()">🔍</button>
-      </div>
-    </div>
-
     <div class="header-actions">
-      <a href="#">🤍 <span class="nav-text">Favoritos</span></a>
-      <a href="../carrinho/carrinho.html">🛒 <span class="nav-text">Carrinho</span> <span id="contador-carrinho"></span></a>
-      <a href="../login/login.html" id="link-conta">👤 <span class="nav-text">Minha conta</span></a>
+      <a href="../carrinho/carrinho.html">🛒 <span class="nav-text">Carrinho</span></a>
+      <a href="../login/login.html" id="link-conta">👤 <span class="nav-text">Login</span></a>
     </div>
   </div>
 </header>
@@ -43,30 +33,30 @@
 <div class="conteudo" id="CategoriasPagina">
   <h2>Categorias</h2>
   <div id="Categorias">
-      <a href="../produtos/produtos.html" class="Categoria" onclick="abrirCategoria()">
-        <img src="https://tfdfjz.vtexassets.com/arquivos/ids/371835/tenis-esportivo-new-balance-feminino-520v9-preto-520v9-1.jpg?v=639072015197630000" alt="Tênis esportivo" width="200" height="150">
-        <p>Esportivo</p>
-      </a>
-      <a href="../produtos/produtos.html" class="Categoria" onclick="abrirCategoria()">
-        <img src="https://blog.espacotenis.com.br/wp-content/uploads/2023/02/761_Tnis-casual.jpg" alt="Tênis casual" width="200" height="150">
-        <p>Casual</p>
-      </a>
-      <a href="../produtos/produtos.html" class="Categoria" onclick="abrirCategoria()">
-        <img src="https://imgcentauro-a.akamaihd.net/1024x1024/99599631A20.jpg" alt="Tênis de corrida" width="200" height="150">
-        <p>Corrida</p>
-      </a>
-      <a href="../produtos/produtos.html" class="Categoria" onclick="abrirCategoria()">
-        <img src="https://imgcentauro-a.akamaihd.net/1024x1024/9972VG41A3.jpg" alt="Tênis masculino" width="200" height="150">
-        <p>Masculino</p>
-      </a>
-      <a href="../produtos/produtos.html" class="Categoria" onclick="abrirCategoria()">
-        <img src="https://images.tcdn.com.br/img/img_prod/679348/tenis_feminino_slip_on_plataforma_sapatilha_sola_alta_k107_615_7_38b0c9f5faa421b49a436a768d04a39c.jpg" alt="Tênis feminino" width="200" height="150">
-        <p>Feminino</p>
-      </a>
-      <a href="../produtos/produtos.html" class="Categoria" onclick="abrirCategoria()">
-        <img src="https://pequito.cdn.magazord.com.br/img/2025/05/produto/3767/2014506-b-2.jpg?ims=fit-in/425x425/filters:fill(white)" alt="Tênis infantil" width="200" height="150">
-        <p>Infantil</p>
-      </a>
+    <a href="../produtos/produtos.html" class="Categoria">
+      <img src="https://tfdfjz.vtexassets.com/arquivos/ids/371835/tenis-esportivo-new-balance-feminino-520v9-preto-520v9-1.jpg?v=639072015197630000" alt="Tênis esportivo" width="200" height="150">
+      <p>Esportivo</p>
+    </a>
+    <a href="../produtos/produtos.html" class="Categoria">
+      <img src="https://blog.espacotenis.com.br/wp-content/uploads/2023/02/761_Tnis-casual.jpg" alt="Tênis casual" width="200" height="150">
+      <p>Casual</p>
+    </a>
+    <a href="../produtos/produtos.html" class="Categoria">
+      <img src="https://imgcentauro-a.akamaihd.net/1024x1024/99599631A20.jpg" alt="Tênis de corrida" width="200" height="150">
+      <p>Corrida</p>
+    </a>
+    <a href="../produtos/produtos.html" class="Categoria">
+      <img src="https://imgcentauro-a.akamaihd.net/1024x1024/9972VG41A3.jpg" alt="Tênis masculino" width="200" height="150">
+      <p>Masculino</p>
+    </a>
+    <a href="../produtos/produtos.html" class="Categoria">
+      <img src="https://images.tcdn.com.br/img/img_prod/679348/tenis_feminino_slip_on_plataforma_sapatilha_sola_alta_k107_615_7_38b0c9f5faa421b49a436a768d04a39c.jpg" alt="Tênis feminino" width="200" height="150">
+      <p>Feminino</p>
+    </a>
+    <a href="../produtos/produtos.html" class="Categoria">
+      <img src="https://pequito.cdn.magazord.com.br/img/2025/05/produto/3767/2014506-b-2.jpg?ims=fit-in/425x425/filters:fill(white)" alt="Tênis infantil" width="200" height="150">
+      <p>Infantil</p>
+    </a>
   </div>
 </div>
 
@@ -87,7 +77,7 @@
       <a href="../home/home.html">Início</a>
       <a href="../produtos/produtos.html">Produtos</a>
       <a href="../categorias/categorias.html">Categorias</a>
-      <a href="#">Sobre nós</a>
+      <a href="../admin/admin.html">Área Admin</a>
     </div>
 
     <div class="rodape-ajudas">
@@ -127,8 +117,6 @@
   </div>
 </footer>
 
-  <script src="../../shared/auth/auth.js"></script>
-  <script src="../../shared/header/header.js"></script>
-  <script src="categorias.js"></script>
+<script src="categorias.js"></script>
 </body>
 </html>

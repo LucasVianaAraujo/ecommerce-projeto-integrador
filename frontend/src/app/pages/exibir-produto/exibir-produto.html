@@ -18,141 +18,114 @@
 
     <nav class="nav-menu">
       <a href="../home/home.html">🏠 <span class="nav-text">Home</span></a>
-      <a href="../produtos/produtos.html" class="ativo">📦 <span class="nav-text">Produtos</span></a>
+      <a href="../produtos/produtos.html">📦 <span class="nav-text">Produtos</span></a>
       <a href="../categorias/categorias.html">🏷️ <span class="nav-text">Categorias</span></a>
-      <a href="#">🔖 <span class="nav-text">Ofertas</span></a>
-      <a href="#">✉️ <span class="nav-text">Contato</span></a>
+      <a href="../cadastro-usuario/cadastro-usuario.html">📝 <span class="nav-text">Cadastro</span></a>
     </nav>
 
-    <div class="search-container" id="busca-container">
-      <span class="search-circle">🔍</span>
-      <div class="search-input-wrapper">
-        <input type="text" id="campo-busca" placeholder="O que você está procurando?">
-        <button type="button" onclick="buscarProdutos()">🔍</button>
-      </div>
-    </div>
-
     <div class="header-actions">
-      <a href="#">🤍 <span class="nav-text">Favoritos</span></a>
-      <a href="../carrinho/carrinho.html">🛒 <span class="nav-text">Carrinho</span> <span id="contador-carrinho"></span></a>
-      <a href="../login/login.html" id="link-conta">👤 <span class="nav-text">Minha conta</span></a>
+      <a href="../carrinho/carrinho.html">🛒 <span class="nav-text">Carrinho</span></a>
+      <a href="../login/login.html" id="link-conta">👤 <span class="nav-text">Login</span></a>
     </div>
   </div>
 </header>
 
+  <div id="Produto">
+    <section id="Galeria">
+      <div id="ImagemPrincipal"><img src="../../../../public/images/all-star.jpg" alt="Foto do produto" height="250"></div>
+      <div id="Miniaturas">
+        <div class="Miniatura"></div>
+        <div class="Miniatura"></div>
+        <div class="Miniatura"></div>
+        <div class="Miniatura"></div>
+        <div class="Miniatura">+ 4</div>
+      </div>
+    </section>
 
-<div id="Produto">
-  <section id="Galeria">
-    <div id="ImagemPrincipal"><img src="../../../../public/images/all-star.jpg" alt="Foto do produto" height="250"></div>
-    <div id="Miniaturas">
-      <div class="Miniatura"></div>
-      <div class="Miniatura"></div>
-      <div class="Miniatura"></div>
-      <div class="Miniatura"></div>
-      <div class="Miniatura">+ 4</div>
-    </div>
-  </section>
+    <section id="Informacoes">
+      <h1 id="nome-produto">Produto 01</h1>
+      <span class="etiqueta">Boas Avaliações</span>
 
-  <section id="Informacoes">
-    <h1 id="nome-produto">Produto 01</h1>
-    <span class="etiqueta">Boas Avaliações</span>
+      <h2 id="preco-produto">R$ 240,00</h2>
+      <p id="descricao-produto">Descrição do produto.</p>
 
-    <h2 id="preco-produto">R$ 240,00</h2>
-    <p id="parcelas-produto">Ou 3x de R$ 80,00</p>
-    <p id="descricao-produto">Descrição do produto.</p>
+      <p>Cores</p>
+      <div class="Opcoes">
+        <div class="Opcao OpcaoCor cor-preto selecionada" title="Preto" onclick="escolherOpcao(this, 'OpcaoCor')"></div>
+        <div class="Opcao OpcaoCor cor-branco" title="Branco" onclick="escolherOpcao(this, 'OpcaoCor')"></div>
+        <div class="Opcao OpcaoCor cor-vermelho" title="Vermelho" onclick="escolherOpcao(this, 'OpcaoCor')"></div>
+      </div>
 
-    <p>Cores</p>
-    <div class="Opcoes">
-      <div class="Opcao OpcaoCor cor-preto selecionada" title="Preto" onclick="escolherOpcao(this, 'OpcaoCor')"></div>
-      <div class="Opcao OpcaoCor cor-branco" title="Branco" onclick="escolherOpcao(this, 'OpcaoCor')"></div>
-      <div class="Opcao OpcaoCor cor-vermelho" title="Vermelho" onclick="escolherOpcao(this, 'OpcaoCor')"></div>
-    </div>
+      <p>Tamanhos</p>
+      <div class="Opcoes">
+        <div class="Opcao OpcaoTamanho" title="38" onclick="escolherOpcao(this, 'OpcaoTamanho')">38</div>
+        <div class="Opcao OpcaoTamanho selecionada" title="40" onclick="escolherOpcao(this, 'OpcaoTamanho')">40</div>
+        <div class="Opcao OpcaoTamanho" title="42" onclick="escolherOpcao(this, 'OpcaoTamanho')">42</div>
+      </div>
 
-    <p>Tamanhos</p>
-    <div class="Opcoes">
-      <div class="Opcao OpcaoTamanho" title="38" onclick="escolherOpcao(this, 'OpcaoTamanho')">38</div>
-      <div class="Opcao OpcaoTamanho selecionada" title="40" onclick="escolherOpcao(this, 'OpcaoTamanho')">40</div>
-      <div class="Opcao OpcaoTamanho" title="42" onclick="escolherOpcao(this, 'OpcaoTamanho')">42</div>
-    </div>
+      <button type="button" class="botao-produto" onclick="adicionarAoCarrinho(false)">Adicionar ao Carrinho</button>
+      <button type="button" class="botao-produto" onclick="adicionarAoCarrinho(true)">Comprar</button>
+      <p class="mensagem-produto" id="mensagem-produto" style="color: green;"></p>
+    </section>
+  </div>
 
-    <a href="#" class="link-medidas">Guia de Medidas</a>
+  <footer>
+    <div class="rodape-principal">
+      <div class="rodape-logo">
+        <h1>LOGO</h1>
+        <p>mais do que calçados oferecemos<br>conforto que é justo</p>
+        <div class="redes-sociais">
+          <img src="../../../../public/images/instagram.png" alt="Instagram" width="30" height="30">
+          <img src="../../../../public/images/facebook.png" alt="Facebook" width="30" height="30">
+          <img src="../../../../public/images/whatsapp.png" alt="WhatsApp" width="30" height="30">
+        </div>
+      </div>
 
-    <button type="button" class="botao-produto" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
-    <button type="button" class="botao-produto" onclick="comprarAgora()">Comprar</button>
-    <p class="mensagem-produto" id="mensagem-produto"></p>
+      <div class="rodape-servicos">
+        <h2>Serviços</h2>
+        <a href="../home/home.html">Início</a>
+        <a href="../produtos/produtos.html">Produtos</a>
+        <a href="../carrinho/carrinho.html">Carrinho</a>
+        <a href="../login/login.html">Login</a>
+      </div>
 
-    <div id="FreteProduto">
-      <input type="checkbox" id="marcar-frete" checked onchange="alternarFrete()">
-      <label for="marcar-frete">Calcular Frete</label>
-    </div>
-    <div id="AreaFrete">
-      <input type="text" id="campo-cep" placeholder="Digite seu CEP">
-      <button type="button" onclick="consultarCep()">Consultar</button>
-      <p id="resultado-frete"></p>
-    </div>
-  </section>
-</div>
+      <div class="rodape-ajudas">
+        <h2>Ajudas</h2>
+        <a href="#">Como comprar</a>
+        <a href="#">Reembolso</a>
+        <a href="#">Troca e devoluções</a>
+        <a href="#">Sobre nós</a>
+      </div>
 
-<footer>
-  <div class="rodape-principal">
-    <div class="rodape-logo">
-      <h1>LOGO</h1>
-      <p>mais do que calçados oferecemos<br>conforto que é justo</p>
-      <div class="redes-sociais">
-        <img src="../../../../public/images/instagram.png" alt="Instagram" width="30" height="30">
-        <img src="../../../../public/images/facebook.png" alt="Facebook" width="30" height="30">
-        <img src="../../../../public/images/whatsapp.png" alt="WhatsApp" width="30" height="30">
+      <div class="rodape-atendimento">
+        <h2>Atendimento</h2>
+        <div><span>📞</span><span>11 9999-9999</span></div>
+        <div><span>✉️</span><span>minhaLoja@gmail.com</span></div>
+        <div><span>🏢</span><span>seg a sex - 8h às 17h</span></div>
       </div>
     </div>
 
-    <div class="rodape-servicos">
-      <h2>Serviços</h2>
-      <a href="../home/home.html">Início</a>
-      <a href="../produtos/produtos.html">Produtos</a>
-      <a href="../categorias/categorias.html">Categorias</a>
-      <a href="#">Sobre nós</a>
-    </div>
+    <div class="rodape-inferior">
+      <div class="rodape-frete">
+        <img src="../../../../public/images/caminhao.png" alt="Frete" width="40" height="40">
+        <strong>frete grátis</strong>
+      </div>
 
-    <div class="rodape-ajudas">
-      <h2>Ajudas</h2>
-      <a href="#">Como comprar</a>
-      <a href="#">Reembolso</a>
-      <a href="#">Troca e devoluções</a>
-      <a href="#">Sobre nós</a>
-    </div>
+      <div class="rodape-pagamentos">
+        <strong>formas de pagamento</strong>
+        <div>
+          <img src="../../../../public/images/visa.png" alt="Visa" width="40" height="30">
+          <img src="../../../../public/images/mastercard.png" alt="Mastercard" width="40" height="30">
+          <img src="../../../../public/images/pix.png" alt="Pix" width="40" height="30">
+        </div>
+      </div>
 
-    <div class="rodape-atendimento">
-      <h2>Atendimento</h2>
-      <div><span>📞</span><span>11 9999-9999</span></div>
-      <div><span>✉️</span><span>minhaLoja@gmail.com</span></div>
-      <div><span>🏢</span><span>seg a sex - 8h às 17h</span></div>
-    </div>
-  </div>
-
-  <div class="rodape-inferior">
-    <div class="rodape-frete">
-      <img src="../../../../public/images/caminhao.png" alt="Frete" width="40" height="40">
-      <strong>frete grátis</strong>
-    </div>
-
-    <div class="rodape-pagamentos">
-      <strong>formas de pagamento</strong>
-      <div>
-        <img src="../../../../public/images/visa.png" alt="Visa" width="40" height="30">
-        <img src="../../../../public/images/mastercard.png" alt="Mastercard" width="40" height="30">
-        <img src="../../../../public/images/pix.png" alt="Pix" width="40" height="30">
+      <div class="rodape-endereco">
+        <p>Praça do Sol, 6584, Casa 115 -<br>Liberdade, Rio Verde - GO, CEP<br>76113-744</p>
       </div>
     </div>
+  </footer>
 
-    <div class="rodape-endereco">
-      <p>Praça do Sol, 6584, Casa 115 -<br>Liberdade, Rio Verde - GO, CEP<br>76113-744</p>
-    </div>
-  </div>
-</footer>
-
-  <script src="../../shared/auth/auth.js"></script>
-  <script src="../../services/produto.service.js"></script>
-  <script src="../../shared/header/header.js"></script>
   <script src="exibir-produto.js"></script>
 </body>
 </html>

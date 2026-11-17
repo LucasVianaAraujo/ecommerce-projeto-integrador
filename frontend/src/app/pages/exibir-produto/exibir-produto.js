@@ -1,21 +1,16 @@
-var produtoAtual = null;
+var idSelecionado = localStorage.getItem("produtoSelecionado");
+var produtos = JSON.parse(localStorage.getItem("produtos") || "[]");
+var produtoAtual = produtos[0];
 
-function carregarProduto() {
-  var id = Number(localStorage.getItem("produtoSelecionado"));
-  produtoAtual = produtoService.buscarPorId(id);
-  if (produtoAtual == undefined) {
-    document.getElementById("Produto").innerHTML =
-      '<p>Produto não encontrado. <a href="../produtos/produtos.html">Ver produtos</a></p>';
-    return;
+for (var i = 0; i < produtos.length; i++) {
+  if (produtos[i].id == idSelecionado) {
+    produtoAtual = produtos[i];
   }
-  document.title = produtoAtual.nome + " - OldShoes";
-  document.getElementById("nome-produto").innerHTML = produtoAtual.nome;
-  document.getElementById("preco-produto").innerHTML = formatarPreco(produtoAtual.preco);
-  document.getElementById("parcelas-produto").innerHTML =
-    "Ou 3x de " + formatarPreco(produtoAtual.preco / 3);
-  document.getElementById("descricao-produto").innerHTML =
-    produtoAtual.marca + " - " + produtoAtual.descricao;
 }
+
+document.getElementById("nome-produto").innerHTML = produtoAtual.nome;
+document.getElementById("preco-produto").innerHTML = "R$ " + produtoAtual.preco.toFixed(2);
+document.getElementById("descricao-produto").innerHTML = produtoAtual.descricao;
 
 function escolherOpcao(elemento, classeGrupo) {
   var opcoes = document.getElementsByClassName(classeGrupo);
@@ -25,78 +20,22 @@ function escolherOpcao(elemento, classeGrupo) {
   elemento.classList.add("selecionada");
 }
 
-function lerOpcaoSelecionada(classeGrupo) {
-  var opcoes = document.getElementsByClassName(classeGrupo);
-  for (var i = 0; i < opcoes.length; i++) {
-    if (opcoes[i].className.indexOf("selecionada") >= 0) {
-      return opcoes[i].title;
-    }
-  }
-  throw "Escolha a cor e o tamanho.";
-}
+function adicionarAoCarrinho(irParaCarrinho) {
+  var cor = document.querySelector(".OpcaoCor.selecionada").title;
+  var tamanho = document.querySelector(".OpcaoTamanho.selecionada").title;
 
-function adicionarAoCarrinho() {
-  try {
-    var cor = lerOpcaoSelecionada("OpcaoCor");
-    var tamanho = lerOpcaoSelecionada("OpcaoTamanho");
-    var variacao = "Tam. " + tamanho + " · " + cor;
-    var carrinho = JSON.parse(localStorage.getItem("carrinho") || "[]");
-    var existente = carrinho.find(i => i.id === produtoAtual.id && i.variacao === variacao);
-    if (existente != undefined) {
-      existente.quantidade = existente.quantidade + 1;
-    } else {
-      carrinho.push({
-        id: produtoAtual.id,
-        nome: produtoAtual.nome,
-        variacao: variacao,
-        preco: produtoAtual.preco,
-        quantidade: 1
-      });
-    }
-    localStorage.setItem("carrinho", JSON.stringify(carrinho));
-    atualizarContadorCarrinho();
-    mostrarMensagem("mensagem-produto", "Produto adicionado ao carrinho!", "green");
-    return true;
-  } catch (erro) {
-    mostrarMensagem("mensagem-produto", erro, "red");
-    return false;
-  }
-}
+  var carrinho = JSON.parse(localStorage.getItem("carrinho") || "[]");
 
-function comprarAgora() {
-  if (adicionarAoCarrinho()) {
+  carrinho.push({
+    nome: produtoAtual.nome,
+    preco: produtoAtual.preco,
+    variacao: "Tam. " + tamanho + " · " + cor
+  });
+
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  document.getElementById("mensagem-produto").innerHTML = "Produto adicionado ao carrinho!";
+
+  if (irParaCarrinho) {
     window.location.href = "../carrinho/carrinho.html";
   }
 }
-
-function alternarFrete() {
-  var marcado = document.getElementById("marcar-frete").checked;
-  document.getElementById("AreaFrete").style.display = marcado ? "block" : "none";
-}
-
-function consultarCep() {
-  var cep = document.getElementById("campo-cep").value.trim().replace("-", "");
-  if (cep.length != 8 || isNaN(cep)) {
-    mostrarMensagem("resultado-frete", "Digite um CEP com 8 números.", "red");
-    return;
-  }
-  mostrarMensagem("resultado-frete", "Consultando...", "black");
-  fetch("https://viacep.com.br/ws/" + cep + "/json/")
-    .then(response => response.json())
-    .then(dados => {
-      if (dados.erro) {
-        mostrarMensagem("resultado-frete", "CEP não encontrado.", "red");
-      } else {
-        mostrarMensagem(
-          "resultado-frete",
-          `Entrega para ${dados.logradouro}, ${dados.bairro} - ${dados.localidade}/${dados.uf}. Frete grátis acima de R$ 200,00.`,
-          "black"
-        );
-      }
-    })
-    .catch(erro => {
-      mostrarMensagem("resultado-frete", "Não foi possível consultar o CEP.", "red");
-    });
-}
-
-carregarProduto();

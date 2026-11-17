@@ -20,26 +20,15 @@
       <a href="../home/home.html">🏠 <span class="nav-text">Home</span></a>
       <a href="../produtos/produtos.html">📦 <span class="nav-text">Produtos</span></a>
       <a href="../categorias/categorias.html">🏷️ <span class="nav-text">Categorias</span></a>
-      <a href="#">🔖 <span class="nav-text">Ofertas</span></a>
-      <a href="#">✉️ <span class="nav-text">Contato</span></a>
+      <a href="../cadastro-usuario/cadastro-usuario.html">📝 <span class="nav-text">Cadastro</span></a>
     </nav>
 
-    <div class="search-container" id="busca-container">
-      <span class="search-circle">🔍</span>
-      <div class="search-input-wrapper">
-        <input type="text" id="campo-busca" placeholder="O que você está procurando?">
-        <button type="button" onclick="buscarProdutos()">🔍</button>
-      </div>
-    </div>
-
     <div class="header-actions">
-      <a href="#">🤍 <span class="nav-text">Favoritos</span></a>
-      <a href="../carrinho/carrinho.html">🛒 <span class="nav-text">Carrinho</span> <span id="contador-carrinho"></span></a>
-      <a href="../login/login.html" id="link-conta">👤 <span class="nav-text">Minha conta</span></a>
+      <a href="../carrinho/carrinho.html">🛒 <span class="nav-text">Carrinho</span></a>
+      <a href="../login/login.html" id="link-conta">👤 <span class="nav-text">Login</span></a>
     </div>
   </div>
 </header>
-
 
 <div class="fundo-conta">
   <div class="caixa-conta">
@@ -62,18 +51,16 @@
         <div class="campo">
           <label for="senha">Senha</label>
           <div class="campo-senha">
-            <input type="password" id="senha" placeholder="Escolha uma senha forte">
-            <button type="button" class="btn-olho" onclick="alternarSenha('senha', this)">Mostrar</button>
+            <input type="password" id="senha" placeholder="Escolha uma senha">
           </div>
         </div>
         <div class="campo">
           <label for="confirma-senha">Confirmar senha</label>
           <div class="campo-senha">
             <input type="password" id="confirma-senha" placeholder="Repita a senha">
-            <button type="button" class="btn-olho" onclick="alternarSenha('confirma-senha', this)">Mostrar</button>
           </div>
         </div>
-        <p class="mensagem" id="mensagem"></p>
+        <p class="mensagem" id="mensagem" style="color: red;"></p>
         <button type="submit" class="botao-conta">Cadastrar</button>
         <p class="link-troca">Já tem conta? <a href="../login/login.html">Entrar</a></p>
       </form>
@@ -97,8 +84,8 @@
       <h2>Serviços</h2>
       <a href="../home/home.html">Início</a>
       <a href="../produtos/produtos.html">Produtos</a>
-      <a href="../categorias/categorias.html">Categorias</a>
-      <a href="#">Sobre nós</a>
+      <a href="../carrinho/carrinho.html">Carrinho</a>
+      <a href="../login/login.html">Login</a>
     </div>
 
     <div class="rodape-ajudas">
@@ -138,8 +125,6 @@
   </div>
 </footer>
 
-  <script src="../../shared/auth/auth.js"></script>
-  <script src="../../shared/header/header.js"></script>
-  <script src="cadastro-usuario.js"></script>
+<script src="cadastro-usuario.js"></script>
 </body>
 </html>

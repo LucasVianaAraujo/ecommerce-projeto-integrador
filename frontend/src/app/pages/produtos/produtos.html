@@ -18,84 +18,24 @@
 
     <nav class="nav-menu">
       <a href="../home/home.html">🏠 <span class="nav-text">Home</span></a>
-      <a href="../produtos/produtos.html" class="ativo">📦 <span class="nav-text">Produtos</span></a>
+      <a href="../produtos/produtos.html">📦 <span class="nav-text">Produtos</span></a>
       <a href="../categorias/categorias.html">🏷️ <span class="nav-text">Categorias</span></a>
-      <a href="#">🔖 <span class="nav-text">Ofertas</span></a>
-      <a href="#">✉️ <span class="nav-text">Contato</span></a>
+      <a href="../cadastro-usuario/cadastro-usuario.html">📝 <span class="nav-text">Cadastro</span></a>
     </nav>
 
-    <div class="search-container" id="busca-container">
-      <span class="search-circle">🔍</span>
-      <div class="search-input-wrapper">
-        <input type="text" id="campo-busca" placeholder="O que você está procurando?">
-        <button type="button" onclick="buscarProdutos()">🔍</button>
-      </div>
-    </div>
-
     <div class="header-actions">
-      <a href="#">🤍 <span class="nav-text">Favoritos</span></a>
-      <a href="../carrinho/carrinho.html">🛒 <span class="nav-text">Carrinho</span> <span id="contador-carrinho"></span></a>
-      <a href="../login/login.html" id="link-conta">👤 <span class="nav-text">Minha conta</span></a>
+      <a href="../carrinho/carrinho.html">🛒 <span class="nav-text">Carrinho</span></a>
+      <a href="../login/login.html" id="link-conta">👤 <span class="nav-text">Login</span></a>
     </div>
   </div>
 </header>
 
-
 <div class="conteudo">
   <div id="CabecalhoProdutos">
     <h1 id="titulo-produtos">Todos os produtos</h1>
-    <select id="ordenacao" onchange="aplicarFiltros()">
-      <option value="">Filtrar por</option>
-      <option value="barato">Mais barato</option>
-      <option value="caro">Mais caro</option>
-      <option value="nome">Nome (A-Z)</option>
-    </select>
   </div>
 
-  <div id="FiltroAtivo"><span id="filtro-ativo"><button type="button">× Mais Barato</button></span></div>
-
-  <div class="lista-produtos" id="lista-produtos">
-      <a href="../exibir-produto/exibir-produto.html" class="Produto">
-        <div class="ProdutoImagem"><img src="../../../../public/images/all-star.jpg" alt="Produto 07" height="100"></div>
-        <p>Produto 07</p>
-        <strong>R$ 189,90</strong>
-      </a>
-      <a href="../exibir-produto/exibir-produto.html" class="Produto">
-        <div class="ProdutoImagem"><img src="../../../../public/images/all-star.jpg" alt="Produto 07" height="100"></div>
-        <p>Produto 07</p>
-        <strong>R$ 189,90</strong>
-      </a>
-      <a href="../exibir-produto/exibir-produto.html" class="Produto">
-        <div class="ProdutoImagem"><img src="../../../../public/images/all-star.jpg" alt="Produto 07" height="100"></div>
-        <p>Produto 07</p>
-        <strong>R$ 189,90</strong>
-      </a>
-      <a href="../exibir-produto/exibir-produto.html" class="Produto">
-        <div class="ProdutoImagem"><img src="../../../../public/images/all-star.jpg" alt="Produto 07" height="100"></div>
-        <p>Produto 07</p>
-        <strong>R$ 189,90</strong>
-      </a>
-      <a href="../exibir-produto/exibir-produto.html" class="Produto">
-        <div class="ProdutoImagem"><img src="../../../../public/images/all-star.jpg" alt="Produto 07" height="100"></div>
-        <p>Produto 07</p>
-        <strong>R$ 189,90</strong>
-      </a>
-      <a href="../exibir-produto/exibir-produto.html" class="Produto">
-        <div class="ProdutoImagem"><img src="../../../../public/images/all-star.jpg" alt="Produto 07" height="100"></div>
-        <p>Produto 07</p>
-        <strong>R$ 189,90</strong>
-      </a>
-      <a href="../exibir-produto/exibir-produto.html" class="Produto">
-        <div class="ProdutoImagem"><img src="../../../../public/images/all-star.jpg" alt="Produto 07" height="100"></div>
-        <p>Produto 07</p>
-        <strong>R$ 189,90</strong>
-      </a>
-      <a href="../exibir-produto/exibir-produto.html" class="Produto">
-        <div class="ProdutoImagem"><img src="../../../../public/images/all-star.jpg" alt="Produto 07" height="100"></div>
-        <p>Produto 07</p>
-        <strong>R$ 189,90</strong>
-      </a>
-  </div>
+  <div class="lista-produtos" id="lista-produtos"></div>
 </div>
 
 <footer>
@@ -114,8 +54,8 @@
       <h2>Serviços</h2>
       <a href="../home/home.html">Início</a>
       <a href="../produtos/produtos.html">Produtos</a>
-      <a href="../categorias/categorias.html">Categorias</a>
-      <a href="#">Sobre nós</a>
+      <a href="../carrinho/carrinho.html">Carrinho</a>
+      <a href="../login/login.html">Login</a>
     </div>
 
     <div class="rodape-ajudas">
@@ -155,9 +95,6 @@
   </div>
 </footer>
 
-  <script src="../../shared/auth/auth.js"></script>
-  <script src="../../services/produto.service.js"></script>
-  <script src="../../shared/header/header.js"></script>
-  <script src="produtos.js"></script>
+<script src="produtos.js"></script>
 </body>
 </html>
