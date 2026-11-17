@@ -11,6 +11,7 @@ for (var i = 0; i < produtos.length; i++) {
 document.getElementById("nome-produto").innerHTML = produtoAtual.nome;
 document.getElementById("preco-produto").innerHTML = "R$ " + produtoAtual.preco.toFixed(2);
 document.getElementById("descricao-produto").innerHTML = produtoAtual.descricao;
+document.getElementById("ImagemPrincipal").innerHTML = `<img src="${produtoAtual.imagem}" alt="${produtoAtual.nome}" height="250">`;
 
 function escolherOpcao(elemento, classeGrupo) {
   var opcoes = document.getElementsByClassName(classeGrupo);

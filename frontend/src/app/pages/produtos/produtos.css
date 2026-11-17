@@ -12,7 +12,7 @@
 
 .Produto {
   display: block;
-  background-color: #ffffff;
+  background-color: white;
   border: 1px solid #e2e2e6;
   border-radius: 12px;
   padding-bottom: 2vh;
@@ -28,7 +28,7 @@
   justify-content: center;
   height: 20vh;
   margin: 5%;
-  background-color: var(--cinza);
+  background-color: #ffffff;
   border-radius: 8px;
 }
 
